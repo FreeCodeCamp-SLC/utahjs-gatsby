@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `UtahJS.com`,
+    description: `UtahJS Information. Built with Gatsby and Strapi CMS`,
+    author: `freeCodeCamp - SLC Study Group`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -12,6 +12,14 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
+    },
+    {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        apiURL: `http://localhost:1337`,
+        contentTypes: [`categories`, `user`],
+      },
+      queryLimit: 1000,
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
