@@ -4,6 +4,7 @@ html {
   font: 112.5%/1.45em georgia, serif, sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
+  min-height: 100vh;
 }
 body {
   margin: 0;
@@ -18,6 +19,11 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+  min-height: 100vh;
+}
+
+#___gatsby {
+  min-height: 100vh;
 }
 article,
 aside,
