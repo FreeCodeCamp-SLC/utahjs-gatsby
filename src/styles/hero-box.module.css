@@ -8,6 +8,7 @@
   right: 20px;
   left: 20px;
   width: auto;
+  max-width: 480px;
   height: auto;
   border-radius: 8px;
 }
@@ -59,4 +60,19 @@ img.logo {
 .green {
   color: #fff;
   background-color: #0fa513;
+}
+
+@media all and (min-width: 575px) {
+  .hero_box_inner {
+    font-size: 18px;
+  }
+
+  .hero_box_inner h2 {
+    font-size: 22px;
+  }
+
+  .btn {
+    margin: 0 20px;
+  }
+
 }
