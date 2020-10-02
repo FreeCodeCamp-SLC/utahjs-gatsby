@@ -15,6 +15,8 @@ const HeroBox = () => {
         <div className={heroBoxStyles.hero_subtext}>
           Let's learn together.
         </div>
+        <a className={`${heroBoxStyles.btn} ${heroBoxStyles.yellow}`} href='https://conf.utahjs.com'>Conference</a>
+        <a className={`${heroBoxStyles.btn} ${heroBoxStyles.green}`} href='https://slack.utahjs.com'>Join Slack</a>
       </div>
     </div>
   )
