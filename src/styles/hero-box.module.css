@@ -1,0 +1,36 @@
+.hero_box {
+  position: absolute;
+  color: #fff;
+  background-color: rgba(22, 29, 14, 0.6);
+  margin-top: 0;
+  padding: 20px;
+  top: 20px;
+  right: 20px;
+  left: 20px;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+}
+
+.hero_box_inner {
+  height: auto;
+  text-align: center;
+  font-size: 14px;
+}
+
+.hero_box_inner h2 {
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.hero_subtext {
+  margin: 10px 0;
+}
+
+img.logo {
+  display: block;
+  width: 50px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
