@@ -10,8 +10,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  font-family: "Gothic A1", sans-serif;
   font-weight: normal;
+  font-size: 16px;
   word-wrap: break-word;
   font-kerning: normal;
   -moz-font-feature-settings: "kern", "liga", "clig", "calt";
@@ -25,7 +26,37 @@ details,
 figcaption,
 figure,
 footer,
-header,
+header {
+  background-color: #2b2b2b;
+}
+header nav {
+  background-color: #000;
+  width: 100%;
+}
+header nav a {
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1;
+  color: #aaa !important;
+  margin-right: 1.5em;
+  padding: 0.7em 0;
+  text-decoration: none;
+}
+header .content {
+  padding: 20px 20px 0 40px;
+  height: 100px;
+}
+.center-content {
+  padding: 0 20px;
+  max-width: 1240px;
+  margin: 0 auto;
+  text-align: left;
+}
+.center-it {
+  text-align: center;
+}
 main,
 menu,
 nav,
@@ -51,8 +82,10 @@ template {
   display: none;
 }
 a {
+  color: white;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  margin-right: 1.5em;
 }
 a:active,
 a:hover {
