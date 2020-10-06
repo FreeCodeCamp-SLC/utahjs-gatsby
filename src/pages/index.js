@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -20,16 +20,3 @@ const IndexPage = () => (
 )
 
 export default IndexPage
-
-export const pageQuery = graphql`
-  query IndexQuery {
-    allStrapiCategories {
-      edges {
-        node {
-          id
-          name
-        }
-      }
-    }
-  }
-`
