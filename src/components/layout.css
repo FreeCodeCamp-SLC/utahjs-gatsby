@@ -1,16 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&family=Sanchez&display=swap");
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   font: 112.5%/1.45em georgia, serif, sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
+  min-height: 100vh;
 }
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: "Gothic A1", sans-serif;
+  font-family: Sanchez, serif;
   font-weight: normal;
   font-size: 16px;
   word-wrap: break-word;
@@ -19,6 +22,12 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+  min-height: 100vh;
+  background-color: #000;
+}
+
+#___gatsby {
+  min-height: 100vh;
 }
 article,
 aside,
@@ -293,8 +302,7 @@ h2 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Sanchez, serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.62671rem;
