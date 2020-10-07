@@ -4,7 +4,10 @@ import React from "react"
 
 const Header = ({ siteTitle }) => (
   <React.Fragment>
-    <header className="center-it">
+    <header
+      className="center-it"
+      style={{ paddingTop: "20px", paddingBottom: "0" }}
+    >
       <div className="content center-content">
         <Link
           to="/"
@@ -36,7 +39,6 @@ const Header = ({ siteTitle }) => (
             fontWeight: "bold",
             fontFamily: "Domine, serif",
             marginTop: "22px",
-            marginBottom: "11px",
             marginLeft: "10px",
           }}
         >
@@ -45,7 +47,7 @@ const Header = ({ siteTitle }) => (
       </div>
     </header>
     <header>
-      <nav className="center-it">
+      <nav>
         <div className="center-content">
           <Link to="/">HOME</Link>
           <Link to="https://vi.to/hubs/utahjs-conference-series">TICKETS</Link>
