@@ -1,7 +1,11 @@
-import React from "react";
+import React from "react"
+
+import Layout from "../components/layout"
 
 const conferencePage = () => (
-	<h1>Conference Page</h1>
+  <Layout>
+    <h1>Conference Page</h1>
+  </Layout>
 )
 
 export default conferencePage
