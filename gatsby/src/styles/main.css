@@ -160,15 +160,15 @@ dd {
 dd {
   margin-bottom: 0;
 }
-footer{
-	margin: 5px 0 20px 0;
-	background-color: #222;
-	border-radius: 8px;
-	padding: 20px;
+footer {
+  margin: 5px 0 20px 0;
+  background-color: #222;
+  border-radius: 8px;
+  padding: 20px;
 }
 footer p {
-	padding: 0px;
-	margin: 0px;
+  padding: 0px;
+  margin: 0px;
 }
 .sisters {
   display: flex;

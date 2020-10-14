@@ -8,6 +8,8 @@ const Footer = () => {
       donation or sponsor this site or an event please contact Ken Snyder at{" "}
       <a href="mailto:ken@utahjs.com">ken@utahjs.com</a>.
       </p>
+
+      
     </footer>
   )
 }
