@@ -105,7 +105,10 @@ const IndexMainContent = () => (
       </dd>
 
       <dt>
-        <a href="https://twitter.com/utjs" className="btn btn-participate">
+        <a
+          href="https://twitter.coasdfasdfm/utjs"
+          className="btn btn-participate"
+        >
           Twitter
         </a>
       </dt>
