@@ -1,3 +1,6 @@
+# IDE
+.history/
+
 # Logs
 logs
 *.log
@@ -67,6 +70,3 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
-
-# .vscode settings
-.vscode/
