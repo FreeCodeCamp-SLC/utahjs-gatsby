@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'gatsby';
+import { Link } from 'gatsby';
 
 const IndexMainContent = () => {
 	return (
@@ -7,7 +7,7 @@ const IndexMainContent = () => {
 			<h2 id="GetInvolved">Get involved in JavaScript in Utah</h2>
 			<dl className="ways-to-participate clearfix">
 				
-				<dt><a href="https://conf.utahjs.com" className="btn btn-participate">Conferences</a></dt>
+				<dt><Link to="conference" className="btn btn-participate">Conferences</Link></dt>
 				<dd>
 					We have a conference every year! Our latest conference details are at <a href="https://conf.utahjs.com">conf.utahjs.com</a>.
 				</dd>
