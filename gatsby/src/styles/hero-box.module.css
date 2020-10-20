@@ -23,7 +23,7 @@
   font-size: 18px;
   font-weight: bold;
   padding-top: 5px;
-  color: white;
+  color: white !important;
 }
 
 .hero_subtext {
