@@ -1,94 +1,106 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
+import Button from 'react-bootstrap/Button';
 import heroJS from '../images/heroJS.svg';
 import heroBackgr from '../images/heroBackgr.svg';
 
 const Hero = styled.div`
   background: url(${heroBackgr}) no-repeat 50% 50% / cover;
   position: relative;
+  justify-content: flex-end;
+  align-items: center;
+  display: flex;
   min-height: 300px;
   height: 35vh;
   font-family: 'Gothic A1', sans-serif;
-  .hero-box {
-    position: absolute;
+  color: #ffffff;   
+  
+  #hero-box {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 150px;
     width: 480px;
     height: 240px;
     padding: 30px;
     background-color: rgba(22, 29, 14, 0.75);
-    right: 150px;
-    top: 50%;
-    margin-top: -120px;
     border-radius: 12px;
   }
-  .hero-box-inner {
-    height: 200px;
-  }
-  .hero-text {
+  #hero-text {
     text-align: left;
     width: 296px;
-    float: right;
   }
-  .hero-title {
+  #hero-title {
     font-weight: bold;
     font-size: 22px;
   }
-  .hero-subtext {
+  #hero-subtext {
     margin-top: 10px;
-    padding: 0;
-    color: white;
     font-size: 18px;
-    font-weight: normal;
   }
-  .hero-buttons {
-    width: 296px;
-    float: right;
+  #hero-buttons {
     margin-top: 15px;
   }
-  .hero-buttons a {
+  #hero-buttons a {
     margin-right: 6px;
   }
-  img {
-    vertical-align: middle;
+@media (max-width: 768px){
+  #hero-box {
+    margin-right: 20px;
   }
-  .btn btn-primary {
-    color: #fff !important;
-    background-color: #dd7d00 !important;
-    border-color: transparent;
+  @media (max-width: 520px){
+  justify-content: center;
+  #hero-box {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+    width: 408px;
   }
-  
-  .btn btn-secondary {
-    color: #222 !important;
-    background-color: #fae034;
+  #hero-title {
+    font-size: 15px;
   }
+  #hero-subtext {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+  img{
+    height: 60px;
+  }
+}
+@media (max-width: 300px){
+  #hero-box{
+    padding: 2px;
+  }
+  #hero-text, #hero-buttons{
+    text-align: center;
+  }
+}
 `;
 
 function ConferenceHero() {
   return (
     <Hero>
-      <div className='hero-box'>
-        <div className='hero-box-inner'>
-          <span className='hero-box-img'>
-            <img src={heroJS} alt='Utah JS Logo' />
-          </span>
-          <div className='hero-text'>
-            <div className='hero-title'>
+      <div id='hero-box'>
+        <div id='img-div'>
+          <img src={heroJS} alt='Utah JS Logo' id='hero-box-img' />
+        </div>
+        <div id='heroContent'>
+          <div id='hero-text'>
+            <div id='hero-title'>
               2020 UtahJS Conference
               <br />
               Online Series
             </div>
-            <div className='hero-subtext'>Fridays in October 2020</div>
+            <div id='hero-subtext'>Fridays in October 2020</div>
           </div>
-          <div className='hero-buttons'>
-            <a
-              className='btn btn-primary'
-              href='https://vi.to/hubs/utahjs-conference-series'
-            >
-              Buy Tickets
-            </a>
-            <a className='btn btn-secondary' href='/sponsor'>
-              Sponsor
-            </a>
+          <div id='hero-buttons'>
+            <Button href='https://vi.to/hubs/utahjs-conference-series'>
+              BUY TICKETS
+            </Button>
+            <Button variant='secondary'>
+              <Link to='/sponsor'>SPONSOR</Link>
+            </Button>
           </div>
         </div>
       </div>
