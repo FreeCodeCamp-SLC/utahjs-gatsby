@@ -6,7 +6,7 @@ const IndexMainContent = () => (
     <h2 id="GetInvolved">Get involved in JavaScript in Utah</h2>
     <dl className="ways-to-participate clearfix">
       <dt>
-        <a href="https://conf.utahjs.com" className="btn btn-participate">
+        <a href="conference" className="btn btn-participate">
           Conferences
         </a>
       </dt>
