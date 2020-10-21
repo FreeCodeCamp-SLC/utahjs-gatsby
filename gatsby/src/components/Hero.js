@@ -1,21 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
-import HeroBox from './HeroBox';
-import heroImg from '../images/Circuit_Board.svg';
+import React from 'react'
 
-const HeroStyles = styled.div`
-  position: relative;
-  max-width: 1240px;
-  min-height: 320px;
-  height: 35vh;
-  background: url(${heroImg});
-  margin: 0 auto;
-`;
+import HeroBox from './HeroBox'
 
-const Hero = () => (
-  <HeroStyles>
-    <HeroBox />
-  </HeroStyles>
-);
+const Hero = () => {
+  return (
+    <div className='hero'>
+      <HeroBox />
+    </div>
+  )
+}
 
-export default Hero;
+export default Hero
