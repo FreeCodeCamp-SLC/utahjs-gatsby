@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
 import heroBackgr from '../images/heroBackgr.svg';
+import heroJS from '../images/heroJS.svg';
 
 // styles
 
@@ -91,22 +91,12 @@ const Hero = styled.div`
 `;
 
 function ConferenceHero() {
-  // graph ql query for gatsby-image
-  const { heroJS } = useStaticQuery(graphql`
-    query {
-      heroJS: imageSharp(fixed: { originalName: { eq: "utahjs-logo.png" } }) {
-        fixed {
-          src
-        }
-      }
-    }
-  `);
   console.log('data', heroJS);
   return (
     <Hero>
       <div id='hero-box'>
         <div id='img-div'>
-          <Img fixed={heroJS.ImageSharp.fixed} alt='Utah JS Logo' />
+          <img src={heroJS} alt='Utah JS Logo' id='hero-box-img' />
         </div>
         <div id='heroContent'>
           <div id='hero-text'>
