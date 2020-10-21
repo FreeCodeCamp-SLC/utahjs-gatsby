@@ -1,10 +1,12 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
-import heroJS from '../images/heroJS.svg';
+// import heroJS from '../images/heroJS.svg';
 import heroBackgr from '../images/heroBackgr.svg';
+
+// styles
 
 const Hero = styled.div`
   background: url(${heroBackgr}) no-repeat 50% 50% / cover;
@@ -45,6 +47,17 @@ const Hero = styled.div`
   #hero-buttons a {
     margin-right: 6px;
   }
+  a{
+    text-decoration: none;
+    color: #222222;
+  }
+  a:hover{
+    text-decoration: none;
+    color: #222222;
+  }
+  .btn.btn-primary{
+    color: #ffffff;
+  }
 @media (max-width: 768px){
   #hero-box {
     margin-right: 20px;
@@ -79,11 +92,23 @@ const Hero = styled.div`
 `;
 
 function ConferenceHero() {
+  // graph ql query for gatsby-image
+  const data = useStaticQuery(graphql`
+    query {
+      heroJS: file(relativePath: { eq: "heroJS.svg" }) {
+        childImageSharp {
+          fixed(height: 100, width: 78) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `);
   return (
     <Hero>
       <div id='hero-box'>
         <div id='img-div'>
-          <img src={heroJS} alt='Utah JS Logo' id='hero-box-img' />
+          <Img fixed={data.heroJS.childImageSharp.fixed} alt='Utah JS Logo' />
         </div>
         <div id='heroContent'>
           <div id='hero-text'>

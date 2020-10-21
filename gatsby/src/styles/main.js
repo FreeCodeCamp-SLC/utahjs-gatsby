@@ -47,15 +47,6 @@ h6 {
   .btn.btn-secondary:hover {
     background-color: #fff28b
   }
-  a{
-    text-decoration: none;
-    color: #222222;
-  }
-  a:hover{
-    text-decoration: none;
-    color: #222222;
-  }
-  
 `;
 
 export default GlobalStyles;
