@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import ConferenceSpeaker from '../components/ConferenceSpeaker';
 
 const CenterContentStyles = styled.div`
   max-width: 1240px;
@@ -11,7 +13,17 @@ const CenterContentStyles = styled.div`
   text-align: left;
 `;
 
-const conferencePage = () => (
+const SpeakersSponsorsStyles = styled.section`
+  display: flex
+  padding: 50px 0;
+`;
+
+const SpeakerBiosStyles = styled.div`
+  width: 600px;
+  display: block;
+`;
+
+const conferencePage = ({ data: { conferenceSpeakers } }) => (
   <Layout>
     <SEO title="Conference" />
     <CenterContentStyles>
@@ -40,8 +52,34 @@ const conferencePage = () => (
           We are super excited to hear these speakers and hope you will join us!
         </p>
       </section>
+      <SpeakersSponsorsStyles>
+        <SpeakerBiosStyles>
+          <h1>Schedule</h1>
+          {conferenceSpeakers.nodes.map((speaker) => (
+            <ConferenceSpeaker speaker={speaker} key={speaker.id} />
+          ))}
+        </SpeakerBiosStyles>
+        <div>Sponsors</div>
+      </SpeakersSponsorsStyles>
     </CenterContentStyles>
   </Layout>
 );
 
 export default conferencePage;
+
+export const query = graphql`
+  query {
+    conferenceSpeakers: allSpeaker {
+      nodes {
+        id
+        img
+        name
+        description
+        date
+        time
+        role
+        presentation
+      }
+    }
+  }
+`;
