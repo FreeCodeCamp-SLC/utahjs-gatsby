@@ -1,18 +1,18 @@
 import React from 'react';
-// import { Link } from 'gatsby';
+import { Link } from 'gatsby';
 
 const IndexMainContent = () => (
   <section>
     <h2 id="GetInvolved">Get involved in JavaScript in Utah</h2>
     <dl className="ways-to-participate clearfix">
       <dt>
-        <a href="conference" className="btn btn-participate">
+        <Link to="/conference" className="btn btn-participate">
           Conferences
-        </a>
+        </Link>
       </dt>
       <dd>
         We have a conference every year! Our latest conference details are at{' '}
-        <a href="https://conf.utahjs.com">conf.utahjs.com</a>.
+        <Link to="/conference">utahjs.com/conference</Link>.
       </dd>
 
       <dt>
