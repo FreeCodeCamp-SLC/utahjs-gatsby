@@ -12,7 +12,7 @@ const IndexMainContent = () => (
       </dt>
       <dd>
         We have a conference every year! Our latest conference details are at{' '}
-        <Link to="/conference">conf.utahjs.com</Link>.
+        <Link to="/conference">utahjs.com/conference</Link>.
       </dd>
 
       <dt>
