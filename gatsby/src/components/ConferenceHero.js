@@ -3,7 +3,6 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
-// import heroJS from '../images/heroJS.svg';
 import heroBackgr from '../images/heroBackgr.svg';
 
 // styles
@@ -93,22 +92,21 @@ const Hero = styled.div`
 
 function ConferenceHero() {
   // graph ql query for gatsby-image
-  const data = useStaticQuery(graphql`
+  const { heroJS } = useStaticQuery(graphql`
     query {
-      heroJS: file(relativePath: { eq: "heroJS.svg" }) {
-        childImageSharp {
-          fixed(height: 100, width: 78) {
-            ...GatsbyImageSharpFixed
-          }
+      heroJS: imageSharp(fixed: { originalName: { eq: "utahjs-logo.png" } }) {
+        fixed {
+          src
         }
       }
     }
   `);
+  console.log('data', heroJS);
   return (
     <Hero>
       <div id='hero-box'>
         <div id='img-div'>
-          <Img fixed={data.heroJS.childImageSharp.fixed} alt='Utah JS Logo' />
+          <Img fixed={heroJS.ImageSharp.fixed} alt='Utah JS Logo' />
         </div>
         <div id='heroContent'>
           <div id='hero-text'>
