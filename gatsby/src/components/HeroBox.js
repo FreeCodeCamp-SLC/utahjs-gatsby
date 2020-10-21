@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import styled from 'styled-components';
 import logo from '../images/utahjs-logo.png';
 
@@ -46,6 +47,7 @@ const HeroBoxStyles = styled.div`
     padding: 5px 9px;
     text-decoration: none;
     margin-right: 5px;
+    border: transparent;
     border-radius: 4px;
     text-transform: uppercase;
   }
@@ -90,12 +92,12 @@ const HeroBox = () => (
       <p className="hero_subtext">JavaScript Engineers of Utah</p>
       <p className="hero_subtext">Let's learn together.</p>
 
-      <a className="btn yellow" href="https://conf.utahjs.com">
+      <Button className="btn yellow" href="https://conf.utahjs.com">
         Conference
-      </a>
-      <a className="btn green" href="https://slack.utahjs.com">
+      </Button>
+      <Button className="btn green" href="https://slack.utahjs.com">
         Join Slack
-      </a>
+      </Button>
     </div>
   </HeroBoxStyles>
 );
