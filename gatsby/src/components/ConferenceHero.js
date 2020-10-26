@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
 import heroBackgr from '../images/heroBackgr.svg';
-import heroJS from '../images/heroJS.svg';
 
 // styles
 
@@ -91,28 +91,41 @@ const Hero = styled.div`
 `;
 
 function ConferenceHero() {
-  console.log('data', heroJS);
+
+  //query for gatsby-img
+  const data = useStaticQuery(graphql`
+    query {
+      utahjs: file(relativePath: { eq: "utahjs-logo.png" }) {
+        childImageSharp {
+          fixed(height: 100, width: 78) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <Hero>
-      <div id='hero-box'>
-        <div id='img-div'>
-          <img src={heroJS} alt='Utah JS Logo' id='hero-box-img' />
+      <div id="hero-box">
+        <div id="img-div">
+          <Img fixed={data.utahjs.childImageSharp.fixed} alt="Utah JS Logo" />
         </div>
-        <div id='heroContent'>
-          <div id='hero-text'>
-            <div id='hero-title'>
+        <div id="heroContent">
+          <div id="hero-text">
+            <div id="hero-title">
               2020 UtahJS Conference
               <br />
               Online Series
             </div>
-            <div id='hero-subtext'>Fridays in October 2020</div>
+            <div id="hero-subtext">Fridays in October 2020</div>
           </div>
-          <div id='hero-buttons'>
-            <Button href='https://vi.to/hubs/utahjs-conference-series'>
+          <div id="hero-buttons">
+            <Button href="https://vi.to/hubs/utahjs-conference-series">
               BUY TICKETS
             </Button>
-            <Button variant='secondary'>
-              <Link to='/sponsor'>SPONSOR</Link>
+            <Button variant="secondary">
+              <Link to="/sponsor">SPONSOR</Link>
             </Button>
           </div>
         </div>

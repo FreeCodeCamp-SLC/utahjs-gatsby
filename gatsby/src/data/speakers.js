@@ -1,6 +1,14 @@
 export const speakers = [
   {
-    img: null,
+    img: '../images/speaker.svg',
+    name: 'Adam Cuppy',
+    subtitle: 'COO @ ZEAL',
+    socialLinks: [{ twitter: 'https://www.twitter.com' }, { linkedIn: 'link' }],
+    description: `Adam is _not_ a Fortune 500 CEO, award-winning book author, or Nobel Prize recipient. But, he's an actor turned software engineer who co-founded ZEAL, a people-centric process-focused consulting company located around the United States. Learn more on the interwebs @CodingZeal @adamcuppy`,
+    presentations: ['Mechanically Confident'],
+  },
+  {
+    img: '../images/speaker.svg',
     name: 'Adam Cuppy',
     subtitle: 'COO @ ZEAL',
     socialLinks: [{ twitter: 'link' }, { linkedIn: 'link' }],
@@ -8,7 +16,7 @@ export const speakers = [
     presentations: ['Mechanically Confident'],
   },
   {
-    img: null,
+    img: '../images/speaker.svg',
     name: 'Adam Cuppy',
     subtitle: 'COO @ ZEAL',
     socialLinks: [{ twitter: 'link' }, { linkedIn: 'link' }],
@@ -16,7 +24,7 @@ export const speakers = [
     presentations: ['Mechanically Confident'],
   },
   {
-    img: null,
+    img: '../images/speaker.svg',
     name: 'Adam Cuppy',
     subtitle: 'COO @ ZEAL',
     socialLinks: [{ twitter: 'link' }, { linkedIn: 'link' }],
@@ -24,7 +32,7 @@ export const speakers = [
     presentations: ['Mechanically Confident'],
   },
   {
-    img: null,
+    img: '../images/speaker.svg',
     name: 'Adam Cuppy',
     subtitle: 'COO @ ZEAL',
     socialLinks: [{ twitter: 'link' }, { linkedIn: 'link' }],
@@ -32,15 +40,7 @@ export const speakers = [
     presentations: ['Mechanically Confident'],
   },
   {
-    img: null,
-    name: 'Adam Cuppy',
-    subtitle: 'COO @ ZEAL',
-    socialLinks: [{ twitter: 'link' }, { linkedIn: 'link' }],
-    description: `Adam is _not_ a Fortune 500 CEO, award-winning book author, or Nobel Prize recipient. But, he's an actor turned software engineer who co-founded ZEAL, a people-centric process-focused consulting company located around the United States. Learn more on the interwebs @CodingZeal @adamcuppy`,
-    presentations: ['Mechanically Confident'],
-  },
-  {
-    img: null,
+    img: '../images/speaker.svg',
     name: 'Adam Cuppy',
     subtitle: 'COO @ ZEAL',
     socialLinks: [{ twitter: 'link' }, { linkedIn: 'link' }],
