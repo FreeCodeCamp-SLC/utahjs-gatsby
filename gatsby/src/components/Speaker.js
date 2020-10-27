@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import speaka from '../images/speaker.svg';
 
 const SpeakerBox = styled.div`
   border: 1px solid #ccc;
@@ -13,7 +12,7 @@ const SpeakerBox = styled.div`
     font-family: sans-serif;
     font-size: 16px;
   }
-  #pres {
+  .pres {
     color: #ff9000;
     line-height: 1.5;
     font-weight: bold;
@@ -35,10 +34,10 @@ const Person = styled.div`
     line-height: 1.5;
     font-weight: bold;
   }
-  img {
+  .avatar {
     height: 96px;
   }
-  #info {
+  .info {
     display: flex;
     flex-direction: column;
     margin-left: 10px;
@@ -66,6 +65,13 @@ export default function Speaker({ speaker }) {
     query {
       utahjs: file(relativePath: { eq: "utahjs-logo.png" }) {
         childImageSharp {
+          fixed(height: 96, width: 96) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      utahjsIcon: file(relativePath: { eq: "utahjs-logo.png" }) {
+        childImageSharp {
           fixed(height: 18, width: 15) {
             ...GatsbyImageSharpFixed
           }
@@ -76,16 +82,15 @@ export default function Speaker({ speaker }) {
   return (
     <SpeakerBox>
       <Person>
-        {/* speaker.img was not rendering so I just imported the svg */}
-        <img src={speaka} alt='speaker' />
-        <div id='info'>
+        <Img className='avatar' fixed={data.utahjs.childImageSharp.fixed} />
+        <div className='info'>
           <h2>{speaker.name}</h2>
           <h3>{speaker.subtitle}</h3>
           <SocialLinks>
             {speaker.socialLinks.map((link) => (
               <div className='wrapper'>
                 <a href={Object.keys(link)[0]}>
-                  <Img fixed={data.utahjs.childImageSharp.fixed}></Img>
+                  <Img fixed={data.utahjsIcon.childImageSharp.fixed} />
                 </a>
               </div>
             ))}
@@ -93,7 +98,7 @@ export default function Speaker({ speaker }) {
         </div>
       </Person>
       <p>{speaker.description}</p>
-      <p id='pres'>{speaker.presentations}</p>
+      <p className='pres'>{speaker.presentations}</p>
     </SpeakerBox>
   );
 }
