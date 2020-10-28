@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import ConferenceHero from '../components/ConferenceHero';
 
 const CenterContentStyles = styled.div`
   max-width: 1240px;
@@ -13,7 +14,8 @@ const CenterContentStyles = styled.div`
 
 const conferencePage = () => (
   <Layout>
-    <SEO title="Conference" />
+    <SEO title='Conference' />
+    <ConferenceHero />
     <CenterContentStyles>
       <div>Hero section placeholder</div>
       <section className="conference_info">
