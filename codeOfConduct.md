@@ -1,3 +1,6 @@
+# Code of Conduct
+
+
 Harassment includes offensive verbal comments related to gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), sexual images in public spaces, deliberate intimidation, stalking, following, harassing photography or recording, sustained disruption of talks or other events, inappropriate physical contact, and unwelcome sexual attention.
 
 Participants asked to stop any harassing behavior are expected to comply immediately.
@@ -12,4 +15,4 @@ Conference staff will be happy to help participants contact venue security or lo
 
 We expect participants to follow these rules at conference and workshop venues and conference-related social events.
 
-This Code of Conduct is adapted from Conference Code of Conduct and React Rally Code of Conduct.
+This Code of Conduct is adapted from [Conference Code of Conduct](http://confcodeofconduct.com/) and [React Rally Code of Conduct](http://www.reactrally.com/#/conduct).
