@@ -4,25 +4,22 @@ import styled from 'styled-components';
 
 const NavStyles = styled.nav`
   background-color: #222;
-  padding: 0;
-  margin: 0;
-
+  display: flex;
+    justify-content: center;
+    align-items: center;
   ul {
     list-style: none;
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    padding: 0.75rem 0;
+    margin: 0;
 
     li {
       color: white;
       text-transform: uppercase;
-
-      + li {
-        padding-left: 20px;
-      }
-
-      Link {
-      }
-    }
+      font-weight: 400;
+      font-size: 1.25rem;
+        margin-right: 1.5rem;
   }
 `;
 
