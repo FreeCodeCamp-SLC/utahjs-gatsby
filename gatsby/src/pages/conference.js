@@ -4,6 +4,7 @@ import Nav from '../components/Nav';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import ConferenceHero from '../components/ConferenceHero';
+import Sponsors from '../components/Sponsors';
 
 const CenterContentStyles = styled.div`
   max-width: 1240px;
@@ -16,8 +17,8 @@ const conferencePage = () => (
   <Layout>
     <SEO title='Conference' />
     <Nav />
-    <ConferenceHero />
     <CenterContentStyles>
+      <ConferenceHero />
       <div>Hero section placeholder</div>
       <section className="conference_info">
         <h1>9th Annual UtahJS Conference - Online Series</h1>
@@ -43,6 +44,7 @@ const conferencePage = () => (
           We are super excited to hear these speakers and hope you will join us!
         </p>
       </section>
+      <Sponsors />
     </CenterContentStyles>
   </Layout>
 );
