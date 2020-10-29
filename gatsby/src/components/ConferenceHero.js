@@ -68,7 +68,6 @@ const Hero = styled.div`
     align-items: center;
     margin-right: 0;
     width: 408px;
-    padding: 2px;
   }
   #hero-title {
     font-size: 15px;
@@ -93,10 +92,7 @@ function ConferenceHero() {
       imageSharp {
         fluid(maxWidth: 78) {
           ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  `); */
+       ; */
   const data = useStaticQuery(graphql`
     query {
       imageSharp {
@@ -106,12 +102,13 @@ function ConferenceHero() {
       }
     }
   `);
+
   console.log(data);
   return (
     <Hero>
       <div id='hero-box'>
         <div id='img-div'>
-        {/* <Img fluid={data.imageSharp.fluid} alt='Utah JS Logo' /> */}
+          {/* <Img fluid={data.imageSharp.fluid} alt='Utah JS Logo' /> */}
           {<Img fixed={data.imageSharp.fixed} alt='Utah JS Logo' />}
         </div>
         <div id='heroContent'>
