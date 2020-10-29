@@ -1,25 +1,37 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link as GatsbyLink } from 'gatsby';
 import styled from 'styled-components';
 
 const NavStyles = styled.nav`
   background-color: #222;
-  display: flex;
-    justify-content: center;
-    align-items: center;
   ul {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0.75rem 20px;
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    padding: 0.75rem 0;
-    margin: 0;
-
+    align-items: center;
     li {
-      color: white;
-      text-transform: uppercase;
-      font-weight: 400;
-      font-size: 1.25rem;
-        margin-right: 1.5rem;
+      margin-right: 1.5rem;
+    }
+  }
+`;
+
+const StyledLink = styled(GatsbyLink)`
+  color: #aaa;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 1.15rem;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+  @media (max-width: 662px) {
+    font-size: 0.8rem;
   }
 `;
 
@@ -27,31 +39,35 @@ const Nav = () => (
   <NavStyles>
     <ul>
       <li>
-        <Link>Home</Link>
+        <StyledLink to="/conference">Home</StyledLink>
       </li>
       <li>
-        <Link>Tickets</Link>
+        <StyledLink to="https://vi.to/hubs/utahjs-conference-series">
+          Tickets
+        </StyledLink>
       </li>
       <li>
-        <Link>Code of Conduct</Link>
+        <StyledLink to="/conduct">Code of Conduct</StyledLink>
       </li>
       <li>
-        <Link>Merch</Link>
+        <StyledLink to="https://teespring.com/utahjs-2020-online-series">
+          Merch
+        </StyledLink>
       </li>
       <li>
-        <Link>Sponsor Us</Link>
+        <StyledLink to="/sponsor">Sponsor Us</StyledLink>
       </li>
       <li>
-        <Link>Past Speakers</Link>
+        <StyledLink to="/past-speakers">Past Speakers</StyledLink>
       </li>
       <li>
-        <Link>Mailing List</Link>
+        <StyledLink to="http://eepurl.com/hcwmDf">Mailing List</StyledLink>
       </li>
       <li>
-        <Link>UtahJS.com</Link>
+        <StyledLink to="/">UtahJS.com</StyledLink>
       </li>
       <li>
-        <Link>SLack</Link>
+        <StyledLink to="http://slack.utahjs.com/">Slack</StyledLink>
       </li>
     </ul>
   </NavStyles>
