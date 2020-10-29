@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Nav from '../components/Nav';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import ConferenceHero from '../components/ConferenceHero';
@@ -15,6 +15,7 @@ const CenterContentStyles = styled.div`
 const conferencePage = () => (
   <Layout>
     <SEO title='Conference' />
+    <Nav />
     <ConferenceHero />
     <CenterContentStyles>
       <div>Hero section placeholder</div>
