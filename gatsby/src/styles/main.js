@@ -32,6 +32,21 @@ h5 {
 h6 {
   font-size: 16px;
 }
+.btn.btn-primary {
+    color: #fff;
+    background-color: #dd7d00;
+    border-color: transparent;
+  }
+  .btn.btn-primary:hover {
+    background-color: #ff9000
+  }
+  .btn.btn-secondary {
+    color: #222;
+    background-color: #fae034;
+  }
+  .btn.btn-secondary:hover {
+    background-color: #fff28b
+  }
 `;
 
 export default GlobalStyles;

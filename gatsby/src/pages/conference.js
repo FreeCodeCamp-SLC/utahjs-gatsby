@@ -1,10 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-
+import Nav from '../components/Nav';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import ConferenceSpeaker from '../components/ConferenceSpeaker';
+import ConferenceHero from '../components/ConferenceHero';
 
 const CenterContentStyles = styled.div`
   max-width: 1240px;
@@ -35,8 +36,9 @@ export default function conferencePage({ data }) {
   return (
     <Layout>
       <SEO title="Conference" />
+      <Nav />
+      <ConferenceHero />
       <CenterContentStyles>
-        <div>Hero section placeholder</div>
         <section className="conference_info">
           <h1>9th Annual UtahJS Conference - Online Series</h1>
           <p>

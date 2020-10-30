@@ -44,7 +44,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Fira Sans', 'Sanchez'],
+          families: ['Fira Sans', 'Sanchez', 'Gothic A1', 'Domine'],
         },
       },
     },
