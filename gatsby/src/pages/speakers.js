@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Speaker from '../components/Speaker';
 import { speakers } from '../data/speakers';
@@ -9,6 +10,7 @@ const PageStyles = styled.div`
   padding: 16px;
   height: 100vh;
 `;
+
 export default function SpeakersPage() {
   return (
     <>
