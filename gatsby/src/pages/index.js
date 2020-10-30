@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Hero from '../components/Hero';
 import { HomeStyles, CenterContent } from '../styles/indexStyles';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -12,6 +12,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <HomeStyles>
+      <Hero />
       <CenterContent className="center-content">
         <MainContent />
         <RelatedMeetups />
