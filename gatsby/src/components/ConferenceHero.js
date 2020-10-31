@@ -91,8 +91,7 @@ const Hero = styled.div`
 `;
 
 function ConferenceHero() {
-
-  //query for gatsby-img
+  // query for gatsby-img
   const data = useStaticQuery(graphql`
     query {
       utahjs: file(relativePath: { eq: "utahjs-logo.png" }) {
