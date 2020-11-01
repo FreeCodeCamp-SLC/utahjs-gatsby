@@ -13,7 +13,7 @@ const CenterContentStyles = styled.div`
 
 const conferencePage = () => (
   <Layout>
-    <SEO title='Conference' />
+    <SEO title="Conference" />
     <ConferenceHero />
     <CenterContentStyles>
       <div>Hero section placeholder</div>
