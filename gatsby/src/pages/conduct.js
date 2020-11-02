@@ -86,8 +86,10 @@ export const conduct = () => (
           workshop venues and conference-related social events.
         </p>
         <p>
-          This Code of Conduct is adapted from{' '}
-          <a href="http://confcodeofconduct.com/">Conference Code of Conduct</a>{' '}
+          This Code of Conduct is adapted from
+          <a href="http://confcodeofconduct.com/">
+            Conference Code of Conduct
+          </a>{' '}
           and{' '}
           <a href="http://www.reactrally.com/#/conduct">
             React Rally Code of Conduct
