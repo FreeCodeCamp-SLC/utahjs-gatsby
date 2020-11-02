@@ -7,12 +7,8 @@ import Nav from '../components/Nav';
 const CenterContentStyles = styled.div`
   max-width: 1240px;
   padding: 0 20px;
-  margin: 0 auto;
+  margin: 2rem auto;
   text-align: left;
-`;
-
-const BodyContent = styled.div`
-  margin: 2rem 0;
 `;
 
 export const conduct = () => (
@@ -20,7 +16,7 @@ export const conduct = () => (
     <SEO title="UtahJS Code of Conduct" />
     <Nav />
     <CenterContentStyles>
-      <BodyContent>
+      <div className="body-content">
         <h1>UtahJS Conference Code of Conduct</h1>
         <p>
           All attendees, speakers, sponsors and volunteers at our conference are
@@ -98,7 +94,7 @@ export const conduct = () => (
           </a>
           .
         </p>
-      </BodyContent>
+      </div>
     </CenterContentStyles>
   </Layout>
 );
