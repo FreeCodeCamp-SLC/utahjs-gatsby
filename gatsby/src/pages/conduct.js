@@ -28,13 +28,13 @@ export const conduct = () => (
           enforce this code throughout the event. We expect cooperation from all
           participants to help ensure a safe environment for everybody.
         </p>
-        <h2>Need Help?</h2>
+        <h3>Need Help?</h3>
         <p>Please contact one of the following organizers:</p>
         <p>
           Sunny Leggett - 801-675-8304 <br />
           Ken Snyder - ken@utahjs.com
         </p>
-        <h2>The Quick Version</h2>
+        <h3>The Quick Version</h3>
         <p>
           Our conference is dedicated to providing a harassment-free conference
           experience for everyone, regardless of gender, gender identity and
@@ -47,7 +47,7 @@ export const conduct = () => (
           be sanctioned or expelled from the conference without a refund at the
           discretion of the conference organizers.
         </p>
-        <h2>The Less Quick Version </h2>
+        <h3>The Less Quick Version </h3>
         <p>
           Harassment includes offensive verbal comments related to gender,
           gender identity and expression, age, sexual orientation, disability,
