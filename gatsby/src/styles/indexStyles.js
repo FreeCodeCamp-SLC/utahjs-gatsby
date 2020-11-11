@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const HomeStyles = styled.div`
   background-color: #000;
-  padding: 20px;
+  padding-bottom: 20px;
   font-family: 'Fira Sans', sans-serif;
   h1,
   h2,

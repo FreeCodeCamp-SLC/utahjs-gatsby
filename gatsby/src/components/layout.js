@@ -1,6 +1,5 @@
 import React from 'react';
 import 'normalize.css';
-import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import GlobalStyles from '../styles/main';
 import Header from './header';
@@ -19,14 +18,10 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyles />
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header />
       <main>{children}</main>
     </>
   );
-};
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 };
 
 export default Layout;

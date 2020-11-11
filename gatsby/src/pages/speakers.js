@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Speaker from '../components/Speaker';
 import { speakers } from '../data/speakers';
+import Layout from '../components/layout';
 
 const PageStyles = styled.div`
   font-family: Domine, serif;
@@ -52,7 +53,7 @@ const AgendaManage = styled.div`
 `;
 export default function SpeakersPage() {
   return (
-    <>
+    <Layout>
       <nav>bunch of alinks</nav>
       <PageStyles>
         <div id='wrapper'>
@@ -72,6 +73,6 @@ export default function SpeakersPage() {
           </a>
         </AgendaManage>
       </PageStyles>
-    </>
+      </Layout>
   );
 }
