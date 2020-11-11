@@ -6,6 +6,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import ConferenceSpeaker from '../components/ConferenceSpeaker';
 import ConferenceHero from '../components/ConferenceHero';
+import Sponsors from '../components/Sponsors';
 
 const CenterContentStyles = styled.div`
   max-width: 1240px;
@@ -37,8 +38,8 @@ export default function conferencePage({ data }) {
     <Layout>
       <SEO title="Conference" />
       <Nav />
-      <ConferenceHero />
       <CenterContentStyles>
+        <ConferenceHero />
         <section className="conference_info">
           <h1>9th Annual UtahJS Conference - Online Series</h1>
           <p>
@@ -72,7 +73,7 @@ export default function conferencePage({ data }) {
               <ConferenceSpeaker speaker={speaker} key={speaker._id} />
             ))}
           </SpeakerSectionStyles>
-          <div>Sponsors</div>
+          <Sponsors />
         </SpeakersSponsorsContainerStyles>
       </CenterContentStyles>
     </Layout>
