@@ -1,7 +1,9 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Speaker from '../components/Speaker';
 import { speakers } from '../data/speakers';
+import Layout from '../components/layout';
 
 const PageStyles = styled.div`
   font-family: Domine, serif;
@@ -50,28 +52,29 @@ const AgendaManage = styled.div`
     }
   }
 `;
+
 export default function SpeakersPage() {
   return (
-    <>
+    <Layout>
       <nav>bunch of alinks</nav>
       <PageStyles>
-        <div id='wrapper'>
-          <h2 className='bold'>2019 Speakers</h2>
-          <p className='italic'>in alphabetical order</p>
-          <p id='speakers'>View 2018 Speakers</p>
+        <div id="wrapper">
+          <h2 className="bold">2019 Speakers</h2>
+          <p className="italic">in alphabetical order</p>
+          <p id="speakers">View 2018 Speakers</p>
           {speakers.map((speaker) => (
             <Speaker speaker={speaker} />
           ))}
         </div>
         <AgendaManage>
-          <a className='manage' href='https://sessionize.com/'>
-            <span className='strong'>Agenda Management</span> powered by{' '}
-            <span className='strong' id='teal'>
+          <a className="manage" href="https://sessionize.com/">
+            <span className="strong">Agenda Management</span> powered by{' '}
+            <span className="strong" id="teal">
               Sessionize.com
             </span>
           </a>
         </AgendaManage>
       </PageStyles>
-    </>
+      </Layout>
   );
 }
