@@ -51,7 +51,7 @@ function Header() {
             <Img fixed={data.utahjs.childImageSharp.fixed} alt='Utah JS Logo' />
           </div>
         </Link>
-        <h1>2020 UtahJS Conference - Online Series</h1>
+        <h1>{new Date().getFullYear()} UtahJS Conference - Online Series</h1>
     </Head>
     </Wrapper>
   );
