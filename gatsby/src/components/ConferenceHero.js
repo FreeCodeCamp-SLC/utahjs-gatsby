@@ -16,8 +16,8 @@ const Hero = styled.div`
   min-height: 300px;
   height: 35vh;
   font-family: 'Gothic A1', sans-serif;
-  color: #ffffff;   
-  
+  color: #ffffff;
+
   #hero-box {
     display: flex;
     justify-content: space-between;
@@ -46,47 +46,49 @@ const Hero = styled.div`
   #hero-buttons a {
     margin-right: 6px;
   }
-  a{
+  a {
     text-decoration: none;
     color: #222222;
   }
-  a:hover{
+  a:hover {
     text-decoration: none;
     color: #222222;
   }
-  .btn.btn-primary{
+  .btn.btn-primary {
     color: #ffffff;
   }
-@media (max-width: 768px){
-  #hero-box {
-    margin-right: 20px;
+  @media (max-width: 768px) {
+    #hero-box {
+      margin-right: 20px;
+    }
   }
-  @media (max-width: 520px){
-  justify-content: center;
-  #hero-box {
-    flex-direction: column;
-    align-items: center;
-    margin-right: 0;
-    width: 408px;
+  @media (max-width: 520px) {
+    justify-content: center;
+    #hero-box {
+      flex-direction: column;
+      align-items: center;
+      margin-right: 0;
+      width: 408px;
+    }
+    #hero-title {
+      font-size: 15px;
+    }
+    #hero-subtext {
+      margin-top: 10px;
+      font-size: 15px;
+    }
+    #hero-text,
+    #hero-buttons {
+      text-align: center;
+    }
+    img {
+      height: 60px;
+    }
   }
-  #hero-title {
-    font-size: 15px;
-  }
-  #hero-subtext {
-    margin-top: 10px;
-    font-size: 15px;
-  }
-  #hero-text, #hero-buttons{
-    text-align: center;
-  }
-  img{
-    height: 60px;
-  }
-}
 `;
 
 function ConferenceHero() {
-  //query for gatsby-img
+  // query for gatsby-img
   /* const data = useStaticQuery(graphql`
     query {
       imageSharp {
@@ -106,26 +108,26 @@ function ConferenceHero() {
   console.log(data);
   return (
     <Hero>
-      <div id='hero-box'>
-        <div id='img-div'>
+      <div id="hero-box">
+        <div id="img-div">
           {/* <Img fluid={data.imageSharp.fluid} alt='Utah JS Logo' /> */}
-          {<Img fixed={data.imageSharp.fixed} alt='Utah JS Logo' />}
+          {<Img fixed={data.imageSharp.fixed} alt="Utah JS Logo" />}
         </div>
-        <div id='heroContent'>
-          <div id='hero-text'>
-            <div id='hero-title'>
+        <div id="heroContent">
+          <div id="hero-text">
+            <div id="hero-title">
               2020 UtahJS Conference
               <br />
               Online Series
             </div>
-            <div id='hero-subtext'>Fridays in October 2020</div>
+            <div id="hero-subtext">Fridays in October 2020</div>
           </div>
-          <div id='hero-buttons'>
-            <Button href='https://vi.to/hubs/utahjs-conference-series'>
+          <div id="hero-buttons">
+            <Button href="https://vi.to/hubs/utahjs-conference-series">
               BUY TICKETS
             </Button>
-            <Button variant='secondary'>
-              <Link to='/sponsor'>SPONSOR</Link>
+            <Button variant="secondary">
+              <Link to="/sponsor">SPONSOR</Link>
             </Button>
           </div>
         </div>

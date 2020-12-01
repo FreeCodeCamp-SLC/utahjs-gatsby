@@ -1,9 +1,8 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Speaker from '../components/Speaker';
 import { speakers } from '../data/speakers';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 
 const PageStyles = styled.div`
   font-family: Domine, serif;
@@ -75,6 +74,6 @@ export default function SpeakersPage() {
           </a>
         </AgendaManage>
       </PageStyles>
-      </Layout>
+    </Layout>
   );
 }

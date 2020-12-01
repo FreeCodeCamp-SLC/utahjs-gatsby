@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 
-const Sponsas = styled.div`
+const Wrapper = styled.div`
   max-width: 600px;
   padding-left: 100px;
   font-family: Domine, serif;
@@ -11,14 +11,13 @@ const Sponsas = styled.div`
     font-weight: bold;
     border-bottom: 2px dotted #ccc;
   }
-  .wrapper{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  .spacer{
+  .spacer {
     margin-top: 10px;
-  }
   }
 `;
 
@@ -43,7 +42,7 @@ const Sponsors = () => {
   `);
 
   return (
-    <Sponsas>
+    <Wrapper>
       <h2>Thank you to our 2020 sponsors!</h2>
       <div className="wrapper">
         <div className="spacer">
@@ -59,7 +58,7 @@ const Sponsors = () => {
           <Img fixed={data.auth.childImageSharp.fixed} alt="authO logo" />
         </a>
       </div>
-    </Sponsas>
+    </Wrapper>
   );
 };
 
