@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 const SponsorPage = () => (
   <>
     <p>This is the sponsor page.</p>
-    <Link to='/conference'>Back to conference page</Link>
+    <Link to="/conference">Back to conference page</Link>
   </>
 );
 
