@@ -81,7 +81,7 @@ const HeroBox = () => (
       <p className="hero_subtext">JavaScript Engineers of Utah</p>
       <p className="hero_subtext">Let's learn together.</p>
 
-      <Button className="btn yellow" href="https://conf.utahjs.com">
+      <Button className="btn yellow" href="/conference">
         Conference
       </Button>
       <Button className="btn green" href="https://slack.utahjs.com">
