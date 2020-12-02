@@ -8,6 +8,9 @@ import returnDateTime from '../utils/dateTime';
 const OnlineSeriesTalk = styled.div`
   border-bottom: 1px solid gainsboro;
   padding-bottom: 10px;
+  .talk-time {
+    font-size: 16px;
+  }
 `;
 
 const SpeakerBio = styled.div`
@@ -45,6 +48,7 @@ const SpeakerBio = styled.div`
     }
     .bio-desc {
       padding-bottom: 8px;
+      margin: 0;
     }
   }
 `;
@@ -54,7 +58,7 @@ export default function ConferenceSpeaker({ speaker }) {
   return (
     <OnlineSeriesTalk>
       <h2>
-        {dateAndTime.date} <span>{dateAndTime.time}</span>
+        {dateAndTime.date} <span className="talk-time">{dateAndTime.time}</span>
       </h2>
       <SpeakerBio>
         <Img fixed={speaker.image.asset.fixed} alt={speaker.name} />
