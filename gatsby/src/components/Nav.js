@@ -3,22 +3,29 @@ import { Link as GatsbyLink } from 'gatsby';
 import styled from 'styled-components';
 
 const NavStyles = styled.nav`
-  background-color: #222;
+  background-color: #000;
+
   ul {
     max-width: 1240px;
     margin: 0 auto;
-    padding: 0.75rem 20px;
+    padding: 0 20px;
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     li {
-      margin-right: 1.5rem;
+      font-size: 17px;
+      line-height: 1;
+      padding: 0.7em 0;
+      margin-right: 1.5em;
       a {
+        font-weight: sans-serif;
+        font-weight: bold;
+        padding: 0;
+        margin: 0;
         color: #aaa;
         text-transform: uppercase;
         cursor: pointer;
-        font-size: 1.15rem;
         &:hover {
           color: white;
           text-decoration: none;
@@ -38,7 +45,7 @@ const StyledLink = styled(GatsbyLink)`
   color: #aaa;
   text-transform: uppercase;
   cursor: pointer;
-  font-size: 1.15rem;
+  font-size: 17px;
   &:hover {
     color: white;
     text-decoration: none;
