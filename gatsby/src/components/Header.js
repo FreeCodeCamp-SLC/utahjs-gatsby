@@ -3,9 +3,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 
-const Wrapper = styled.div`
+const Wrapper = styled.header`
   background: #2b2b2b;
-  header {
+  .header-content {
     max-width: 1240px;
     margin: 0 auto;
     text-align: left;
@@ -13,9 +13,10 @@ const Wrapper = styled.div`
     align-items: center;
     height: 100px;
     background: #2b2b2b;
+    padding: 20px 0 0 20px;
   }
-  .imageWrap {
-    margin: 10px 18px 7px 10px;
+  .gatsby-image-wrapper {
+    margin-right: 20px;
   }
   h1 {
     color: #f7dd56;
@@ -27,7 +28,6 @@ const Wrapper = styled.div`
     margin-left: 10px;
   }
 `;
-
 function Header() {
   const data = useStaticQuery(graphql`
     query {
@@ -42,16 +42,13 @@ function Header() {
   `);
   return (
     <Wrapper>
-      <header>
+      <div className="header-content">
         <Link to="/">
-          <div className="imageWrap">
-            <Img fixed={data.utahjs.childImageSharp.fixed} alt="Utah JS Logo" />
-          </div>
+          <Img fixed={data.utahjs.childImageSharp.fixed} alt="Utah JS Logo" />
         </Link>
         <h1>{new Date().getFullYear()} UtahJS Conference - Online Series</h1>
-      </header>
+      </div>
     </Wrapper>
   );
 }
-
 export default Header;
