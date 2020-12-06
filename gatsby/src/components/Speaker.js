@@ -58,8 +58,6 @@ const SocialLinks = styled.div`
   }
 `;
 
-const Descript = styled.div``;
-
 export default function Speaker({ speaker }) {
   const data = useStaticQuery(graphql`
     query {
@@ -82,13 +80,13 @@ export default function Speaker({ speaker }) {
   return (
     <SpeakerBox>
       <Person>
-        <Img className='avatar' fixed={data.utahjs.childImageSharp.fixed} />
-        <div className='info'>
+        <Img className="avatar" fixed={data.utahjs.childImageSharp.fixed} />
+        <div className="info">
           <h2>{speaker.name}</h2>
           <h3>{speaker.subtitle}</h3>
           <SocialLinks>
             {speaker.socialLinks.map((link) => (
-              <div className='wrapper'>
+              <div className="wrapper">
                 <a href={Object.keys(link)[0]}>
                   <Img fixed={data.utahjsIcon.childImageSharp.fixed} />
                 </a>
@@ -98,7 +96,7 @@ export default function Speaker({ speaker }) {
         </div>
       </Person>
       <p>{speaker.description}</p>
-      <p className='pres'>{speaker.presentations}</p>
+      <p className="pres">{speaker.presentations}</p>
     </SpeakerBox>
   );
 }

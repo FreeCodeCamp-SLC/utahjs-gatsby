@@ -15,9 +15,6 @@ const Head = styled.div`
   align-items: center;
   height: 100px;
   background: #333333;
-  .wrapper {
-
-  }
   div {
     margin: 10px 18px 7px 10px;
   }
@@ -45,14 +42,14 @@ function Header() {
   `);
   return (
     <Wrapper>
-    <Head>
-        <Link to='/'>
+      <Head>
+        <Link to="/">
           <div>
-            <Img fixed={data.utahjs.childImageSharp.fixed} alt='Utah JS Logo' />
+            <Img fixed={data.utahjs.childImageSharp.fixed} alt="Utah JS Logo" />
           </div>
         </Link>
         <h1>{new Date().getFullYear()} UtahJS Conference - Online Series</h1>
-    </Head>
+      </Head>
     </Wrapper>
   );
 }
