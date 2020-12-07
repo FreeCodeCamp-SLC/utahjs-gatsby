@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const HomeStyles = styled.div`
   background-color: #000;
-  padding: 20px;
+  padding-bottom: 20px;
   font-family: 'Fira Sans', sans-serif;
   h1,
   h2,
@@ -35,7 +35,6 @@ export const CenterContent = styled.section`
     border-radius: 8px;
     padding: 20px;
   }
-
   .table {
     margin-top: 11px;
   }
@@ -43,11 +42,9 @@ export const CenterContent = styled.section`
     background-color: #f9e034;
     color: #343433;
   }
-
   .center-it {
     text-align: center;
   }
-
   p {
     padding-bottom: 0.25em;
   }
@@ -74,7 +71,6 @@ export const CenterContent = styled.section`
   .hero-buttons .btn:nth-child(2) {
     background-color: #0fa513;
   }
-
   .ways-to-participate dt:nth-child(14n + 1) .btn {
     background-color: #f6e05a;
     color: #333;
@@ -97,7 +93,6 @@ export const CenterContent = styled.section`
   .ways-to-participate dt:nth-child(14n + 13) .btn {
     background-color: #fe5621;
   }
-
   .ways-to-participate {
     padding-bottom: 0;
   }
@@ -127,13 +122,11 @@ export const CenterContent = styled.section`
   dt {
     font-weight: 500;
   }
-
   a,
   a:hover,
   a:visited {
     color: #2095f2;
   }
-
   .sisters {
     display: flex;
     justify-content: center;
@@ -155,7 +148,6 @@ export const CenterContent = styled.section`
   .sister-name {
     margin-top: 5px;
   }
-
   @media (max-width: 520px) {
     dl.ways-to-participate dt {
       float: none;

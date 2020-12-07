@@ -1,3 +1,7 @@
+import dotenv from 'dotenv';
+
+dotenv.config({ path: '.env' });
+
 module.exports = {
   siteMetadata: {
     title: `UtahJS.com`,
@@ -16,12 +20,13 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
-      resolve: `gatsby-source-strapi`,
+      resolve: `gatsby-source-sanity`,
       options: {
-        apiURL: `http://localhost:1337`,
-        contentTypes: [`categories`, `user`],
+        projectId: 'j549up2g',
+        dataset: 'production',
+        watchMode: true,
+        token: process.env.SANITY_TOKEN,
       },
-      queryLimit: 1000,
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -39,7 +44,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Fira Sans', 'Sanchez'],
+          families: ['Fira Sans', 'Sanchez', 'Gothic A1', 'Domine'],
         },
       },
     },
