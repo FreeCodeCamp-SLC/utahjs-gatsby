@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import { FaTwitter, FaLinkedinIn } from 'react-icons/fa';
 
 const SpeakerBox = styled.div`
   border: 1px solid #ccc;
@@ -58,37 +59,45 @@ const SocialLinks = styled.div`
   }
 `;
 
-export default function Speaker({ speaker }) {
+export default function Speaker({speakers}) {
   const data = useStaticQuery(graphql`
     query {
-      utahjs: file(relativePath: { eq: "utahjs-logo.png" }) {
-        childImageSharp {
-          fixed(height: 96, width: 96) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      utahjsIcon: file(relativePath: { eq: "utahjs-logo.png" }) {
-        childImageSharp {
-          fixed(height: 18, width: 15) {
-            ...GatsbyImageSharpFixed
+      allSanitySpeaker {
+        edges {
+          node {
+            id
+            name
+            role
+            presentations
+            description
+            image {
+              asset {
+                fixed {
+                  base64
+                  srcWebp
+                  srcSetWebp
+                }
+              }
+            }
           }
         }
       }
     }
   `);
+  const speakers = data.allSanitySpeaker.edges;
+  console.log(speakers);
   return (
     <SpeakerBox>
       <Person>
-        <Img className="avatar" fixed={data.utahjs.childImageSharp.fixed} />
-        <div className="info">
+        {/* <Img className='avatar' fixed={data.utahjs.childImageSharp.fixed} /> */}
+        {/* <div className='info'>
           <h2>{speaker.name}</h2>
           <h3>{speaker.subtitle}</h3>
           <SocialLinks>
-            {speaker.socialLinks.map((link) => (
-              <div className="wrapper">
+            {speakers.map((link) => (
+              <div className='wrapper'>
                 <a href={Object.keys(link)[0]}>
-                  <Img fixed={data.utahjsIcon.childImageSharp.fixed} />
+                  <FaLinkedinIn />
                 </a>
               </div>
             ))}
@@ -96,7 +105,7 @@ export default function Speaker({ speaker }) {
         </div>
       </Person>
       <p>{speaker.description}</p>
-      <p className="pres">{speaker.presentations}</p>
+      <p className='pres'>{speaker.presentations}</p> */}
     </SpeakerBox>
   );
 }
