@@ -56,18 +56,6 @@ export default {
       inputComponent: PresentationLengthInput,
     },
     {
-      name: 'twitter',
-      title: 'Twitter',
-      type: 'url',
-      description: 'Twitter url',
-    },
-    {
-      name: 'linkedIn',
-      title: 'LinkedIn',
-      type: 'url',
-      description: 'LinkedIn url',
-    },
-    {
       name: 'image',
       title: 'Image',
       type: 'image',
