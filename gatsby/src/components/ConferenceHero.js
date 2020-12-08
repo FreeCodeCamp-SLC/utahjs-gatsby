@@ -107,13 +107,11 @@ function ConferenceHero() {
     }
   `);
 
-  console.log(data);
   return (
     <Hero>
       <div id="hero-box">
         <div id="img-div">
-          {/* <Img fluid={data.imageSharp.fluid} alt='Utah JS Logo' /> */}
-          {<Img fixed={data.file.childImageSharp.fixed} alt="Utah JS Logo" />}
+          <Img fixed={data.file.childImageSharp.fixed} alt="Utah JS Logo" />
         </div>
         <div id="heroContent">
           <div id="hero-text">
