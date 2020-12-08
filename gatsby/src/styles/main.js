@@ -24,6 +24,10 @@ const GlobalStyles = createGlobalStyle`
     font-family: Domine, serif;
     color: #000;
   }
+h1, h2, h3 {
+  margin-top: 22px;
+    margin-bottom: 11px;
+}
   h1 {
     font-size: 26px;
   }

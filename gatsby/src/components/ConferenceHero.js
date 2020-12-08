@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
-import heroBackgr from '../images/heroBackgr.svg';
+import heroBackgr from '../images/arches-2020-hero.jpg';
 
 // styles
 
