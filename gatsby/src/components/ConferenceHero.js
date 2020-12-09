@@ -97,22 +97,20 @@ function ConferenceHero() {
        ; */
   const data = useStaticQuery(graphql`
     query {
-      imageSharp {
-        fixed(height: 100, width: 78) {
-          ...GatsbyImageSharpFixed
+      file(relativePath: { eq: "utahjs-logo.png" }) {
+        childImageSharp {
+          fixed(height: 100, width: 78) {
+            ...GatsbyImageSharpFixed
+          }
         }
       }
     }
   `);
 
-  console.log(data);
   return (
     <Hero>
       <div id="hero-box">
-        <div id="img-div">
-          {/* <Img fluid={data.imageSharp.fluid} alt='Utah JS Logo' /> */}
-          {<Img fixed={data.imageSharp.fixed} alt="Utah JS Logo" />}
-        </div>
+        <Img fixed={data.file.childImageSharp.fixed} alt="Utah JS Logo" />
         <div id="heroContent">
           <div id="hero-text">
             <div id="hero-title">
