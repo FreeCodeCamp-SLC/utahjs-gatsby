@@ -15,7 +15,7 @@ const CenterContentStyles = styled.div`
   text-align: left;
 `;
 
-const ConferenceInfoStyles = styled.div`
+const ConferenceInfoStyles = styled.section`
   h1 {
     margin: 22px 0 11px 0;
   }
