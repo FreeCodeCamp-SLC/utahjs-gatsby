@@ -5,6 +5,10 @@ import styled from 'styled-components';
 import HeroBox from './HeroBox';
 import heroImg from '../images/Circuit_Board.svg';
 
+// In order to use gatsby-image and its benefits the background image is
+// queried with GraphQL then fed to an Img component. The component is then
+// styled to act like a background image with an absolute position and 100% coverage
+
 const HeroStyles = styled.div`
   position: relative;
   max-width: 1240px;
@@ -20,7 +24,6 @@ const HeroStyles = styled.div`
     width: 100%;
     height: 100%;
     z-index: -10;
-    object-fit: cover;
   }
 `;
 
