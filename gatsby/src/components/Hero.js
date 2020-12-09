@@ -11,17 +11,18 @@ const HeroStyles = styled.div`
   min-height: 320px;
   height: 35vh;
   margin: 0 auto;
+  z-index: 1;
 
+  heroImg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    object-fit: cover;
+  }
 `;
-
-// const HeroImg = styled(Img)`
-//   position: "absolute",
-//   left: 0,
-//   top: 0,
-//   width: "100%",
-//   height: "100%",
-//   z-index: -1
-// `;
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
