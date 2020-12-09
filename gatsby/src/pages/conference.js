@@ -15,6 +15,15 @@ const CenterContentStyles = styled.div`
   text-align: left;
 `;
 
+const ConferenceInfoStyles = styled.section`
+  h1 {
+    margin: 22px 0 11px 0;
+  }
+  p {
+    margin: 0 0 11px 0;
+  }
+`;
+
 const SpeakersSponsorsContainerStyles = styled.section`
   display: flex;
   padding: 50px 0;
@@ -40,7 +49,7 @@ export default function conferencePage({ data }) {
       <Nav />
       <CenterContentStyles>
         <ConferenceHero />
-        <section className="conference_info">
+        <ConferenceInfoStyles>
           <h1>9th Annual UtahJS Conference - Online Series</h1>
           <p>
             Due to COVID-19, the 2020 UtahJS Conference will be an online
@@ -65,7 +74,7 @@ export default function conferencePage({ data }) {
             We are super excited to hear these speakers and hope you will join
             us!
           </p>
-        </section>
+        </ConferenceInfoStyles>
         <SpeakersSponsorsContainerStyles>
           <SpeakerSectionStyles>
             <h1>Schedule</h1>
