@@ -8,7 +8,7 @@ import HeroBox from './HeroBox';
 // queried with GraphQL then fed to an Img component. The component is then
 // styled to act like a background image with an absolute position and 100% coverage
 
-const HeroStyles = styled.div`
+const HeroStyles = styled.section`
   position: relative;
   max-width: 1240px;
   min-height: 320px;

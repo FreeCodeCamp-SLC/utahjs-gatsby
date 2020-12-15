@@ -16,12 +16,9 @@ const HeroBoxStyles = styled.div`
   max-width: 480px;
   height: auto;
   border-radius: 8px;
-  .hero_box_inner {
-    height: auto;
-    text-align: center;
-    font-size: 14px;
-  }
-  .hero_box_inner h2 {
+  text-align: center;
+  font-size: 14px;
+  h2 {
     font-size: 18px;
     font-weight: bold;
     padding-top: 5px;
@@ -60,10 +57,8 @@ const HeroBoxStyles = styled.div`
     background-color: #0fa513;
   }
   @media all and (min-width: 575px) {
-    .hero_box_inner {
-      font-size: 18px;
-    }
-    .hero_box_inner h2 {
+    font-size: 18px;
+    h2 {
       font-size: 22px;
     }
     .btn {
@@ -74,20 +69,16 @@ const HeroBoxStyles = styled.div`
 
 const HeroBox = () => (
   <HeroBoxStyles>
-    <div className="hero_box_inner">
-      <img className="logo" src={logo} alt="UtahJS Logo" />
-      <h2>UtahJS</h2>
-
-      <p className="hero_subtext">JavaScript Engineers of Utah</p>
-      <p className="hero_subtext">Let's learn together.</p>
-
-      <Button className="btn yellow" href="/conference">
-        Conference
-      </Button>
-      <Button className="btn green" href="https://slack.utahjs.com">
-        Join Slack
-      </Button>
-    </div>
+    <img className="logo" src={logo} alt="UtahJS Logo" />
+    <h2>UtahJS</h2>
+    <p className="hero_subtext">JavaScript Engineers of Utah</p>
+    <p className="hero_subtext">Let's learn together.</p>
+    <Button className="btn yellow" href="/conference">
+      Conference
+    </Button>
+    <Button className="btn green" href="https://slack.utahjs.com">
+      Join Slack
+    </Button>
   </HeroBoxStyles>
 );
 
