@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import Nav from '../components/Nav';
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 import ConferenceSpeaker from '../components/ConferenceSpeaker';
@@ -46,7 +45,6 @@ export default function conferencePage({ data }) {
   return (
     <Layout>
       <SEO title="Conference" />
-      <Nav />
       <CenterContentStyles>
         <ConferenceHero />
         <ConferenceInfoStyles>

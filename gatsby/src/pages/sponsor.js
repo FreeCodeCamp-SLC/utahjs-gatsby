@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Nav from '../components/Nav';
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 
@@ -14,7 +13,6 @@ const CenterContentStyles = styled.div`
 const SponsorPage = () => (
   <Layout>
     <SEO title="Sponsor Us" />
-    <Nav />
     <CenterContentStyles>
       <h1>Sponsor Us</h1>
       <p>

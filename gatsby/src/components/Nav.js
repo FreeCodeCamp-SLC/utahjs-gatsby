@@ -65,7 +65,10 @@ const Nav = () => (
   <NavStyles>
     <ul>
       <li>
-        <StyledLink to="/conference">Home</StyledLink>
+        <StyledLink to="/">Home</StyledLink>
+      </li>
+      <li>
+        <StyledLink to="/conference">Conferences</StyledLink>
       </li>
       <li>
         <a href="https://vi.to/hubs/utahjs-conference-series">Tickets</a>
@@ -84,9 +87,6 @@ const Nav = () => (
       </li>
       <li>
         <a href="http://eepurl.com/hcwmDf">Mailing List</a>
-      </li>
-      <li>
-        <StyledLink to="/">UtahJS.com</StyledLink>
       </li>
       <li>
         <a href="http://slack.utahjs.com/">Slack</a>

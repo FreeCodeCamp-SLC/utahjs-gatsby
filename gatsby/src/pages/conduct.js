@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
-import Nav from '../components/Nav';
 
 const CenterContentStyles = styled.div`
   max-width: 1240px;
@@ -14,7 +13,6 @@ const CenterContentStyles = styled.div`
 export const conduct = () => (
   <Layout>
     <SEO title="UtahJS Code of Conduct" />
-    <Nav />
     <CenterContentStyles>
       <div className="body-content">
         <h1>UtahJS Conference Code of Conduct</h1>
