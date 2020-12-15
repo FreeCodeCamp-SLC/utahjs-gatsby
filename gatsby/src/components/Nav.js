@@ -16,16 +16,19 @@ const NavStyles = styled.nav`
     li {
       font-size: 17px;
       line-height: 1;
+      letter-spacing: 1px;
       padding: 0.7em 0;
       margin-right: 1.5em;
       a {
-        font-weight: sans-serif;
+        font-family: 'Gothic A1', sans-serif;
         font-weight: bold;
         padding: 0;
         margin: 0;
         color: #aaa;
         text-transform: uppercase;
         cursor: pointer;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
         &:hover {
           color: white;
           text-decoration: none;
