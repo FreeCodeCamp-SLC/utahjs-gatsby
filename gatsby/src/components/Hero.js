@@ -3,7 +3,6 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import HeroBox from './HeroBox';
-import heroImg from '../images/Circuit_Board.svg';
 
 // In order to use gatsby-image and its benefits the background image is
 // queried with GraphQL then fed to an Img component. The component is then
