@@ -17,7 +17,7 @@ const HeroStyles = styled.div`
   margin: 0 auto;
   z-index: 1;
 
-  heroImg {
+  .heroImg {
     position: absolute;
     left: 0;
     top: 0;
