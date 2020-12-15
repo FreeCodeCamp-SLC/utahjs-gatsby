@@ -7,7 +7,7 @@ import heroBackgr from '../images/arches-2020-hero.jpg';
 
 // styles
 
-const Hero = styled.div`
+const Hero = styled.section`
   background: url(${heroBackgr}) no-repeat 50% 50% / cover;
   position: relative;
   justify-content: flex-end;
@@ -18,7 +18,7 @@ const Hero = styled.div`
   font-family: 'Gothic A1', sans-serif;
   color: #ffffff;
 
-  #hero-box {
+  .hero-box {
     display: flex;
     justify-content: space-between;
     margin-right: 150px;
@@ -28,22 +28,22 @@ const Hero = styled.div`
     background-color: rgba(22, 29, 14, 0.75);
     border-radius: 12px;
   }
-  #hero-text {
+  .hero-text {
     text-align: left;
     width: 296px;
   }
-  #hero-title {
+  .hero-title {
     font-weight: bold;
     font-size: 22px;
   }
-  #hero-subtext {
+  .hero-subtext {
     margin-top: 10px;
     font-size: 18px;
   }
-  #hero-buttons {
+  .hero-buttons {
     margin-top: 15px;
   }
-  #hero-buttons a {
+  .hero-buttons a {
     margin-right: 6px;
   }
   a {
@@ -58,27 +58,27 @@ const Hero = styled.div`
     color: #ffffff;
   }
   @media (max-width: 768px) {
-    #hero-box {
+    .hero-box {
       margin-right: 20px;
     }
   }
   @media (max-width: 520px) {
     justify-content: center;
-    #hero-box {
+    .hero-box {
       flex-direction: column;
       align-items: center;
       margin-right: 0;
       width: 408px;
     }
-    #hero-title {
+    .hero-title {
       font-size: 15px;
     }
-    #hero-subtext {
+    .hero-subtext {
       margin-top: 10px;
       font-size: 15px;
     }
-    #hero-text,
-    #hero-buttons {
+    .hero-text,
+    .hero-buttons {
       text-align: center;
     }
     img {
@@ -88,13 +88,6 @@ const Hero = styled.div`
 `;
 
 function ConferenceHero() {
-  // query for gatsby-img
-  /* const data = useStaticQuery(graphql`
-    query {
-      imageSharp {
-        fluid(maxWidth: 78) {
-          ...GatsbyImageSharpFluid
-       ; */
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "utahjs-logo.png" }) {
@@ -109,18 +102,18 @@ function ConferenceHero() {
 
   return (
     <Hero>
-      <div id="hero-box">
+      <div className="hero-box">
         <Img fixed={data.file.childImageSharp.fixed} alt="Utah JS Logo" />
-        <div id="heroContent">
-          <div id="hero-text">
-            <div id="hero-title">
+        <div className="heroContent">
+          <div className="hero-text">
+            <div className="hero-title">
               2020 UtahJS Conference
               <br />
               Online Series
             </div>
-            <div id="hero-subtext">Fridays in October 2020</div>
+            <div className="hero-subtext">Fridays in October 2020</div>
           </div>
-          <div id="hero-buttons">
+          <div className="hero-buttons">
             <Button href="https://vi.to/hubs/utahjs-conference-series">
               BUY TICKETS
             </Button>
