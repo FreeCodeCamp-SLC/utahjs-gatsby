@@ -5,26 +5,12 @@ import { speakers } from '../data/speakers';
 import Layout from '../components/Layout';
 
 const PageStyles = styled.div`
-  font-family: Domine, serif;
-  max-width: 1240px;
-  margin: 0 auto;
-  color: #333;
-  padding: 16px;
-  height: 100vh;
-  .bold {
-    font-size: 26px;
-    font-weight: 600;
-  }
-  .italic {
-    font-style: italic;
-    font-family: Gothic A1;
-  }
-  #wrapper {
+  .wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  #speakers {
+  .speakers {
     color: #ff9000;
     font-family: Gothic A1;
   }
@@ -35,7 +21,6 @@ const AgendaManage = styled.div`
   justify-content: center;
   font-size: 11px;
   font-family: sans-serif;
-  text-decoration: none;
   margin-bottom: 17px;
   .strong {
     color: rgba(17, 17, 17, 0.5);
@@ -46,7 +31,7 @@ const AgendaManage = styled.div`
     color: rgba(17, 17, 17, 0.5);
   }
   a:hover {
-    #teal {
+    .teal {
       color: #1ab394;
     }
   }
@@ -55,11 +40,13 @@ const AgendaManage = styled.div`
 export default function SpeakersPage() {
   return (
     <Layout>
-      <PageStyles>
-        <div id="wrapper">
-          <h2 className="bold">2019 Speakers</h2>
-          <p className="italic">in alphabetical order</p>
-          <p id="speakers">View 2018 Speakers</p>
+      <PageStyles className="center-content">
+        <h1>2019 Speakers</h1>
+        <p>
+          <em>in alphabetical order</em>
+        </p>
+        <p className="speakers">View 2018 Speakers</p>
+        <div>
           {speakers.map((speaker) => (
             <Speaker speaker={speaker} />
           ))}
@@ -67,9 +54,7 @@ export default function SpeakersPage() {
         <AgendaManage>
           <a className="manage" href="https://sessionize.com/">
             <span className="strong">Agenda Management</span> powered by{' '}
-            <span className="strong" id="teal">
-              Sessionize.com
-            </span>
+            <span className="strong teal">Sessionize.com</span>
           </a>
         </AgendaManage>
       </PageStyles>
