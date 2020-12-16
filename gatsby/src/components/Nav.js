@@ -16,19 +16,29 @@ const NavStyles = styled.nav`
     li {
       font-size: 17px;
       line-height: 1;
+<<<<<<< HEAD
       letter-spacing: 1px;
       padding: 0.7em 0;
       margin-right: 1.5em;
       a {
         font-family: 'Gothic A1', sans-serif;
+=======
+      padding: 0.7em 0;
+      margin-right: 1.5em;
+      a {
+        font-weight: sans-serif;
+>>>>>>> 448d4b42066ac3f0421996363ba143ca9665f048
         font-weight: bold;
         padding: 0;
         margin: 0;
         color: #aaa;
         text-transform: uppercase;
         cursor: pointer;
+<<<<<<< HEAD
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+=======
+>>>>>>> 448d4b42066ac3f0421996363ba143ca9665f048
         &:hover {
           color: white;
         }
