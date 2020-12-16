@@ -37,7 +37,6 @@ const HeroBoxStyles = styled.div`
     display: inline-block;
     font-family: 'Fira Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     padding: 5px 9px;
-    text-decoration: none;
     margin-right: 5px;
     border: transparent;
     border-radius: 4px;
@@ -46,7 +45,6 @@ const HeroBoxStyles = styled.div`
   .btn:hover {
     opacity: 0.95;
     color: #fff;
-    text-decoration: none;
   }
   .btn.yellow {
     color: #000;

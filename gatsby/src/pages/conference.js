@@ -7,13 +7,6 @@ import ConferenceSpeaker from '../components/ConferenceSpeaker';
 import ConferenceHero from '../components/ConferenceHero';
 import Sponsors from '../components/Sponsors';
 
-const CenterContentStyles = styled.div`
-  max-width: 1240px;
-  padding: 0 20px;
-  margin: 0 auto;
-  text-align: left;
-`;
-
 const ConferenceInfoStyles = styled.section`
   h1 {
     margin: 22px 0 11px 0;
@@ -45,7 +38,7 @@ export default function conferencePage({ data }) {
   return (
     <Layout>
       <SEO title="Conference" />
-      <CenterContentStyles>
+      <div className="center-content">
         <ConferenceHero />
         <ConferenceInfoStyles>
           <h1>9th Annual UtahJS Conference - Online Series</h1>
@@ -82,7 +75,7 @@ export default function conferencePage({ data }) {
           </SpeakerSectionStyles>
           <Sponsors />
         </SpeakersSponsorsContainerStyles>
-      </CenterContentStyles>
+      </div>
     </Layout>
   );
 }

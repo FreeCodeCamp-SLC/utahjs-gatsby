@@ -1,19 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
-
-const CenterContentStyles = styled.div`
-  max-width: 1240px;
-  padding: 0 20px;
-  margin: 2rem auto;
-  text-align: left;
-`;
 
 export const conduct = () => (
   <Layout>
     <SEO title="UtahJS Code of Conduct" />
-    <CenterContentStyles>
+    <div className="center-content">
       <div className="body-content">
         <h1>UtahJS Conference Code of Conduct</h1>
         <p>
@@ -84,10 +76,8 @@ export const conduct = () => (
           workshop venues and conference-related social events.
         </p>
         <p>
-          This Code of Conduct is adapted from
-          <a href="http://confcodeofconduct.com/">
-            Conference Code of Conduct
-          </a>{' '}
+          This Code of Conduct is adapted from{' '}
+          <a href="http://confcodeofconduct.com/">Conference Code of Conduct</a>{' '}
           and{' '}
           <a href="http://www.reactrally.com/#/conduct">
             React Rally Code of Conduct
@@ -95,7 +85,7 @@ export const conduct = () => (
           .
         </p>
       </div>
-    </CenterContentStyles>
+    </div>
   </Layout>
 );
 

@@ -47,15 +47,20 @@ const Hero = styled.section`
     margin-right: 6px;
   }
   a {
-    text-decoration: none;
     color: #222222;
   }
   a:hover {
-    text-decoration: none;
     color: #222222;
   }
   .btn.btn-primary {
     color: #ffffff;
+  }
+  a.btn-secondary,
+  a.btn-secondary:hover,
+  a.btn-secondary:focus,
+  a.btn-secondary:visited {
+    color: #222;
+    background-color: #fae034;
   }
   @media (max-width: 768px) {
     .hero-box {
@@ -114,10 +119,13 @@ function ConferenceHero() {
             <div className="hero-subtext">Fridays in October 2020</div>
           </div>
           <div className="hero-buttons">
-            <Button href="https://vi.to/hubs/utahjs-conference-series">
+            <Button
+              className="btn btn-primary"
+              href="https://vi.to/hubs/utahjs-conference-series"
+            >
               BUY TICKETS
             </Button>
-            <Button variant="secondary">
+            <Button className="btn btn-secondary" variant="secondary">
               <Link to="/sponsor">SPONSOR</Link>
             </Button>
           </div>

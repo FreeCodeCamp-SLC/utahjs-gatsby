@@ -8,7 +8,6 @@ import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 import RelatedMeetups from '../components/RelatedMeetups';
-import Footer from '../components/Footer';
 
 export const HomeStyles = styled.div`
   background-color: #000;
@@ -26,9 +25,6 @@ export const HomeStyles = styled.div`
     margin: 0 0 1em 0;
     padding: 0;
     line-height: 1.3;
-  }
-  main {
-    text-align: center;
   }
   .center-content {
     color: white;
@@ -155,6 +151,9 @@ export const HomeStyles = styled.div`
     }
     .sister-name {
       margin-top: 5px;
+    }
+    .about {
+      margin: 0;
     }
     @media (max-width: 520px) {
       dl.ways-to-participate dt {
@@ -328,7 +327,15 @@ const IndexPage = () => (
           </dl>
         </section>
         <RelatedMeetups />
-        <Footer />
+        <section>
+          <p className="about">
+            UtahJS is a 501(c)(3) organization and contributions are tax
+            deductible. We are run by a passionate group of volunteers. To help
+            out or make a donation or sponsor this site or an event please
+            contact Ken Snyder at{' '}
+            <a href="mailto:ken@utahjs.com">ken@utahjs.com</a>.
+          </p>
+        </section>
       </div>
     </HomeStyles>
   </Layout>

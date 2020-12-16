@@ -1,19 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
-
-const CenterContentStyles = styled.div`
-  max-width: 1240px;
-  padding: 0 20px;
-  margin: 0 auto;
-  text-align: left;
-`;
 
 const SponsorPage = () => (
   <Layout>
     <SEO title="Sponsor Us" />
-    <CenterContentStyles>
+    <div className="center-content">
       <h1>Sponsor Us</h1>
       <p>
         UtahJS is an educational non-profit in Utah that promotes web
@@ -26,7 +18,7 @@ const SponsorPage = () => (
         For more information or to secure a sponsorship, please contact{' '}
         <a href="mailto:crystal@zeroslopeevents.com">Crystal Harvey</a>.
       </p>
-    </CenterContentStyles>
+    </div>
   </Layout>
 );
 

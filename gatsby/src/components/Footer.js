@@ -2,24 +2,43 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterStyles = styled.footer`
-  background-color: #222;
-  border-radius: 8px;
-  padding: 20px;
-
-  p {
-    padding: 0px;
-    margin: 0px;
+  background-color: #000;
+  padding: 8px 0;
+  width: 100%;
+  .item {
+    margin: 0 10px;
+    line-height: 24px;
+    font-size: 14px;
+    color: #fff;
+    a {
+      text-decoration: underline;
+      color: #fff;
+    }
+    a:hover {
+      text-decoration: underline;
+      opacity: 0.8;
+    }
+    a.glyphicon,
+    a.glyphicon:hover {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 12px;
+    }
   }
 `;
 
 const Footer = () => (
-  <FooterStyles className="about">
-    <p>
-      UtahJS is a 501(c)(3) organization and contributions are tax deductible.
-      We are run by a passionate group of volunteers. To help out or make a
-      donation or sponsor this site or an event please contact Ken Snyder at{' '}
-      <a href="mailto:ken@utahjs.com">ken@utahjs.com</a>.
-    </p>
+  <FooterStyles>
+    <div className="center-content">
+      <span className="item">© 2020 UtahJS</span>
+      <span className="item">
+        Built by{' '}
+        <a href="https://www.linkedin.com/in/barrowbrian/">Brian Barrow</a> and{' '}
+        <a href="https://kendsnyder.com" target="_blank" rel="noreferrer">
+          Ken Snyder
+        </a>
+      </span>
+    </div>
   </FooterStyles>
 );
 

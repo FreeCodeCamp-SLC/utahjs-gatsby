@@ -31,7 +31,6 @@ const NavStyles = styled.nav`
         -moz-osx-font-smoothing: grayscale;
         &:hover {
           color: white;
-          text-decoration: none;
         }
         @media (max-width: 768px) {
           font-size: 0.9rem;
@@ -51,7 +50,6 @@ const StyledLink = styled(GatsbyLink)`
   font-size: 17px;
   &:hover {
     color: white;
-    text-decoration: none;
   }
   @media (max-width: 768px) {
     font-size: 0.9rem;
