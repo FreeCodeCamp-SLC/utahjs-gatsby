@@ -46,21 +46,15 @@ const Hero = styled.section`
   .hero-buttons a {
     margin-right: 6px;
   }
-  a {
-    color: #222222;
-  }
-  a:hover {
-    color: #222222;
-  }
-  .btn.btn-primary {
-    color: #ffffff;
-  }
-  a.btn-secondary,
-  a.btn-secondary:hover,
-  a.btn-secondary:focus,
-  a.btn-secondary:visited {
-    color: #222;
+  .btn-secondary {
+    border-color: #fae034;
     background-color: #fae034;
+    color: #343434;
+  }
+  .btn-secondary:hover {
+    border-color: #fff28b;
+    background-color: #fff28b;
+    color: #000;
   }
   @media (max-width: 768px) {
     .hero-box {
@@ -125,9 +119,9 @@ function ConferenceHero() {
             >
               BUY TICKETS
             </Button>
-            <Button className="btn btn-secondary" variant="secondary">
-              <Link to="/sponsor">SPONSOR</Link>
-            </Button>
+            <Link className="btn btn-secondary" to="/sponsor">
+              SPONSOR
+            </Link>
           </div>
         </div>
       </div>
