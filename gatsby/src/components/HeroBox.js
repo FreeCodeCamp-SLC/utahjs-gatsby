@@ -63,6 +63,11 @@ const HeroBoxStyles = styled.div`
       margin: 0 20px;
     }
   }
+  @media all and (max-width: 288px) {
+    .btn {
+      margin: 5px 20px;
+    }
+  }
 `;
 
 const HeroBox = () => (

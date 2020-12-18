@@ -167,6 +167,9 @@ export const HomeStyles = styled.div`
         margin: 10px auto;
         text-align: center;
       }
+      #GetInvolved {
+        text-align: center;
+      }
     }
   }
 `;
