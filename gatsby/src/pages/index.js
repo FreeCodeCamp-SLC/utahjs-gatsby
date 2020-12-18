@@ -155,11 +155,17 @@ export const HomeStyles = styled.div`
     .about {
       margin: 0;
     }
-    @media (max-width: 520px) {
+    @media (max-width: 665px) {
       dl.ways-to-participate dt {
         float: none;
         text-align: center;
         width: auto;
+      }
+      dl.ways-to-participate dd {
+        float: none;
+        width: 100%;
+        margin: 10px auto;
+        text-align: center;
       }
     }
   }
