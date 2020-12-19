@@ -68,7 +68,9 @@ const RelatedMeetups = () => {
 
   return (
     <section>
-      <h2 id="Meetups">Other Web Technology Meetups in Utah</h2>
+      <h2 id="Meetups" className="center-it">
+        Other Web Technology Meetups in Utah
+      </h2>
       <div className="sisters">
         <a
           href="https://www.meetup.com/AngularJS-Utah/"

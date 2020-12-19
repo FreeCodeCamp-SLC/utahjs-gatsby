@@ -167,9 +167,6 @@ export const HomeStyles = styled.div`
         margin: 10px auto;
         text-align: center;
       }
-      #GetInvolved {
-        text-align: center;
-      }
     }
   }
 `;
@@ -181,7 +178,9 @@ const IndexPage = () => (
       <Hero />
       <div className="center-content">
         <section>
-          <h2 id="GetInvolved">Get involved in JavaScript in Utah</h2>
+          <h2 id="GetInvolved" className="center-it">
+            Get involved in JavaScript in Utah
+          </h2>
           <dl className="ways-to-participate clearfix">
             <dt>
               <Link to="/conference" className="btn btn-participate">
