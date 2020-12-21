@@ -5,6 +5,11 @@ const FooterStyles = styled.footer`
   background-color: #000;
   padding: 8px 0;
   width: 100%;
+  .center-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
   .item {
     margin: 0 10px;
     line-height: 24px;
@@ -23,6 +28,12 @@ const FooterStyles = styled.footer`
       color: #ccc;
       text-decoration: none;
       font-size: 12px;
+    }
+  }
+  @media all and (min-width: 415px) {
+    .center-content {
+      text-align: left;
+      display: inline-block;
     }
   }
 `;
