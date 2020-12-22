@@ -79,7 +79,7 @@ const GlobalStyles = createGlobalStyle`
   .sponsor-us {
     padding: 22px 20px 22px 20px;
     h1 {
-      margin: 0;
+      margin-top: 0;
     }
   }
   .btn {
