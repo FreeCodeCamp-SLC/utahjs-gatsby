@@ -5,7 +5,7 @@ import SEO from '../components/Seo';
 const SponsorPage = () => (
   <Layout>
     <SEO title="Sponsor Us" />
-    <div className="center-content">
+    <div className="center-content sponsor-us">
       <h1>Sponsor Us</h1>
       <p>
         UtahJS is an educational non-profit in Utah that promotes web
