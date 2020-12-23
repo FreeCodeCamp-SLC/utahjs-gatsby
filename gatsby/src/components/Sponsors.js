@@ -4,8 +4,7 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  max-width: 600px;
-  padding-left: 100px;
+  align-items: flex-start;
   font-family: Domine, serif;
   h2 {
     font-weight: bold;

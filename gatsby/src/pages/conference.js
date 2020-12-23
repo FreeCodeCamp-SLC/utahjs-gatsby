@@ -18,6 +18,7 @@ const ConferenceInfoStyles = styled.section`
 
 const SpeakersSponsorsContainerStyles = styled.section`
   display: flex;
+  flex-direction: column;
   padding: 50px 0;
   h1,
   h2,
@@ -28,8 +29,13 @@ const SpeakersSponsorsContainerStyles = styled.section`
 `;
 
 const SpeakerSectionStyles = styled.div`
-  width: 600px;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+`;
+
+const SponsorSectionStyles = styled.div`
+  justify-content: flex-start;
 `;
 
 export default function conferencePage({ data }) {
@@ -73,7 +79,9 @@ export default function conferencePage({ data }) {
               <ConferenceSpeaker speaker={speaker} key={speaker._id} />
             ))}
           </SpeakerSectionStyles>
-          <Sponsors />
+          <SponsorSectionStyles>
+            <Sponsors />
+          </SponsorSectionStyles>
         </SpeakersSponsorsContainerStyles>
       </div>
     </Layout>
