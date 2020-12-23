@@ -13,7 +13,7 @@ const Wrapper = styled.header`
     align-items: center;
     height: 100px;
     background: #2b2b2b;
-    padding: 20px 0 0 20px;
+    padding: 20px 20px 0 20px;
   }
   .gatsby-image-wrapper {
     margin-right: 20px;
@@ -22,10 +22,20 @@ const Wrapper = styled.header`
     color: #f7dd56;
     font-weight: bold;
     font-family: Domine, serif;
-    font-size: 25px;
+    font-size: 18px;
     margin-top: 22px;
     margin-bottom: 11px;
     margin-left: 10px;
+  }
+  @media (min-width: 415px) {
+    h1 {
+      font-size: 22px;
+    }
+  }
+  @media (min-width: 576px) {
+    h1 {
+      font-size: 25px;
+    }
   }
 `;
 function Header() {
