@@ -26,16 +26,26 @@ const SpeakersSponsorsContainerStyles = styled.section`
     margin-top: 22px;
     margin-bottom: 11px;
   }
+  @media all and (min-width: 768px) {
+    flex-direction: row;
+    gap: 50px;
+  }
 `;
 
 const SpeakerSectionStyles = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 2em;
+  @media all and (min-width: 768px) {
+    width: 55%;
+  }
 `;
 
 const SponsorSectionStyles = styled.div`
   justify-content: flex-start;
+  @media all and (min-width: 768px) {
+    width: 45%;
+  }
 `;
 
 export default function conferencePage({ data }) {

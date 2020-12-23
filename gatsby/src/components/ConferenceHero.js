@@ -10,27 +10,23 @@ import heroBackgr from '../images/arches-2020-hero.jpg';
 const Hero = styled.section`
   background: url(${heroBackgr}) no-repeat 50% 50% / cover;
   position: relative;
-  justify-content: flex-end;
-  align-items: center;
-  display: flex;
-  min-height: 300px;
-  height: 35vh;
   font-family: 'Gothic A1', sans-serif;
   color: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
 
   .hero-box {
     display: flex;
-    justify-content: space-between;
-    margin-right: 150px;
-    width: 480px;
-    height: 240px;
-    padding: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
     background-color: rgba(22, 29, 14, 0.75);
     border-radius: 12px;
   }
   .hero-text {
-    text-align: left;
-    width: 296px;
+    text-align: center;
   }
   .hero-title {
     font-weight: bold;
@@ -40,12 +36,13 @@ const Hero = styled.section`
     margin-top: 10px;
     font-size: 18px;
   }
+
   .hero-buttons {
-    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
-  .hero-buttons a {
-    margin-right: 6px;
-  }
+
   .btn-secondary {
     border-color: #fae034;
     background-color: #fae034;
@@ -56,6 +53,9 @@ const Hero = styled.section`
     background-color: #fff28b;
     color: #000;
   }
+  /* 
+  
+  
   @media (max-width: 768px) {
     .hero-box {
       margin-right: 20px;
@@ -83,7 +83,7 @@ const Hero = styled.section`
     img {
       height: 60px;
     }
-  }
+  } */
 `;
 
 function ConferenceHero() {

@@ -18,6 +18,9 @@ const Wrapper = styled.div`
   .spacer {
     margin-top: 10px;
   }
+  @media (min-width: 768px) {
+    align-items: center;
+  }
 `;
 
 const Sponsors = () => {
