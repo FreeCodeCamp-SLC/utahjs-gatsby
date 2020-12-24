@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-import { FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+import { FaTwitter, FaLinkedinIn } from 'react-icons/';
 
 const SpeakerBox = styled.div`
   border: 1px solid #ccc;

@@ -18,18 +18,35 @@ const ConferenceInfoStyles = styled.section`
 
 const SpeakersSponsorsContainerStyles = styled.section`
   display: flex;
-  padding: 50px 0;
+  flex-direction: column;
+  margin-bottom: 25px;
   h1,
   h2,
   h3 {
     margin-top: 22px;
     margin-bottom: 11px;
   }
+  @media all and (min-width: 768px) {
+    flex-direction: row;
+    gap: 50px;
+  }
 `;
 
 const SpeakerSectionStyles = styled.div`
-  width: 600px;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+  @media all and (min-width: 768px) {
+    width: 55%;
+  }
+`;
+
+const SponsorSectionStyles = styled.div`
+  justify-content: flex-start;
+  margin-bottom: 2em;
+  @media all and (min-width: 768px) {
+    width: 45%;
+  }
 `;
 
 export default function conferencePage({ data }) {
@@ -73,7 +90,9 @@ export default function conferencePage({ data }) {
               <ConferenceSpeaker speaker={speaker} key={speaker._id} />
             ))}
           </SpeakerSectionStyles>
-          <Sponsors />
+          <SponsorSectionStyles>
+            <Sponsors />
+          </SponsorSectionStyles>
         </SpeakersSponsorsContainerStyles>
       </div>
     </Layout>

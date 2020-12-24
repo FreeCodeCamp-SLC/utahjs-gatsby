@@ -9,43 +9,49 @@ import heroBackgr from '../images/arches-2020-hero.jpg';
 
 const Hero = styled.section`
   background: url(${heroBackgr}) no-repeat 50% 50% / cover;
-  position: relative;
-  justify-content: flex-end;
-  align-items: center;
-  display: flex;
-  min-height: 300px;
-  height: 35vh;
   font-family: 'Gothic A1', sans-serif;
   color: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 
   .hero-box {
     display: flex;
-    justify-content: space-between;
-    margin-right: 150px;
-    width: 480px;
-    height: 240px;
-    padding: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding: 2em;
     background-color: rgba(22, 29, 14, 0.75);
     border-radius: 12px;
   }
+
+  .hero-content {
+    padding-top: 15px;
+  }
+
   .hero-text {
     text-align: left;
-    width: 296px;
+    margin-bottom: 20px;
   }
   .hero-title {
     font-weight: bold;
-    font-size: 22px;
+    font-size: 15px;
   }
   .hero-subtext {
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 14px;
   }
+
   .hero-buttons {
-    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    a {
+      font-size: 13px;
+    }
   }
-  .hero-buttons a {
-    margin-right: 6px;
-  }
+
   .btn-secondary {
     border-color: #fae034;
     background-color: #fae034;
@@ -56,33 +62,42 @@ const Hero = styled.section`
     background-color: #fff28b;
     color: #000;
   }
-  @media (max-width: 768px) {
+
+  @media all and (min-width: 520px) {
+    justify-content: flex-end;
+    padding-right: 20px;
+
     .hero-box {
-      margin-right: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      max-width: 480px;
+      margin: 1em 0;
     }
-  }
-  @media (max-width: 520px) {
-    justify-content: center;
-    .hero-box {
-      flex-direction: column;
-      align-items: center;
-      margin-right: 0;
-      width: 408px;
+
+    .hero-content {
+      margin: 0 0 2em 2em;
+      padding-top: 0;
     }
+
     .hero-title {
-      font-size: 15px;
+      font-size: 22px;
     }
     .hero-subtext {
-      margin-top: 10px;
-      font-size: 15px;
+      font-size: 18px;
     }
-    .hero-text,
+
     .hero-buttons {
-      text-align: center;
+      flex-direction: row;
+      a {
+        font-size: 15px;
+      }
     }
-    img {
-      height: 60px;
-    }
+  }
+
+  @media all and (min-width: 768px) {
+    padding-right: 150px;
   }
 `;
 
@@ -103,7 +118,7 @@ function ConferenceHero() {
     <Hero>
       <div className="hero-box">
         <Img fixed={data.file.childImageSharp.fixed} alt="Utah JS Logo" />
-        <div className="heroContent">
+        <div className="hero-content">
           <div className="hero-text">
             <div className="hero-title">
               2020 UtahJS Conference
