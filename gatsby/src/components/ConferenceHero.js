@@ -20,29 +20,36 @@ const Hero = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
-    padding: 10px;
+    width: 90%;
+    padding: 20px;
     background-color: rgba(22, 29, 14, 0.75);
     border-radius: 12px;
   }
 
+  .hero-content {
+    padding-top: 15px;
+  }
+
   .hero-text {
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
   }
   .hero-title {
     font-weight: bold;
-    font-size: 22px;
+    font-size: 15px;
   }
   .hero-subtext {
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 14px;
   }
 
   .hero-buttons {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    a {
+      font-size: 13px;
+    }
   }
 
   .btn-secondary {
@@ -54,6 +61,41 @@ const Hero = styled.section`
     border-color: #fff28b;
     background-color: #fff28b;
     color: #000;
+  }
+
+  @media all and (min-width: 520px) {
+    justify-content: flex-end;
+    padding-right: 20px;
+
+    .hero-box {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      max-width: 480px;
+      margin: 1em 0;
+    }
+
+    .hero-content {
+      margin: 0 0 2em 2em;
+      padding-top: 0;
+    }
+
+    .hero-title {
+      font-size: 22px;
+    }
+    .hero-subtext {
+      font-size: 16px;
+    }
+
+    .hero-buttons {
+      flex-direction: row;
+      a {
+        font-size: 15px;
+      }
+    }
+  }
+  @media all and (min-width: 768px) {
+    padding-right: 150px;
   }
 `;
 
@@ -74,7 +116,7 @@ function ConferenceHero() {
     <Hero>
       <div className="hero-box">
         <Img fixed={data.file.childImageSharp.fixed} alt="Utah JS Logo" />
-        <div className="heroContent">
+        <div className="hero-content">
           <div className="hero-text">
             <div className="hero-title">
               2020 UtahJS Conference
