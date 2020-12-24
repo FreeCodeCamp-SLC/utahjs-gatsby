@@ -34,6 +34,7 @@ const SpeakerBio = styled.div`
   }
   .speaker-text {
     width: 90%;
+    padding: 0 5px;
     overflow-wrap: break-word;
     word-wrap: break-word;
     h3 {
@@ -53,6 +54,20 @@ const SpeakerBio = styled.div`
       padding-bottom: 8px;
       margin: 0;
       font-size: 12px;
+    }
+  }
+
+  @media all and (min-width: 520px) {
+    flex-direction: row;
+    align-items: flex-start;
+    .speaker-text {
+      margin-left: 1em;
+      h3 {
+        font-size: 20px;
+      }
+      .bio-desc {
+        font-size: 16px;
+      }
     }
   }
 `;

@@ -21,7 +21,7 @@ const Hero = styled.section`
     justify-content: center;
     align-items: center;
     width: 90%;
-    padding: 20px;
+    padding: 2em;
     background-color: rgba(22, 29, 14, 0.75);
     border-radius: 12px;
   }
@@ -71,6 +71,7 @@ const Hero = styled.section`
       display: flex;
       flex-direction: row;
       align-items: flex-start;
+      justify-content: flex-start;
       max-width: 480px;
       margin: 1em 0;
     }
@@ -84,16 +85,17 @@ const Hero = styled.section`
       font-size: 22px;
     }
     .hero-subtext {
-      font-size: 16px;
+      font-size: 18px;
     }
 
     .hero-buttons {
       flex-direction: row;
       a {
-        font-size: 15px;
+        font-size: 16px;
       }
     }
   }
+
   @media all and (min-width: 768px) {
     padding-right: 150px;
   }
