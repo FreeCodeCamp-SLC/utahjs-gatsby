@@ -9,7 +9,6 @@ import heroBackgr from '../images/arches-2020-hero.jpg';
 
 const Hero = styled.section`
   background: url(${heroBackgr}) no-repeat 50% 50% / cover;
-  position: relative;
   font-family: 'Gothic A1', sans-serif;
   color: #ffffff;
   display: flex;
@@ -26,6 +25,7 @@ const Hero = styled.section`
     background-color: rgba(22, 29, 14, 0.75);
     border-radius: 12px;
   }
+
   .hero-text {
     text-align: center;
     margin-bottom: 20px;
@@ -55,37 +55,6 @@ const Hero = styled.section`
     background-color: #fff28b;
     color: #000;
   }
-  /* 
-  
-  
-  @media (max-width: 768px) {
-    .hero-box {
-      margin-right: 20px;
-    }
-  }
-  @media (max-width: 520px) {
-    justify-content: center;
-    .hero-box {
-      flex-direction: column;
-      align-items: center;
-      margin-right: 0;
-      width: 408px;
-    }
-    .hero-title {
-      font-size: 15px;
-    }
-    .hero-subtext {
-      margin-top: 10px;
-      font-size: 15px;
-    }
-    .hero-text,
-    .hero-buttons {
-      text-align: center;
-    }
-    img {
-      height: 60px;
-    }
-  } */
 `;
 
 function ConferenceHero() {
