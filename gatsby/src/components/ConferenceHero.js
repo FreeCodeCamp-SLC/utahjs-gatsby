@@ -14,7 +14,7 @@ const Hero = styled.section`
   color: #ffffff;
   display: flex;
   justify-content: center;
-  padding: 10px 0;
+  padding: 10px;
 
   .hero-box {
     display: flex;
@@ -22,11 +22,13 @@ const Hero = styled.section`
     justify-content: center;
     align-items: center;
     width: 80%;
+    padding: 10px;
     background-color: rgba(22, 29, 14, 0.75);
     border-radius: 12px;
   }
   .hero-text {
     text-align: center;
+    margin-bottom: 20px;
   }
   .hero-title {
     font-weight: bold;

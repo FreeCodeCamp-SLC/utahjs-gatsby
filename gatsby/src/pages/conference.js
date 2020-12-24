@@ -19,7 +19,7 @@ const ConferenceInfoStyles = styled.section`
 const SpeakersSponsorsContainerStyles = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 50px 0;
+  margin-bottom: 25px;
   h1,
   h2,
   h3 {
@@ -43,6 +43,7 @@ const SpeakerSectionStyles = styled.div`
 
 const SponsorSectionStyles = styled.div`
   justify-content: flex-start;
+  margin-bottom: 2em;
   @media all and (min-width: 768px) {
     width: 45%;
   }
