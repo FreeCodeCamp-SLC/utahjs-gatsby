@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { graphql } from 'gatsby';
 import Speaker from '../components/Speaker';
-import { speakers } from '../data/speakers';
 import Layout from '../components/Layout';
 
 const PageStyles = styled.div`
@@ -22,6 +22,7 @@ const AgendaManage = styled.div`
   font-size: 11px;
   font-family: sans-serif;
   margin-bottom: 17px;
+  text-align: center;
   .strong {
     color: rgba(17, 17, 17, 0.5);
     font-weight: 600;
@@ -37,7 +38,8 @@ const AgendaManage = styled.div`
   }
 `;
 
-export default function SpeakersPage() {
+export default function SpeakersPage({ data }) {
+  const speakers = data.allSanitySpeaker.edges;
   return (
     <Layout>
       <PageStyles className="center-content">
@@ -48,7 +50,7 @@ export default function SpeakersPage() {
         <p className="speakers">View 2018 Speakers</p>
         <div>
           {speakers.map((speaker) => (
-            <Speaker speaker={speaker} />
+            <Speaker speaker={speaker} key={speaker.node.id} />
           ))}
         </div>
         <AgendaManage>
@@ -61,3 +63,30 @@ export default function SpeakersPage() {
     </Layout>
   );
 }
+
+export const query = graphql`
+  query {
+    allSanitySpeaker {
+      edges {
+        node {
+          id
+          name
+          role
+          presentations
+          description
+          image {
+            asset {
+              fixed(width: 96) {
+                base64
+                width
+                height
+                src
+                srcSet
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;

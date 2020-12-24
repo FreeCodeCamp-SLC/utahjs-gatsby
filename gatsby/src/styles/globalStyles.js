@@ -76,6 +76,12 @@ const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
     text-align: left;
   }
+  .sponsor-us {
+    padding: 22px 20px 22px 20px;
+    h1 {
+      margin-top: 0;
+    }
+  }
   .btn {
     font-size: 15px;
     text-transform: uppercase;
