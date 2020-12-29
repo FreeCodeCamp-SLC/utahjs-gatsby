@@ -7,45 +7,67 @@ import ConferenceSpeaker from '../components/ConferenceSpeaker';
 import ConferenceHero from '../components/ConferenceHero';
 import Sponsors from '../components/Sponsors';
 
-const ConferenceInfoStyles = styled.section`
-  h1 {
-    margin: 22px 0 11px 0;
+const Wrapper = styled.div`
+  .conference-info {
+    h2 {
+      font-size: 22px;
+      text-align: center;
+      margin: 22px 0 11px 0;
+    }
+    p {
+      margin: 0 0 11px 0;
+    }
   }
-  p {
-    margin: 0 0 11px 0;
+  .speaker-sponsor-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    h2,
+    h3 {
+      text-align: center;
+    }
+    h2,
+    h3,
+    h4 {
+      margin-top: 22px;
+      margin-bottom: 11px;
+    }
   }
-`;
+  .speaker-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+    h2 {
+      font-size: 22px;
+    }
+  }
 
-const SpeakersSponsorsContainerStyles = styled.section`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 25px;
-  h1,
-  h2,
-  h3 {
-    margin-top: 22px;
-    margin-bottom: 11px;
-  }
-  @media all and (min-width: 768px) {
-    flex-direction: row;
-    gap: 50px;
-  }
-`;
-
-const SpeakerSectionStyles = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2em;
-  @media all and (min-width: 768px) {
-    width: 55%;
-  }
-`;
-
-const SponsorSectionStyles = styled.div`
-  justify-content: flex-start;
-  margin-bottom: 2em;
-  @media all and (min-width: 768px) {
-    width: 45%;
+  @media (min-width: 768px) {
+    .conference-info {
+      h2 {
+        font-size: 26px;
+        text-align: left;
+      }
+    }
+    .speaker-sponsor-container {
+      flex-direction: row;
+      gap: 50px;
+      h2,
+      h3 {
+        text-align: left;
+      }
+      h3 {
+        font-size: 22px;
+      }
+      .speaker-section {
+        h2 {
+          font-size: 26px;
+        }
+      }
+    }
+    .speaker-section {
+      width: 55%;
+    }
   }
 `;
 
@@ -55,10 +77,10 @@ export default function conferencePage({ data }) {
   return (
     <Layout>
       <SEO title="Conference" />
-      <div className="center-content">
+      <Wrapper className="center-content">
         <ConferenceHero />
-        <ConferenceInfoStyles>
-          <h1>9th Annual UtahJS Conference - Online Series</h1>
+        <div className="conference-info">
+          <h2>9th Annual UtahJS Conference - Online Series</h2>
           <p>
             Due to COVID-19, the 2020 UtahJS Conference will be an online
             series.
@@ -82,19 +104,17 @@ export default function conferencePage({ data }) {
             We are super excited to hear these speakers and hope you will join
             us!
           </p>
-        </ConferenceInfoStyles>
-        <SpeakersSponsorsContainerStyles>
-          <SpeakerSectionStyles>
-            <h1>Schedule</h1>
+        </div>
+        <div className="speaker-sponsor-container">
+          <div className="speaker-section">
+            <h2>Schedule</h2>
             {conferenceSpeakers.map((speaker) => (
               <ConferenceSpeaker speaker={speaker} key={speaker._id} />
             ))}
-          </SpeakerSectionStyles>
-          <SponsorSectionStyles>
-            <Sponsors />
-          </SponsorSectionStyles>
-        </SpeakersSponsorsContainerStyles>
-      </div>
+          </div>
+          <Sponsors />
+        </div>
+      </Wrapper>
     </Layout>
   );
 }

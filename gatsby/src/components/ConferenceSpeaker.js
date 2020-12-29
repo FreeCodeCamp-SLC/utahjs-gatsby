@@ -37,7 +37,7 @@ const SpeakerBio = styled.div`
     padding: 0 5px;
     overflow-wrap: break-word;
     word-wrap: break-word;
-    h3 {
+    h4 {
       font-size: 16px;
       padding: 8px 0 6px 0;
       color: #f7dd56;
@@ -62,7 +62,7 @@ const SpeakerBio = styled.div`
     align-items: flex-start;
     .speaker-text {
       margin-left: 1em;
-      h3 {
+      h4 {
         font-size: 20px;
       }
       .bio-desc {
@@ -76,15 +76,15 @@ export default function ConferenceSpeaker({ speaker }) {
   const dateAndTime = returnDateTime(speaker.date_time, speaker.duration);
   return (
     <OnlineSeriesTalk>
-      <h2>
+      <h3>
         {dateAndTime.date} <span className="talk-time">{dateAndTime.time}</span>
-      </h2>
+      </h3>
       <SpeakerBio>
         <Img fixed={speaker.image.asset.fixed} alt={speaker.name} />
         <div className="speaker-text">
-          <h3>
+          <h4>
             {speaker.name}, {speaker.role}
-          </h3>
+          </h4>
           <p className="bio-title">{speaker.presentations}</p>
           <p className="bio-desc">{speaker.description}</p>
         </div>

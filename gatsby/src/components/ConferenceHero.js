@@ -12,43 +12,49 @@ const Hero = styled.section`
   font-family: 'Gothic A1', sans-serif;
   color: #ffffff;
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 10px;
-
+  min-height: 350px;
+  height: 35vh;
   .hero-box {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    height: fit-content;
     align-items: center;
-    width: 90%;
-    padding: 2em;
+    padding: 30px;
+    margin: 0px 20px;
     background-color: rgba(22, 29, 14, 0.75);
     border-radius: 12px;
+    width: -webkit-fill-available;
+    .gatsby-image-wrapper {
+      height: 60px;
+      width: 47px;
+    }
   }
-
   .hero-content {
     padding-top: 15px;
-  }
-
-  .hero-text {
-    text-align: left;
-    margin-bottom: 20px;
-  }
-  .hero-title {
-    font-weight: bold;
-    font-size: 15px;
-  }
-  .hero-subtext {
-    margin-top: 10px;
-    font-size: 14px;
-  }
-
-  .hero-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    a {
-      font-size: 13px;
+    .hero-text {
+      margin-bottom: 15px;
+      .hero-title,
+      .hero-subtext {
+        text-align: center;
+      }
+      .hero-title {
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .hero-subtext {
+        margin-top: 10px;
+        font-size: 16px;
+      }
+    }
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      a {
+        font-size: 16px;
+      }
     }
   }
 
@@ -63,41 +69,43 @@ const Hero = styled.section`
     color: #000;
   }
 
-  @media all and (min-width: 520px) {
+  @media (min-width: 520px) {
     justify-content: flex-end;
-    padding-right: 20px;
-
     .hero-box {
       display: flex;
       flex-direction: row;
-      align-items: flex-start;
-      justify-content: flex-start;
-      max-width: 480px;
-      margin: 1em 0;
-    }
-
-    .hero-content {
-      margin: 0 0 2em 2em;
-      padding-top: 0;
-    }
-
-    .hero-title {
-      font-size: 22px;
-    }
-    .hero-subtext {
-      font-size: 18px;
-    }
-
-    .hero-buttons {
-      flex-direction: row;
-      a {
-        font-size: 15px;
+      justify-content: space-evenly;
+      margin-right: 20px;
+      width: 460px;
+      .gatsby-image-wrapper {
+        height: 100px;
+        width: 78px;
+      }
+      .hero-content {
+        padding-top: 0;
+        .hero-text {
+          .hero-title,
+          .hero-subtext {
+            text-align: left;
+          }
+          .hero-title {
+            font-size: 22px;
+          }
+          .hero-subtext {
+            font-size: 18px;
+          }
+        }
+      }
+      .hero-buttons {
+        flex-direction: row;
       }
     }
   }
 
-  @media all and (min-width: 768px) {
-    padding-right: 150px;
+  @media (min-width: 768px) {
+    .hero-box {
+      margin-right: 150px;
+    }
   }
 `;
 
@@ -106,8 +114,8 @@ function ConferenceHero() {
     query {
       file(relativePath: { eq: "utahjs-logo.png" }) {
         childImageSharp {
-          fixed(height: 100, width: 78) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 100) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -117,7 +125,7 @@ function ConferenceHero() {
   return (
     <Hero>
       <div className="hero-box">
-        <Img fixed={data.file.childImageSharp.fixed} alt="Utah JS Logo" />
+        <Img fluid={data.file.childImageSharp.fluid} alt="Utah JS Logo" />
         <div className="hero-content">
           <div className="hero-text">
             <div className="hero-title">
