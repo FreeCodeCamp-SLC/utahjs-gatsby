@@ -15,9 +15,9 @@ const OnlineSeriesTalk = styled.div`
 
 const SpeakerBio = styled.div`
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   justify-content: left;
-  flex-direction: row;
   padding: 10px;
   margin: 5px 0;
   background-color: #2b2b2b;
@@ -33,8 +33,12 @@ const SpeakerBio = styled.div`
     box-shadow: 2px 2px 5px #000;
   }
   .speaker-text {
-    padding: 0 20px;
+    width: 90%;
+    padding: 0 5px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
     h3 {
+      font-size: 16px;
       padding: 8px 0 6px 0;
       color: #f7dd56;
       margin: 0;
@@ -49,6 +53,21 @@ const SpeakerBio = styled.div`
     .bio-desc {
       padding-bottom: 8px;
       margin: 0;
+      font-size: 12px;
+    }
+  }
+
+  @media all and (min-width: 520px) {
+    flex-direction: row;
+    align-items: flex-start;
+    .speaker-text {
+      margin-left: 1em;
+      h3 {
+        font-size: 20px;
+      }
+      .bio-desc {
+        font-size: 16px;
+      }
     }
   }
 `;

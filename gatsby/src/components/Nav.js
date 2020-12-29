@@ -14,29 +14,27 @@ const NavStyles = styled.nav`
     flex-wrap: wrap;
     align-items: center;
     li {
-      font-size: 17px;
+      font-size: 13px;
       line-height: 1;
-      letter-spacing: 1px;
       padding: 0.7em 0;
       margin-right: 1.5em;
       a {
-        font-family: 'Gothic A1', sans-serif;
-        font-weight: bold;
+        font-weight: sans-serif;
+        font-weight: bolder;
         padding: 0;
         margin: 0;
         color: #aaa;
         text-transform: uppercase;
         cursor: pointer;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
         &:hover {
           color: white;
         }
         @media (max-width: 768px) {
-          font-size: 0.9rem;
         }
-        @media (max-width: 662px) {
-          font-size: 0.8rem;
+        @media (min-width: 520px) {
+          font-size: 17px;
+          line-height: 1.5;
+          padding: 1em 0;
         }
       }
     }
