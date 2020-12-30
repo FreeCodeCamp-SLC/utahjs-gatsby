@@ -7,10 +7,12 @@ const Wrapper = styled.div`
   align-items: flex-start;
   font-family: Domine, serif;
   h2 {
+    font-size: 18px;
     font-weight: bold;
-    border-bottom: 2px dotted #ccc;
+    text-align: center;
   }
   .wrapper {
+    border-top: 2px dotted #ccc;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,6 +22,10 @@ const Wrapper = styled.div`
   }
   @media (min-width: 768px) {
     align-items: center;
+    h2 {
+      font-size: 22px;
+      text-align: left;
+    }
   }
 `;
 
