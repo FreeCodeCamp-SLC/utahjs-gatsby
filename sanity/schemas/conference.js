@@ -1,6 +1,6 @@
 export default {
-  name: 'conference',
-  title: 'Conference',
+  name: 'conferencePage',
+  title: 'Conference Page',
   type: 'document',
   fields: [
     {
@@ -18,24 +18,19 @@ export default {
     {
       name: 'heroimage',
       title: 'Hero Image',
-      type: 'image',
-      validation: (Rule) => Rule.required(),
+      type: 'imageWithAlt',
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'body',
       title: 'Body Content',
-      type: 'array',
-      of: [
-        {
-          type: 'block',
-        },
-      ],
+      type: 'richText',
     },
     {
-      name: 'sponsortitle',
+      name: 'sponsorTitle',
       title: 'Sponsor Title',
       type: 'string',
       validation: (Rule) => Rule.required(),
