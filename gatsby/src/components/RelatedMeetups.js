@@ -5,183 +5,196 @@ import Img from 'gatsby-image';
 const RelatedMeetups = () => {
   const data = useStaticQuery(graphql`
     query {
-      angular: file(relativePath: { eq: "sisters/angularjs.png" }) {
-        childImageSharp {
-          fixed(height: 90, width: 90) {
-            ...GatsbyImageSharpFixed
-          }
+      text: allSanityHome {
+        nodes {
+          otherMeetupHeader
+          angularAnchorText
+          angularUrl
+          lunchAnchorText
+          lunchUrl
+          nodeAnchorText
+          nodeUrl
+          reactAnchorText
+          reactUrl
+          emberAnchorText
+          emberUrl
+          ionicAnchorText
+          ionicUrl
+          vueAnchorText
+          vueUrl
+          downtownCodingAnchorText
+          downtownCodingUrl
         }
       }
-      lunchJs: file(relativePath: { eq: "sisters/lunchjs.jpg" }) {
-        childImageSharp {
-          fixed(height: 90, width: 90) {
-            ...GatsbyImageSharpFixed
-          }
+      angular: sanityImageAsset(
+        _id: {
+          eq: "image-171c6f6745be3bf48998a229cb5237e030d51fa0-180x180-png"
         }
-      }
-      nodeJs: file(relativePath: { eq: "sisters/nodejs.png" }) {
-        childImageSharp {
-          fixed(height: 90, width: 70) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      reactJs: file(relativePath: { eq: "sisters/reactjs.png" }) {
-        childImageSharp {
-          fixed(height: 90, width: 90) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      emberJs: file(relativePath: { eq: "sisters/emberjs.png" }) {
-        childImageSharp {
-          fixed(height: 90, width: 60) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      ionicUtah: file(relativePath: { eq: "sisters/ionic.jpg" }) {
-        childImageSharp {
-          fixed(height: 90, width: 90) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      vueJs: file(relativePath: { eq: "sisters/vuejs.jpg" }) {
-        childImageSharp {
-          fixed(height: 90, width: 90) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      downtownCoding: file(
-        relativePath: { eq: "sisters/downtown-coding.jpg" }
       ) {
-        childImageSharp {
-          fixed(height: 58, width: 90) {
-            ...GatsbyImageSharpFixed
-          }
+        fixed(width: 90, height: 90) {
+          ...GatsbySanityImageFixed
+        }
+      }
+      downtown: sanityImageAsset(
+        _id: { eq: "image-53fecb49097fe92435a8438c48bf5c53ab399555-90x58-png" }
+      ) {
+        fixed(width: 90, height: 58) {
+          ...GatsbySanityImageFixed
+        }
+      }
+      ember: sanityImageAsset(
+        _id: {
+          eq: "image-7382ab88816dd6a504ac482da3cae24452f40077-120x180-png"
+        }
+      ) {
+        fixed(width: 60, height: 90) {
+          ...GatsbySanityImageFixed
+        }
+      }
+      ionic: sanityImageAsset(
+        _id: {
+          eq: "image-8f9ee0f792f16f3ef5fa653564836e698aca2d77-180x180-jpg"
+        }
+      ) {
+        fixed(width: 90, height: 90) {
+          ...GatsbySanityImageFixed
+        }
+      }
+      lunch: sanityImageAsset(
+        _id: {
+          eq: "image-202e205b7f6074f171991bad081967513c3c0905-180x180-jpg"
+        }
+      ) {
+        fixed(width: 90, height: 90) {
+          ...GatsbySanityImageFixed
+        }
+      }
+      node: sanityImageAsset(
+        _id: {
+          eq: "image-a50ab66036d092a844da86c32112ba04de4c7875-140x180-png"
+        }
+      ) {
+        fixed(width: 70, height: 90) {
+          ...GatsbySanityImageFixed
+        }
+      }
+      react: sanityImageAsset(
+        _id: {
+          eq: "image-573b4f12f2c2be86e37dfdc3d91b0e18a60af9f1-180x180-png"
+        }
+      ) {
+        fixed(width: 90, height: 90) {
+          ...GatsbySanityImageFixed
+        }
+      }
+      vue: sanityImageAsset(
+        _id: {
+          eq: "image-e159755b0370dd102d68b1eeed2182cd56d42897-180x180-png"
+        }
+      ) {
+        fixed(width: 90, height: 90) {
+          ...GatsbySanityImageFixed
         }
       }
     }
   `);
-
+  const text = data.text.nodes[0];
   return (
     <section>
-      <h2 id="Meetups" className="center-it">
-        Other Web Technology Meetups in Utah
+      <h2 id='Meetups' className='center-it'>
+        {text.otherMeetupHeader}
       </h2>
-      <div className="sisters">
+      <div className='sisters'>
         <a
-          href="https://www.meetup.com/AngularJS-Utah/"
-          target="_blank"
-          rel="noreferrer"
-          className="sister"
+          href={text.angularUrl}
+          target='_blank'
+          rel='noreferrer'
+          className='sister'
         >
           <Img
-            className="sister-img"
-            backgroundColor="white"
-            fixed={data.angular.childImageSharp.fixed}
-            alt=""
+            className='sister-img'
+            backgroundColor='white'
+            fixed={data.angular.fixed}
+            alt=''
           />
-          <span className="sister-name">Angular</span>
+          <span className='sister-name'>{text.angularAnchorText}</span>
         </a>
         <a
-          href="https://www.meetup.com/lunch-js/"
-          target="_blank"
-          rel="noreferrer"
-          className="sister"
+          href={text.lunchUrl}
+          target='_blank'
+          rel='noreferrer'
+          className='sister'
         >
-          <Img
-            className="sister-img"
-            fixed={data.lunchJs.childImageSharp.fixed}
-            alt=""
-          />
-          <span className="sister-name">Lunch.JS</span>
+          <Img className='sister-img' fixed={data.lunch.fixed} alt='' />
+          <span className='sister-name'>{text.lunchAnchorText}</span>
         </a>
         <a
-          href="https://www.meetup.com/utahnodejs/"
-          target="_blank"
-          rel="noreferrer"
-          className="sister"
+          href={text.nodeUrl}
+          target='_blank'
+          rel='noreferrer'
+          className='sister'
         >
           <Img
-            className="sister-img"
+            className='sister-img'
             imgStyle={{ filter: 'brightness(1.2)' }}
-            fixed={data.nodeJs.childImageSharp.fixed}
-            alt="utah node"
+            fixed={data.node.fixed}
+            alt='utah node'
           />
-          <span className="sister-name">Node.js SLC</span>
+          <span className='sister-name'>{text.nodeAnchorText}</span>
         </a>
       </div>
-      <div className="sisters">
+      <div className='sisters'>
         <a
-          href="https://www.meetup.com/ReactJS-Utah/"
-          target="_blank"
-          rel="noreferrer"
-          className="sister"
+          href={text.reactUrl}
+          target='_blank'
+          rel='noreferrer'
+          className='sister'
         >
           <Img
-            className="sister-img"
+            className='sister-img'
             imgStyle={{ filter: 'brightness(0.6)' }}
-            fixed={data.reactJs.childImageSharp.fixed}
-            alt="react JS"
+            fixed={data.react.fixed}
+            alt='react JS'
           />
-          <span className="sister-name">ReactJS</span>
+          <span className='sister-name'>{text.reactAnchorText}</span>
         </a>
         <a
-          href="https://www.meetup.com/EmberJS-SLC/"
-          target="_blank"
-          rel="noreferrer"
-          className="sister"
+          href={text.emberUrl}
+          target='_blank'
+          rel='noreferrer'
+          className='sister'
         >
-          <Img
-            className="sister-img"
-            fixed={data.emberJs.childImageSharp.fixed}
-            alt=""
-          />
-          <span className="sister-name">Ember.JS</span>
+          <Img className='sister-img' fixed={data.ember.fixed} alt='' />
+          <span className='sister-name'>{text.emberAnchorText}</span>
         </a>
         <a
-          href="https://www.meetup.com/Ionic-Utah/"
-          target="_blank"
-          rel="noreferrer"
-          className="sister"
+          href={text.ionicUrl}
+          target='_blank'
+          rel='noreferrer'
+          className='sister'
         >
-          <Img
-            className="sister-img"
-            fixed={data.ionicUtah.childImageSharp.fixed}
-            alt=""
-          />
-          <span className="sister-name">Ionic</span>
+          <Img className='sister-img' fixed={data.ionic.fixed} alt='' />
+          <span className='sister-name'>{text.ionicAnchorText}</span>
         </a>
       </div>
-      <div className="sisters">
+      <div className='sisters'>
         <a
-          href="https://www.meetup.com/utah-vue/"
-          target="_blank"
-          rel="noreferrer"
-          className="sister"
+          href={text.vueUrl}
+          target='_blank'
+          rel='noreferrer'
+          className='sister'
         >
-          <Img
-            className="sister-img"
-            fixed={data.vueJs.childImageSharp.fixed}
-            alt=""
-          />
-          <span className="sister-name">Vue.js</span>
+          <Img className='sister-img' fixed={data.vue.fixed} alt='' />
+          <span className='sister-name'>{text.vueAnchorText}</span>
         </a>
         <a
-          href="https://www.meetup.com/DowntownCodingSLC/"
-          target="_blank"
-          rel="noreferrer"
-          className="sister"
+          href={text.downtownCodingUrl}
+          target='_blank'
+          rel='noreferrer'
+          className='sister'
         >
-          <Img
-            className="sister-img"
-            fixed={data.downtownCoding.childImageSharp.fixed}
-            alt=""
-          />
-          <span className="sister-name">Downtown Coding</span>
+          <Img className='sister-img' fixed={data.downtown.fixed} alt='' />
+          <span className='sister-name'>{text.downtownCodingAnchorText}</span>
         </a>
       </div>
     </section>

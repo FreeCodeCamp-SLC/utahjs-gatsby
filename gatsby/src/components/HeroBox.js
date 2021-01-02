@@ -1,7 +1,8 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import logo from '../images/utahjs-logo.png';
+import Img from 'gatsby-image';
 
 const HeroBoxStyles = styled.div`
   position: absolute;
@@ -70,19 +71,46 @@ const HeroBoxStyles = styled.div`
   }
 `;
 
-const HeroBox = () => (
-  <HeroBoxStyles>
-    <img className="logo" src={logo} alt="UtahJS Logo" />
-    <h2>UtahJS</h2>
-    <p className="hero_subtext">JavaScript Engineers of Utah</p>
-    <p className="hero_subtext">Let's learn together.</p>
-    <Button className="btn yellow" href="/conference">
-      Conference
-    </Button>
-    <Button className="btn green" href="https://slack.utahjs.com">
-      Join Slack
-    </Button>
-  </HeroBoxStyles>
-);
-
+const HeroBox = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      text: allSanityHome {
+        nodes {
+          heroHeader
+          heroSubtext1
+          heroSubtext2
+          slackUrl
+        }
+      }
+      image: sanityImageAsset(
+        _id: {
+          eq: "image-8bba856101c44816473be120b8c5aa00fe437ba7-140x180-png"
+        }
+      ) {
+        fixed(width: 78) {
+          base64
+          width
+          height
+          src
+          srcSet
+        }
+      }
+    }
+  `);
+  const text = data.text.nodes[0];
+  return (
+    <HeroBoxStyles>
+      <Img className='logo' fixed={data.image.fixed} alt='UtahJS Logo' />
+      <h2>{text.heroHeader}</h2>
+      <p className='hero_subtext'>{text.heroSubtext1}</p>
+      <p className='hero_subtext'>{text.heroSubtext2}</p>
+      <Button className='btn yellow' href='/conference'>
+        Conference
+      </Button>
+      <Button className='btn green' href={text.slackUrl}>
+        Join Slack
+      </Button>
+    </HeroBoxStyles>
+  );
+};
 export default HeroBox;
