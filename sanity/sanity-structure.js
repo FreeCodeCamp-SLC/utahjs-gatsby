@@ -1,9 +1,6 @@
 import S from '@sanity/desk-tool/structure-builder';
 import { IoMdDocument as icon } from 'react-icons/io';
 
-const hiddenDocTypes = (listItem) =>
-  !['conferencePage'].includes(listItem.getId());
-
 export default () =>
   S.list()
     .title('Content')
@@ -18,5 +15,7 @@ export default () =>
             .schemaType('conferencePage')
             .documentId('singleton-conference')
         ),
-      ...S.documentTypeListItems().filter(hiddenDocTypes),
+      ...S.documentTypeListItems().filter(
+        (listItem) => !['conferencePage'].includes(listItem.getId())
+      ),
     ]);

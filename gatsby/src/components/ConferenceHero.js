@@ -3,6 +3,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
+import BlockContent from '@sanity/block-content-to-react';
 import heroBackgr from '../images/arches-2020-hero.jpg';
 
 // styles
@@ -75,14 +76,17 @@ const Hero = styled.section`
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
+      align-items: flex-start;
       margin-right: 20px;
+      padding-bottom: 3em;
       width: 460px;
       .gatsby-image-wrapper {
         height: 100px;
-        width: 78px;
+        width: 115px;
       }
       .hero-content {
         padding-top: 0;
+        margin-left: 50px;
         .hero-text {
           .hero-title,
           .hero-subtext {
@@ -109,14 +113,23 @@ const Hero = styled.section`
   }
 `;
 
-function ConferenceHero() {
+export default function ConferenceHero() {
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "utahjs-logo.png" }) {
         childImageSharp {
-          fluid(maxWidth: 100) {
+          fluid(maxWidth: 150) {
             ...GatsbyImageSharpFluid
           }
+        }
+      }
+      sanityConferencePage {
+        id
+        title
+        subTitle
+        heroImage {
+          _type
+          alt
         }
       }
     }
@@ -128,12 +141,10 @@ function ConferenceHero() {
         <Img fluid={data.file.childImageSharp.fluid} alt="Utah JS Logo" />
         <div className="hero-content">
           <div className="hero-text">
-            <div className="hero-title">
-              2020 UtahJS Conference
-              <br />
-              Online Series
+            <div className="hero-title">{data.sanityConferencePage.title}</div>
+            <div className="hero-subtext">
+              {data.sanityConferencePage.subTitle}
             </div>
-            <div className="hero-subtext">Fridays in October 2020</div>
           </div>
           <div className="hero-buttons">
             <Button
@@ -151,5 +162,3 @@ function ConferenceHero() {
     </Hero>
   );
 }
-
-export default ConferenceHero;

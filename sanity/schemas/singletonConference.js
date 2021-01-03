@@ -11,19 +11,19 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'subtitle',
+      name: 'subTitle',
       title: 'Hero Box Sub-Title',
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'heroimage',
+      name: 'heroImage',
       title: 'Hero Box Image',
       type: 'imageWithAlt',
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'body',
+      name: 'bodyContent',
       title: 'Body Content',
       type: 'richText',
     },
