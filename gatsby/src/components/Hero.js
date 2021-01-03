@@ -12,6 +12,7 @@ const HeroStyles = styled.section`
   position: relative;
   max-width: 1240px;
   min-height: 320px;
+  overflow: hidden;
   height: 35vh;
   margin: 0 auto;
   z-index: 1;

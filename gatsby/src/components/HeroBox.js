@@ -88,11 +88,7 @@ const HeroBox = () => {
         }
       ) {
         fixed(width: 78) {
-          base64
-          width
-          height
-          src
-          srcSet
+          ...GatsbySanityImageFixed
         }
       }
     }
