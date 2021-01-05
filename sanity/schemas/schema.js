@@ -16,7 +16,7 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
-    home,  
+    home,
     speaker,
     sponsorUs,
     // When added to this list, object types can be used as
