@@ -12,8 +12,7 @@
     "@sanity/components",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool",
-    "@sanity/image-url"
+    "@sanity/desk-tool"
   ],
   "env": {
     "development": {

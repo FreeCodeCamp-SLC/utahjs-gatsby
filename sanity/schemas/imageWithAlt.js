@@ -1,7 +1,7 @@
 export default {
   name: 'imageWithAlt',
+  title: 'Image with alt',
   type: 'object',
-  title: 'Image',
   fields: [
     {
       name: 'image',
