@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
-import BlockContent from '@sanity/block-content-to-react';
+import imageUrlBuilder from '@sanity/image-url';
 import heroBackgr from '../images/arches-2020-hero.jpg';
 
 // styles
@@ -28,12 +27,12 @@ const Hero = styled.section`
     border-radius: 12px;
     width: -webkit-fill-available;
     .gatsby-image-wrapper {
-      height: 60px;
+      height: auto;
       width: 47px;
     }
   }
   .hero-content {
-    padding-top: 15px;
+    padding-top: 20px;
     .hero-text {
       margin-bottom: 15px;
       .hero-title,
@@ -81,8 +80,8 @@ const Hero = styled.section`
       padding-bottom: 3em;
       width: 460px;
       .gatsby-image-wrapper {
-        height: 100px;
-        width: 115px;
+        height: auto;
+        width: 95px;
       }
       .hero-content {
         padding-top: 0;
@@ -113,23 +112,42 @@ const Hero = styled.section`
   }
 `;
 
+// Image URL Builder Setup //
+const projectInfo = {
+  projectId: 'j549up2g',
+  dataset: 'production',
+};
+
+const builder = imageUrlBuilder(projectInfo);
+
+function urlFor(source) {
+  return builder.image(source);
+}
+
+// GraphQL Data Query //
 export default function ConferenceHero() {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "utahjs-logo.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 150) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
       sanityConferencePage {
         id
+        heroImage {
+          image {
+            asset {
+              _ref
+              _type
+            }
+          }
+          alt
+        }
         title
         subTitle
-        heroImage {
+        sponsorTitle
+        bodyContent {
+          children {
+            text
+          }
           _type
-          alt
+          _key
         }
       }
     }
@@ -138,7 +156,11 @@ export default function ConferenceHero() {
   return (
     <Hero>
       <div className="hero-box">
-        <Img fluid={data.file.childImageSharp.fluid} alt="Utah JS Logo" />
+        <img
+          className="gatsby-image-wrapper"
+          src={urlFor(data.sanityConferencePage.heroImage.image).url()}
+          alt={data.sanityConferencePage.heroImage.alt}
+        />
         <div className="hero-content">
           <div className="hero-text">
             <div className="hero-title">{data.sanityConferencePage.title}</div>
