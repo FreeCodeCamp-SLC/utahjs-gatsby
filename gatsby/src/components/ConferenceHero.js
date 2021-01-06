@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
 import imageUrlBuilder from '@sanity/image-url';
@@ -112,18 +113,6 @@ const Hero = styled.section`
   }
 `;
 
-// Image URL Builder Setup //
-const projectInfo = {
-  projectId: 'j549up2g',
-  dataset: 'production',
-};
-
-const builder = imageUrlBuilder(projectInfo);
-
-function urlFor(source) {
-  return builder.image(source);
-}
-
 // GraphQL Data Query //
 export default function ConferenceHero() {
   const data = useStaticQuery(graphql`
@@ -133,8 +122,9 @@ export default function ConferenceHero() {
         heroImage {
           image {
             asset {
-              _ref
-              _type
+              fluid(maxWidth: 140) {
+                ...GatsbySanityImageFluid
+              }
             }
           }
           alt
@@ -156,9 +146,8 @@ export default function ConferenceHero() {
   return (
     <Hero>
       <div className="hero-box">
-        <img
-          className="gatsby-image-wrapper"
-          src={urlFor(data.sanityConferencePage.heroImage.image).url()}
+        <Img
+          fluid={data.sanityConferencePage.heroImage.image.asset.fluid}
           alt={data.sanityConferencePage.heroImage.alt}
         />
         <div className="hero-content">
