@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-import { FaTwitter, FaLinkedinIn } from 'react-icons/';
+import { FaTwitter, FaLinkedinIn } from 'react-icons/fa';
 
 const SpeakerBox = styled.div`
   border: 1px solid #ccc;
@@ -64,23 +64,23 @@ export default function Speaker({ speaker }) {
   return (
     <SpeakerBox>
       <Person>
-        <Img className="avatar" fixed={speakerInfo.image.asset.fixed} />
-        <div className="info">
+        <Img className='avatar' fixed={speakerInfo.image.asset.fixed} />
+        <div className='info'>
           <h2>{speakerInfo.name}</h2>
           <h3>{speakerInfo.role}</h3>
           {/* not every speaker has social links so we would need to build logic for this */}
           <SocialLinks>
-            <div className="wrapper">
+            <div className='wrapper'>
               <FaTwitter />
             </div>
-            <div className="wrapper">
+            <div className='wrapper'>
               <FaLinkedinIn />
             </div>
           </SocialLinks>
         </div>
       </Person>
       <p>{speakerInfo.description}</p>
-      <p className="pres">{speakerInfo.presentations}</p>
+      <p className='pres'>{speakerInfo.presentations}</p>
     </SpeakerBox>
   );
 }

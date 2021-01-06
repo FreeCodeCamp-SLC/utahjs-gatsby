@@ -1,25 +1,28 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+import BlockContent from '@sanity/block-content-to-react';
+
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 
-const SponsorPage = () => (
-  <Layout>
-    <SEO title="Sponsor Us" />
-    <div className="center-content sponsor-us">
-      <h1>Sponsor Us</h1>
-      <p>
-        UtahJS is an educational non-profit in Utah that promotes web
-        programming in JavaScript for developers and students at all experience
-        levels. We are a highly active community of JavaScript enthusiasts who
-        want to learn and teach. UtahJS is a 501(c)(3) non-profit organization
-        and sponsorship contributions are tax deductible.
-      </p>
-      <p>
-        For more information or to secure a sponsorship, please contact{' '}
-        <a href="mailto:crystal@zeroslopeevents.com">Crystal Harvey</a>.
-      </p>
-    </div>
-  </Layout>
-);
+const SponsorPage = ({ data }) => {
+  const content = data.allSanitySponsorUs.nodes[0]._rawContent;
+  return (
+    <Layout>
+      <SEO title="Sponsor Us" />
+      <BlockContent className="blockContent center-content" blocks={content} />
+    </Layout>
+  );
+};
 
 export default SponsorPage;
+
+export const pageQuery = graphql`
+  query {
+    allSanitySponsorUs {
+      nodes {
+        _rawContent(resolveReferences: { maxDepth: 10 })
+      }
+    }
+  }
+`;

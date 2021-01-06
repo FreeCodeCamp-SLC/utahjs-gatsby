@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -171,182 +171,186 @@ export const HomeStyles = styled.div`
   }
 `;
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <HomeStyles>
-      <Hero />
-      <div className="center-content">
-        <section>
-          <h2 id="GetInvolved" className="center-it">
-            Get involved in JavaScript in Utah
-          </h2>
-          <dl className="ways-to-participate clearfix">
-            <dt>
-              <Link to="/conference" className="btn btn-participate">
-                Conferences
-              </Link>
-            </dt>
-            <dd>
-              We have a conference every year! Our latest conference details are
-              at <Link to="/conference">utahjs.com/conference</Link>.
-            </dd>
+export default function IndexPage({ data }) {
+  const homeData = data.text.nodes[0];
+  return (
+    <Layout>
+      <SEO title='Home' />
+      <HomeStyles>
+        <Hero />
+        <div className='center-content'>
+          <section>
+            <h2 id='GetInvolved' className='center-it'>
+              {homeData.contentHeader}
+            </h2>
+            <dl className='ways-to-participate clearfix'>
+              <dt>
+                <Link to='/conference' className='btn btn-participate'>
+                  Conferences
+                </Link>
+              </dt>
+              <dd>
+                {homeData.conferencesText}{' '}
+                <Link to='/conference'>{homeData.conferencesAnchorText}</Link>.
+              </dd>
 
-            <dt>
-              <a
-                href="https://slack.utahjs.com"
-                className="btn btn-participate"
-              >
-                Join Slack
-              </a>
-            </dt>
-            <dd>
-              Join our Slack discussions{' '}
-              <a href="https://slack.utahjs.com">here</a>. Ask the community
-              JavaScript questions and make announcements.
-            </dd>
+              <dt>
+                <a href={homeData.slackUrl} className='btn btn-participate'>
+                  Join Slack
+                </a>
+              </dt>
+              <dd>
+                {homeData.slackText1}{' '}
+                <a href={homeData.slackUrl}>{homeData.slackAnchorText}</a>
+                {homeData.slackText2}
+              </dd>
 
-            <dt>
-              <a
-                href="https://teespring.com/utahjs-2020-online-series"
-                className="btn btn-participate"
-              >
-                Buy Merch
-              </a>
-            </dt>
-            <dd>
-              Now available! Merch on shirts, mugs, socks and more.{' '}
-              <a href="https://teespring.com/utahjs-2020-online-series">
-                Check out Tee Spring
-              </a>
-            </dd>
+              <dt>
+                <a href={homeData.merchUrl} className='btn btn-participate'>
+                  Buy Merch
+                </a>
+              </dt>
+              <dd>
+                {homeData.merchText}{' '}
+                <a href={homeData.merchUrl}>{homeData.merchAnchorText}</a>
+              </dd>
 
-            <dt>
-              <a
-                href="http://eepurl.com/hcwmDf"
-                className="btn btn-participate"
-              >
-                Event Email
-              </a>
-            </dt>
-            <dd>
-              Sign up to receive email about UtahJS conferences and special
-              events <a href="http://eepurl.com/hcwmDf">here</a>.
-            </dd>
+              <dt>
+                <a href={homeData.emailUrl} className='btn btn-participate'>
+                  Event Email
+                </a>
+              </dt>
+              <dd>
+                {homeData.emailText}
+                <a href={homeData.emailUrl}>{homeData.emailAnchorText}</a>.
+              </dd>
 
-            <dt>
-              <a
-                href="http://www.meetup.com/UtahJS/"
-                className="btn btn-participate"
-              >
-                Lehi Meetup
-              </a>
-            </dt>
-            <dd>
-              Join us the first Thursday of every month at Jane in Lehi.{' '}
-              <a href="http://www.meetup.com/UtahJS/">Schedule on Meetup.com</a>
-            </dd>
+              <dt>
+                <a href={homeData.lehiUrl} className='btn btn-participate'>
+                  Lehi Meetup
+                </a>
+              </dt>
+              <dd>
+                {homeData.lehiText}{' '}
+                <a href={homeData.lehiUrl}>{homeData.lehiAnchorText}</a>
+              </dd>
 
-            <dt>
-              <a
-                href="http://www.meetup.com/UtahJS/"
-                className="btn btn-participate"
-              >
-                SLC Meetup
-              </a>
-            </dt>
-            <dd>
-              Join us the third Tuesday of every month at O.C. Tanner in Salt
-              Lake City.{' '}
-              <a href="http://www.meetup.com/UtahJS/">Schedule on Meetup.com</a>
-            </dd>
+              <dt>
+                <a href={homeData.SLCUrl} className='btn btn-participate'>
+                  SLC Meetup
+                </a>
+              </dt>
+              <dd>
+                {homeData.SLCText}
+                <a href={homeData.SLCUrl}>{homeData.SLCAnchorText}</a>
+              </dd>
 
-            <dt>
-              <a
-                href="http://www.meetup.com/UtahJS/"
-                className="btn btn-participate"
-              >
-                Ogden Meetup
-              </a>
-            </dt>
-            <dd>
-              Join us the first Thursday of every month at Startup Ogden.{' '}
-              <a href="http://www.meetup.com/UtahJS/">Schedule on Meetup.com</a>
-            </dd>
+              <dt>
+                <a href={homeData.ogdenUrl} className='btn btn-participate'>
+                  Ogden Meetup
+                </a>
+              </dt>
+              <dd>
+                {homeData.ogdenText}{' '}
+                <a href={homeData.ogdenUrl}>{homeData.ogdenAnchorText}</a>
+              </dd>
 
-            <dt>
-              <a
-                href="http://www.meetup.com/UtahJS/"
-                className="btn btn-participate"
-              >
-                Learners Meetup
-              </a>
-            </dt>
-            <dd>
-              Presentations immediately proceeding the SLC meetup, as well as
-              monthly study groups.{' '}
-              <a href="http://www.meetup.com/UtahJS/">Schedule on Meetup.com</a>
-            </dd>
+              <dt>
+                <a href={homeData.learnersUrl} className='btn btn-participate'>
+                  Learners Meetup
+                </a>
+              </dt>
+              <dd>
+                {homeData.learnersText}{' '}
+                <a href={homeData.learnersUrl}>{homeData.learnersAnchorText}</a>
+              </dd>
 
-            <dt>
-              <a
-                href="https://www.linkedin.com/groups/6635311"
-                className="btn btn-participate"
-              >
-                LinkedIn
-              </a>
-            </dt>
-            <dd>
-              Get to know us, connect with us and network with us on our{' '}
-              <a href="https://www.linkedin.com/groups/6635311">
-                LinkedIn Group
-              </a>
-              .
-            </dd>
+              <dt>
+                <a href={homeData.linkedInUrl} className='btn btn-participate'>
+                  LinkedIn
+                </a>
+              </dt>
+              <dd>
+                {homeData.linkedInText}{' '}
+                <a href={homeData.linkedInUrl}>LinkedIn Group</a>.
+              </dd>
 
-            <dt>
-              <a
-                href="https://twitter.coasdfasdfm/utjs"
-                className="btn btn-participate"
-              >
-                Twitter
-              </a>
-            </dt>
-            <dd>
-              Get updates, join the conversation and follow us on{' '}
-              <a href="https://twitter.com/utjs">Twitter</a>.
-            </dd>
+              <dt>
+                <a href={homeData.twitterUrl} className='btn btn-participate'>
+                  Twitter
+                </a>
+              </dt>
+              <dd>
+                {homeData.twitterText}{' '}
+                <a href={homeData.twitterUrl}>{homeData.twitterAnchorText}</a>.
+              </dd>
 
-            <dt>
-              <a
-                href="https://www.youtube.com/channel/UCimy8Fjcw_8XwEDEsI0cKeA"
-                className="btn btn-participate"
-              >
-                Videos
-              </a>
-            </dt>
-            <dd>
-              Watch meetup presentations and conference talks on{' '}
-              <a href="https://www.youtube.com/channel/UCimy8Fjcw_8XwEDEsI0cKeA">
-                YouTube
-              </a>
-              .
-            </dd>
-          </dl>
-        </section>
-        <RelatedMeetups />
-        <section>
-          <p className="about">
-            UtahJS is a 501(c)(3) organization and contributions are tax
-            deductible. We are run by a passionate group of volunteers. To help
-            out or make a donation or sponsor this site or an event please
-            contact Ken Snyder at{' '}
-            <a href="mailto:ken@utahjs.com">ken@utahjs.com</a>.
-          </p>
-        </section>
-      </div>
-    </HomeStyles>
-  </Layout>
-);
+              <dt>
+                <a href={homeData.videosUrl} className='btn btn-participate'>
+                  Videos
+                </a>
+              </dt>
+              <dd>
+                {homeData.videosText}{' '}
+                <a href={homeData.videosUrl}>{homeData.videosAnchorText}</a>.
+              </dd>
+            </dl>
+          </section>
+          <RelatedMeetups />
+          <section>
+            <p className='about'>
+              {homeData.footerText}{' '}
+              <a href={homeData.contactEmail}>{homeData.contactAnchorText}</a>
+            </p>
+          </section>
+        </div>
+      </HomeStyles>
+    </Layout>
+  );
+}
 
-export default IndexPage;
+export const query = graphql`
+  query {
+    text: allSanityHome {
+      nodes {
+        SLCText
+        SLCUrl
+        conferencesText
+        conferencesAnchorText
+        contentHeader
+        emailText
+        emailUrl
+        learnersText
+        learnersUrl
+        lehiText
+        lehiUrl
+        linkedInText
+        linkedInUrl
+        merchText
+        merchUrl
+        ogdenText
+        ogdenUrl
+        slackUrl
+        twitterText
+        twitterUrl
+        videosText
+        videosUrl
+        slackText1
+        slackText2
+        slackAnchorText
+        SLCAnchorText
+        emailAnchorText
+        learnersAnchorText
+        lehiAnchorText
+        linkedInAnchorText
+        ogdenAnchorText
+        twitterAnchorText
+        videosAnchorText
+        merchAnchorText
+        footerText
+        contactAnchorText
+        contactEmail
+      }
+    }
+  }
+`;
