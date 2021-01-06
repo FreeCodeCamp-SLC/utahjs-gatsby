@@ -7,6 +7,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import home from './homePage';
 import singletonConference from './singletonConference';
 import speaker from './speaker';
+import codeOfConduct from './codeOfConduct';
 import sponsorUs from './sponsorUs';
 import richText from './richText';
 import imageWithAlt from './imageWithAlt';
@@ -22,6 +23,7 @@ export default createSchema({
     home,
     singletonConference,
     speaker,
+    codeOfConduct,
     sponsorUs,
     richText,
     imageWithAlt,
