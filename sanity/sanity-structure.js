@@ -6,6 +6,16 @@ export default () =>
     .title('Content')
     .items([
       S.listItem()
+        .title('Home Page')
+        .icon(icon)
+        .child(
+          S.editor()
+            .title('Home Page Editor')
+            .id('home')
+            .schemaType('home')
+            .documentId('singleton-home')
+        ),
+      S.listItem()
         .title('Conference Page')
         .icon(icon)
         .child(
@@ -15,7 +25,18 @@ export default () =>
             .schemaType('conferencePage')
             .documentId('singleton-conference')
         ),
+      S.listItem()
+        .title('Sponsor Us Page')
+        .icon(icon)
+        .child(
+          S.editor()
+            .title('Sponsor Us Page Editor')
+            .id('sponsorUs')
+            .schemaType('sponsorUs')
+            .documentId('singleton-sponsor-us')
+        ),
       ...S.documentTypeListItems().filter(
-        (listItem) => !['conferencePage'].includes(listItem.getId())
+        (listItem) =>
+          !['home', 'conferencePage', 'sponsorUs'].includes(listItem.getId())
       ),
     ]);

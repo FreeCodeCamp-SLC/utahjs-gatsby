@@ -4,11 +4,11 @@ import createSchema from 'part:@sanity/base/schema-creator';
 // Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 // We import object and document schemas
-import speaker from './speaker';
 import home from './homePage';
-import sponsorUs from './sponsorUs';
-import codeOfConduct from './codeOfConduct';
 import singletonConference from './singletonConference';
+import speaker from './speaker';
+import codeOfConduct from './codeOfConduct';
+import sponsorUs from './sponsorUs';
 import richText from './richText';
 import imageWithAlt from './imageWithAlt';
 // Then we give our schema to the builder and provide the result to Sanity
@@ -21,12 +21,12 @@ export default createSchema({
     // The following are document types which will appear
     // in the studio.
     home,
-    speaker,
     singletonConference,
+    speaker,
+    codeOfConduct,
+    sponsorUs,
     richText,
     imageWithAlt,
-    sponsorUs,
-    codeOfConduct,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),
