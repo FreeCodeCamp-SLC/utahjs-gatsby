@@ -27,12 +27,12 @@ const Hero = styled.section`
     border-radius: 12px;
     width: -webkit-fill-available;
     .gatsby-image-wrapper {
-      height: 60px;
+      height: auto;
       width: 47px;
     }
   }
   .hero-content {
-    padding-top: 15px;
+    padding-top: 20px;
     .hero-text {
       margin-bottom: 15px;
       .hero-title,
@@ -75,14 +75,17 @@ const Hero = styled.section`
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
+      align-items: flex-start;
       margin-right: 20px;
+      padding-bottom: 3em;
       width: 460px;
       .gatsby-image-wrapper {
-        height: 100px;
-        width: 78px;
+        height: auto;
+        width: 95px;
       }
       .hero-content {
         padding-top: 0;
+        margin-left: 50px;
         .hero-text {
           .hero-title,
           .hero-subtext {
@@ -109,14 +112,31 @@ const Hero = styled.section`
   }
 `;
 
-function ConferenceHero() {
+// GraphQL Data Query //
+export default function ConferenceHero() {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "utahjs-logo.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 100) {
-            ...GatsbyImageSharpFluid
+      sanityConferencePage {
+        id
+        heroImage {
+          image {
+            asset {
+              fluid(maxWidth: 140) {
+                ...GatsbySanityImageFluid
+              }
+            }
           }
+          alt
+        }
+        title
+        subTitle
+        sponsorTitle
+        bodyContent {
+          children {
+            text
+          }
+          _type
+          _key
         }
       }
     }
@@ -125,15 +145,16 @@ function ConferenceHero() {
   return (
     <Hero>
       <div className="hero-box">
-        <Img fluid={data.file.childImageSharp.fluid} alt="Utah JS Logo" />
+        <Img
+          fluid={data.sanityConferencePage.heroImage.image.asset.fluid}
+          alt={data.sanityConferencePage.heroImage.alt}
+        />
         <div className="hero-content">
           <div className="hero-text">
-            <div className="hero-title">
-              2020 UtahJS Conference
-              <br />
-              Online Series
+            <div className="hero-title">{data.sanityConferencePage.title}</div>
+            <div className="hero-subtext">
+              {data.sanityConferencePage.subTitle}
             </div>
-            <div className="hero-subtext">Fridays in October 2020</div>
           </div>
           <div className="hero-buttons">
             <Button
@@ -151,5 +172,3 @@ function ConferenceHero() {
     </Hero>
   );
 }
-
-export default ConferenceHero;

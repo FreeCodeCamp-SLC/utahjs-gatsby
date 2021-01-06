@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
+import BlockContent from '@sanity/block-content-to-react';
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 import ConferenceSpeaker from '../components/ConferenceSpeaker';
@@ -73,37 +74,14 @@ const Wrapper = styled.div`
 
 export default function conferencePage({ data }) {
   const conferenceSpeakers = data.allSanitySpeaker.nodes;
-
+  const conferenceContent = data.sanityConferencePage;
   return (
     <Layout>
       <SEO title="Conference" />
       <Wrapper className="center-content">
         <ConferenceHero />
         <div className="conference-info">
-          <h2>9th Annual UtahJS Conference - Online Series</h2>
-          <p>
-            Due to COVID-19, the 2020 UtahJS Conference will be an online
-            series.
-          </p>
-          <p>
-            Rather than an all-day conference, we will be hosting four lunch
-            hour presentations.
-          </p>
-          <p>
-            As always, we price tickets to cover our costs. This year, $20
-            includes admission to all 4 presentations! Thanks for supporting the
-            UtahJS Community.
-          </p>
-          <p>
-            We are using the new and very slick Vi.to platform to stream the
-            presentation and host a Q&amp;A session afterward. You can chat with
-            speakers and attendees and ask questions before, during and after
-            the presentations.
-          </p>
-          <p>
-            We are super excited to hear these speakers and hope you will join
-            us!
-          </p>
+          <BlockContent blocks={conferenceContent.bodyContent} />
         </div>
         <div className="speaker-sponsor-container">
           <div className="speaker-section">
@@ -136,6 +114,19 @@ export const query = graphql`
               ...GatsbySanityImageFixed
             }
           }
+        }
+      }
+    }
+    sanityConferencePage {
+      id
+      bodyContent {
+        _key
+        _type
+        style
+        children {
+          _key
+          _type
+          text
         }
       }
     }

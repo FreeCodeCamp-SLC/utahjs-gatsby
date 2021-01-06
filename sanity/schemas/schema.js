@@ -7,6 +7,9 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import speaker from './speaker';
 import home from './homePage';
 import sponsorUs from './sponsorUs';
+import singletonConference from './singletonConference';
+import richText from './richText';
+import imageWithAlt from './imageWithAlt';
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -18,6 +21,9 @@ export default createSchema({
     // in the studio.
     home,
     speaker,
+    singletonConference,
+    richText,
+    imageWithAlt,
     sponsorUs,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
