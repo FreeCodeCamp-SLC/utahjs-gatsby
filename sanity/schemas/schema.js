@@ -9,7 +9,6 @@ import singletonConference from './singletonConference';
 import speaker from './speaker';
 import codeOfConduct from './codeOfConduct';
 import sponsorUs from './sponsorUs';
-import richText from './richText';
 import imageWithAlt from './imageWithAlt';
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -25,9 +24,8 @@ export default createSchema({
     speaker,
     codeOfConduct,
     sponsorUs,
-    richText,
-    imageWithAlt,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
+    imageWithAlt,
   ]),
 });

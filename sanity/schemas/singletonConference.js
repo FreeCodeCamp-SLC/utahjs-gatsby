@@ -24,7 +24,12 @@ export default {
     {
       name: 'bodyContent',
       title: 'Body Content',
-      type: 'richText',
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+        },
+      ],
     },
     {
       name: 'sponsorTitle',
