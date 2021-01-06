@@ -26,6 +26,16 @@ export default () =>
             .documentId('singleton-conference')
         ),
       S.listItem()
+        .title('Code of Conduct Page')
+        .icon(icon)
+        .child(
+          S.editor()
+            .title('Code of Conduct Page Editor')
+            .id('sponsorUs')
+            .schemaType('codeOfConduct')
+            .documentId('singleton-code-of-conduct')
+        ),
+      S.listItem()
         .title('Sponsor Us Page')
         .icon(icon)
         .child(
@@ -37,6 +47,8 @@ export default () =>
         ),
       ...S.documentTypeListItems().filter(
         (listItem) =>
-          !['home', 'conferencePage', 'sponsorUs'].includes(listItem.getId())
+          !['home', 'conferencePage', 'codeOfConduct', 'sponsorUs'].includes(
+            listItem.getId()
+          )
       ),
     ]);
