@@ -55,11 +55,13 @@ export default function SpeakersPage() {
     2018: 'https://sessionize.com/api/v2/8c8rnjbo/view/Speakers',
   };
 
-  // state for which year's speakers we want to render
+  // states for which year's speakers we want to render
   const [speakerUrl, setspeakerUrl] = useState(speakerUrls['2019']);
+  const [speakerYear, setspeakerYear] = useState('2019');
   // method for changing speaker year state
   const changeYear = (year) => {
     setspeakerUrl(speakerUrls[year]);
+    setspeakerYear(year);
   };
 
   // fetch speaker data
@@ -117,7 +119,7 @@ export default function SpeakersPage() {
   return (
     <Layout>
       <PageStyles className='center-content'>
-        <h1>2019 Speakers</h1>
+        <h1>{speakerYear} Speakers</h1>
         <p>
           <em>in alphabetical order</em>
         </p>
