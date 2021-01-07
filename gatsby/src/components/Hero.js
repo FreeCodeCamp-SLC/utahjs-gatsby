@@ -44,7 +44,7 @@ const Hero = () => {
 
   return (
     <HeroStyles>
-      <Img fixed={data.bg.fixed} className='heroImg' alt='Arch' />
+      <Img fixed={data.bg.fixed} className="heroImg" alt="Arch" />
       <HeroBox />
     </HeroStyles>
   );

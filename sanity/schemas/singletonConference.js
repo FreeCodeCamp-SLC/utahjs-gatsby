@@ -22,6 +22,12 @@ export default {
       type: 'imageWithAlt',
     },
     {
+      name: 'heroBackground',
+      title: 'Hero Bacground Image',
+      type: 'imageWithAlt',
+    },
+
+    {
       name: 'bodyContent',
       title: 'Body Content',
       type: 'array',
