@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
-import { FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+import SocialLinks from './SocialLinks';
 
 const SpeakerBox = styled.div`
   border: 1px solid #ccc;
@@ -45,42 +44,31 @@ const Person = styled.div`
   }
 `;
 
-const SocialLinks = styled.div`
-  color: orange;
+const SocialLinksDiv = styled.div`
   display: flex;
-  .wrapper {
-    margin-right: 5px;
-    padding: 4px;
-    border: 1px solid rgba(17, 17, 17, 0.1);
-    font-size: 20px;
-    line-height: 20px;
-    color: #f80;
-    border-radius: 2px;
-  }
 `;
 
 export default function Speaker({ speaker }) {
-  const speakerInfo = speaker.node;
   return (
     <SpeakerBox>
       <Person>
-        <Img className="avatar" fixed={speakerInfo.image.asset.fixed} />
-        <div className="info">
-          <h2>{speakerInfo.name}</h2>
-          <h3>{speakerInfo.role}</h3>
+        <img className='avatar' src={speaker.profilePicture} alt='' />
+
+        <div className='info'>
+          <h2>{speaker.fullName}</h2>
+          <h3>{speaker.tageLine}</h3>
           {/* not every speaker has social links so we would need to build logic for this */}
-          <SocialLinks>
-            <div className="wrapper">
-              <FaTwitter />
-            </div>
-            <div className="wrapper">
-              <FaLinkedinIn />
-            </div>
-          </SocialLinks>
+          <SocialLinksDiv>
+            {speaker.links.map((link, i) => (
+              <SocialLinks link={link} key={speaker.id + i} />
+            ))}
+          </SocialLinksDiv>
         </div>
       </Person>
-      <p>{speakerInfo.description}</p>
-      <p className="pres">{speakerInfo.presentations}</p>
+      <p>{speaker.bio}</p>
+      <p className='pres'>
+        Presentation: {speaker.sessions.map((session) => session.name)}
+      </p>
     </SpeakerBox>
   );
 }
