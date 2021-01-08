@@ -26,23 +26,23 @@ const SocialWrapper = styled.div`
   }
 `;
 
-const SocialLinks = (props) => {
+const SocialLinks = ({ link }) => {
   let twitter;
   let linkedIn;
-  if (props.link.title == 'Twitter') {
+  if (link.title === 'Twitter') {
     twitter = (
-      <a href={props.link.url}>
-        <div className='wrapper'>
-          <FaTwitter className='socialLink' />
+      <a href={link.url}>
+        <div className="wrapper">
+          <FaTwitter className="socialLink" />
         </div>
       </a>
     );
   }
-  if (props.link.title == 'LinkedIn') {
+  if (link.title === 'LinkedIn') {
     linkedIn = (
-      <a href={props.link.url}>
-        <div className='wrapper'>
-          <FaLinkedinIn className='socialLink' />
+      <a href={link.url}>
+        <div className="wrapper">
+          <FaLinkedinIn className="socialLink" />
         </div>
       </a>
     );
