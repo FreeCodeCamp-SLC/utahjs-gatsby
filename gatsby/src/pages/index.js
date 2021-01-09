@@ -175,27 +175,27 @@ export default function IndexPage({ data }) {
   const homeData = data.text.nodes[0];
   return (
     <Layout>
-      <SEO title='Home' />
+      <SEO title="Home" />
       <HomeStyles>
         <Hero />
-        <div className='center-content'>
+        <div className="center-content">
           <section>
-            <h2 id='GetInvolved' className='center-it'>
+            <h2 id="GetInvolved" className="center-it">
               {homeData.contentHeader}
             </h2>
-            <dl className='ways-to-participate clearfix'>
+            <dl className="ways-to-participate clearfix">
               <dt>
-                <Link to='/conference' className='btn btn-participate'>
+                <Link to="/conference" className="btn btn-participate">
                   Conferences
                 </Link>
               </dt>
               <dd>
                 {homeData.conferencesText}{' '}
-                <Link to='/conference'>{homeData.conferencesAnchorText}</Link>.
+                <Link to="/conference">{homeData.conferencesAnchorText}</Link>.
               </dd>
 
               <dt>
-                <a href={homeData.slackUrl} className='btn btn-participate'>
+                <a href={homeData.slackUrl} className="btn btn-participate">
                   Join Slack
                 </a>
               </dt>
@@ -206,7 +206,7 @@ export default function IndexPage({ data }) {
               </dd>
 
               <dt>
-                <a href={homeData.merchUrl} className='btn btn-participate'>
+                <a href={homeData.merchUrl} className="btn btn-participate">
                   Buy Merch
                 </a>
               </dt>
@@ -216,7 +216,7 @@ export default function IndexPage({ data }) {
               </dd>
 
               <dt>
-                <a href={homeData.emailUrl} className='btn btn-participate'>
+                <a href={homeData.emailUrl} className="btn btn-participate">
                   Event Email
                 </a>
               </dt>
@@ -226,7 +226,7 @@ export default function IndexPage({ data }) {
               </dd>
 
               <dt>
-                <a href={homeData.lehiUrl} className='btn btn-participate'>
+                <a href={homeData.lehiUrl} className="btn btn-participate">
                   Lehi Meetup
                 </a>
               </dt>
@@ -236,7 +236,7 @@ export default function IndexPage({ data }) {
               </dd>
 
               <dt>
-                <a href={homeData.SLCUrl} className='btn btn-participate'>
+                <a href={homeData.SLCUrl} className="btn btn-participate">
                   SLC Meetup
                 </a>
               </dt>
@@ -246,7 +246,7 @@ export default function IndexPage({ data }) {
               </dd>
 
               <dt>
-                <a href={homeData.ogdenUrl} className='btn btn-participate'>
+                <a href={homeData.ogdenUrl} className="btn btn-participate">
                   Ogden Meetup
                 </a>
               </dt>
@@ -256,7 +256,7 @@ export default function IndexPage({ data }) {
               </dd>
 
               <dt>
-                <a href={homeData.learnersUrl} className='btn btn-participate'>
+                <a href={homeData.learnersUrl} className="btn btn-participate">
                   Learners Meetup
                 </a>
               </dt>
@@ -266,7 +266,7 @@ export default function IndexPage({ data }) {
               </dd>
 
               <dt>
-                <a href={homeData.linkedInUrl} className='btn btn-participate'>
+                <a href={homeData.linkedInUrl} className="btn btn-participate">
                   LinkedIn
                 </a>
               </dt>
@@ -276,7 +276,7 @@ export default function IndexPage({ data }) {
               </dd>
 
               <dt>
-                <a href={homeData.twitterUrl} className='btn btn-participate'>
+                <a href={homeData.twitterUrl} className="btn btn-participate">
                   Twitter
                 </a>
               </dt>
@@ -286,7 +286,7 @@ export default function IndexPage({ data }) {
               </dd>
 
               <dt>
-                <a href={homeData.videosUrl} className='btn btn-participate'>
+                <a href={homeData.videosUrl} className="btn btn-participate">
                   Videos
                 </a>
               </dt>
@@ -298,7 +298,7 @@ export default function IndexPage({ data }) {
           </section>
           <RelatedMeetups />
           <section>
-            <p className='about'>
+            <p className="about">
               {homeData.footerText}{' '}
               <a href={homeData.contactEmail}>{homeData.contactAnchorText}</a>
             </p>
