@@ -62,6 +62,7 @@ const SpeakerBio = styled.div`
     align-items: flex-start;
     .speaker-text {
       margin-left: 1em;
+      margin-top: 0;
       h4 {
         font-size: 20px;
       }
