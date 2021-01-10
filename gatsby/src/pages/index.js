@@ -173,9 +173,10 @@ export const HomeStyles = styled.div`
 
 export default function IndexPage({ data }) {
   const homeData = data.text.nodes[0];
+  const seo = data.allSanitySeo.nodes[0];
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO seo={seo} />
       <HomeStyles>
         <Hero />
         <div className="center-content">
@@ -350,6 +351,34 @@ export const query = graphql`
         footerText
         contactAnchorText
         contactEmail
+      }
+    }
+    allSanitySeo(filter: { page: { eq: "home" } }) {
+      nodes {
+        title
+        description
+        fbAppId
+        ogUrl
+        ogType
+        ogSiteName
+        ogTitle
+        ogDescription
+        ogImageUrl {
+          asset {
+            url
+          }
+        }
+        ogImageType
+        ogImageWidth
+        ogImageHeight
+        twitterTitle
+        twitterSite
+        twitterCreator
+        twitterImage {
+          asset {
+            url
+          }
+        }
       }
     }
   }
