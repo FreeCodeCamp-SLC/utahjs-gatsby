@@ -4,7 +4,7 @@ dotenv.config({ path: '.env' });
 
 module.exports = {
   siteMetadata: {
-    title: `UtahJS.com`,
+    title: `UtahJS`,
     description: `UtahJS Information. Built with Gatsby and Strapi CMS`,
     author: `freeCodeCamp - SLC Study Group`,
   },
