@@ -53,35 +53,38 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'bodyContent',
+      title: 'Body Content',
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+        },
+      ],
+    },
+    {
       title: 'Conferences Text',
       name: 'conferencesText',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+        },
+      ],
     },
+
     {
-      title: 'Conferences Anchor Text ',
-      name: 'conferencesAnchorText',
-      type: 'string',
+      title: 'Slack Text',
+      name: 'slackText',
       validation: (Rule) => Rule.required(),
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+        },
+      ],
     },
-    {
-      title: 'Slack Text1',
-      name: 'slackText1',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      title: 'Slack Text2',
-      name: 'slackText2',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      title: 'Slack Anchor Text',
-      name: 'slackAnchorText',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
+
     {
       title: 'Slack Url',
       name: 'slackUrl',
@@ -91,8 +94,13 @@ export default {
     {
       title: 'Merch Text',
       name: 'merchText',
-      type: 'string',
       validation: (Rule) => Rule.required(),
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+        },
+      ],
     },
     {
       title: 'Merch Url',
@@ -100,17 +108,17 @@ export default {
       type: 'url',
       validation: (Rule) => Rule.required(),
     },
-    {
-      title: 'Merch Anchor Text',
-      name: 'merchAnchorText',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
+
     {
       title: 'Email Text',
       name: 'emailText',
-      type: 'string',
       validation: (Rule) => Rule.required(),
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+        },
+      ],
     },
     {
       title: 'Email Url',
@@ -118,17 +126,17 @@ export default {
       type: 'url',
       validation: (Rule) => Rule.required(),
     },
-    {
-      title: 'Email Anchor Text',
-      name: 'emailAnchorText',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
+
     {
       title: 'Lehi Text',
       name: 'lehiText',
-      type: 'string',
       validation: (Rule) => Rule.required(),
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+        },
+      ],
     },
     {
       title: 'Lehi Url',
@@ -136,17 +144,17 @@ export default {
       type: 'url',
       validation: (Rule) => Rule.required(),
     },
-    {
-      title: 'Lehi Anchor Text',
-      name: 'lehiAnchorText',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
+
     {
       title: 'SLC Text',
       name: 'SLCText',
-      type: 'string',
       validation: (Rule) => Rule.required(),
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+        },
+      ],
     },
     {
       title: 'SLC Url',
@@ -154,17 +162,17 @@ export default {
       type: 'url',
       validation: (Rule) => Rule.required(),
     },
-    {
-      title: 'SLC Anchor Text',
-      name: 'SLCAnchorText',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
+
     {
       title: 'Ogden Text',
       name: 'ogdenText',
-      type: 'string',
       validation: (Rule) => Rule.required(),
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+        },
+      ],
     },
     {
       title: 'Ogden Url',
@@ -172,17 +180,17 @@ export default {
       type: 'url',
       validation: (Rule) => Rule.required(),
     },
-    {
-      title: 'Ogden Anchor Text',
-      name: 'ogdenAnchorText',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
+
     {
       title: 'Learners Text',
       name: 'learnersText',
-      type: 'string',
       validation: (Rule) => Rule.required(),
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+        },
+      ],
     },
     {
       title: 'Learners Url',
@@ -190,17 +198,17 @@ export default {
       type: 'url',
       validation: (Rule) => Rule.required(),
     },
-    {
-      title: 'Learners Anchor Text',
-      name: 'learnersAnchorText',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
+
     {
       title: 'LinkedIn Text',
-      name: 'linkedInText',
-      type: 'string',
+      name: 'linkedIn',
       validation: (Rule) => Rule.required(),
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+        },
+      ],
     },
     {
       title: 'LinkedIn Url',
@@ -208,17 +216,17 @@ export default {
       type: 'url',
       validation: (Rule) => Rule.required(),
     },
-    {
-      title: 'LinkedIn Anchor Text',
-      name: 'linkedInAnchorText',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
+
     {
       title: 'Twitter Text',
       name: 'twitterText',
-      type: 'string',
       validation: (Rule) => Rule.required(),
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+        },
+      ],
     },
     {
       title: 'Twitter Url',
@@ -227,16 +235,15 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: 'Twitter Anchor Text',
-      name: 'twitterAnchorText',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
-    {
       title: 'Videos Text',
       name: 'videosText',
-      type: 'string',
       validation: (Rule) => Rule.required(),
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+        },
+      ],
     },
     {
       title: 'Videos Url',
@@ -244,12 +251,7 @@ export default {
       type: 'url',
       validation: (Rule) => Rule.required(),
     },
-    {
-      title: 'Videos Anchor Text',
-      name: 'videosAnchorText',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
+
     {
       title: 'Other Meetup Header',
       name: 'otherMeetupHeader',
@@ -408,6 +410,7 @@ export default {
       type: 'url',
       validation: (Rule) => Rule.required(),
     },
+
     {
       name: 'downtownCodingImage',
       title: 'Downtown Coding Image',
@@ -417,22 +420,15 @@ export default {
       },
     },
     {
-      title: 'Footer Text',
-      name: 'footerText',
-      type: 'string',
+      title: 'Footer',
+      name: 'footer',
       validation: (Rule) => Rule.required(),
-    },
-    {
-      title: 'Contact email',
-      name: 'contactEmail',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      title: 'Contact Anchor Text',
-      name: 'contactAnchorText',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+        },
+      ],
     },
   ],
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import styled from 'styled-components';
-
+import BlockContent from '@sanity/block-content-to-react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Hero from '../components/Hero';
@@ -172,30 +172,27 @@ export const HomeStyles = styled.div`
 `;
 
 export default function IndexPage({ data }) {
-  const homeData = data.text.nodes[0];
+  // const homeData = data.text.nodes[0];
   return (
     <Layout>
-      <SEO title='Home' />
+      {/* <SEO title="Home" />
       <HomeStyles>
         <Hero />
-        <div className='center-content'>
+        <div className="center-content">
           <section>
-            <h2 id='GetInvolved' className='center-it'>
+            <h2 id="GetInvolved" className="center-it">
               {homeData.contentHeader}
             </h2>
-            <dl className='ways-to-participate clearfix'>
+            <dl className="ways-to-participate clearfix">
               <dt>
-                <Link to='/conference' className='btn btn-participate'>
+                <Link to="/conference" className="btn btn-participate">
                   Conferences
                 </Link>
               </dt>
-              <dd>
-                {homeData.conferencesText}{' '}
-                <Link to='/conference'>{homeData.conferencesAnchorText}</Link>.
-              </dd>
+              <dd>{homeData.conferencesText}</dd>
 
               <dt>
-                <a href={homeData.slackUrl} className='btn btn-participate'>
+                <a href={homeData.slackUrl} className="btn btn-participate">
                   Join Slack
                 </a>
               </dt>
@@ -206,7 +203,7 @@ export default function IndexPage({ data }) {
               </dd>
 
               <dt>
-                <a href={homeData.merchUrl} className='btn btn-participate'>
+                <a href={homeData.merchUrl} className="btn btn-participate">
                   Buy Merch
                 </a>
               </dt>
@@ -216,7 +213,7 @@ export default function IndexPage({ data }) {
               </dd>
 
               <dt>
-                <a href={homeData.emailUrl} className='btn btn-participate'>
+                <a href={homeData.emailUrl} className="btn btn-participate">
                   Event Email
                 </a>
               </dt>
@@ -226,7 +223,7 @@ export default function IndexPage({ data }) {
               </dd>
 
               <dt>
-                <a href={homeData.lehiUrl} className='btn btn-participate'>
+                <a href={homeData.lehiUrl} className="btn btn-participate">
                   Lehi Meetup
                 </a>
               </dt>
@@ -236,7 +233,7 @@ export default function IndexPage({ data }) {
               </dd>
 
               <dt>
-                <a href={homeData.SLCUrl} className='btn btn-participate'>
+                <a href={homeData.SLCUrl} className="btn btn-participate">
                   SLC Meetup
                 </a>
               </dt>
@@ -246,7 +243,7 @@ export default function IndexPage({ data }) {
               </dd>
 
               <dt>
-                <a href={homeData.ogdenUrl} className='btn btn-participate'>
+                <a href={homeData.ogdenUrl} className="btn btn-participate">
                   Ogden Meetup
                 </a>
               </dt>
@@ -256,7 +253,7 @@ export default function IndexPage({ data }) {
               </dd>
 
               <dt>
-                <a href={homeData.learnersUrl} className='btn btn-participate'>
+                <a href={homeData.learnersUrl} className="btn btn-participate">
                   Learners Meetup
                 </a>
               </dt>
@@ -266,7 +263,7 @@ export default function IndexPage({ data }) {
               </dd>
 
               <dt>
-                <a href={homeData.linkedInUrl} className='btn btn-participate'>
+                <a href={homeData.linkedInUrl} className="btn btn-participate">
                   LinkedIn
                 </a>
               </dt>
@@ -276,7 +273,7 @@ export default function IndexPage({ data }) {
               </dd>
 
               <dt>
-                <a href={homeData.twitterUrl} className='btn btn-participate'>
+                <a href={homeData.twitterUrl} className="btn btn-participate">
                   Twitter
                 </a>
               </dt>
@@ -286,7 +283,7 @@ export default function IndexPage({ data }) {
               </dd>
 
               <dt>
-                <a href={homeData.videosUrl} className='btn btn-participate'>
+                <a href={homeData.videosUrl} className="btn btn-participate">
                   Videos
                 </a>
               </dt>
@@ -298,59 +295,13 @@ export default function IndexPage({ data }) {
           </section>
           <RelatedMeetups />
           <section>
-            <p className='about'>
+            <p className="about">
               {homeData.footerText}{' '}
               <a href={homeData.contactEmail}>{homeData.contactAnchorText}</a>
             </p>
           </section>
         </div>
-      </HomeStyles>
+      </HomeStyles> */}
     </Layout>
   );
 }
-
-export const query = graphql`
-  query {
-    text: allSanityHome {
-      nodes {
-        SLCText
-        SLCUrl
-        conferencesText
-        conferencesAnchorText
-        contentHeader
-        emailText
-        emailUrl
-        learnersText
-        learnersUrl
-        lehiText
-        lehiUrl
-        linkedInText
-        linkedInUrl
-        merchText
-        merchUrl
-        ogdenText
-        ogdenUrl
-        slackUrl
-        twitterText
-        twitterUrl
-        videosText
-        videosUrl
-        slackText1
-        slackText2
-        slackAnchorText
-        SLCAnchorText
-        emailAnchorText
-        learnersAnchorText
-        lehiAnchorText
-        linkedInAnchorText
-        ogdenAnchorText
-        twitterAnchorText
-        videosAnchorText
-        merchAnchorText
-        footerText
-        contactAnchorText
-        contactEmail
-      }
-    }
-  }
-`;

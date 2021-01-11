@@ -52,9 +52,9 @@ export default function Speaker({ speaker }) {
   return (
     <SpeakerBox>
       <Person>
-        <img className='avatar' src={speaker.profilePicture} alt='' />
+        <img className="avatar" src={speaker.profilePicture} alt="" />
 
-        <div className='info'>
+        <div className="info">
           <h2>{speaker.fullName}</h2>
           <h3>{speaker.tageLine}</h3>
           {/* not every speaker has social links so we would need to build logic for this */}
@@ -66,7 +66,7 @@ export default function Speaker({ speaker }) {
         </div>
       </Person>
       <p>{speaker.bio}</p>
-      <p className='pres'>
+      <p className="pres">
         Presentation: {speaker.sessions.map((session) => session.name)}
       </p>
     </SpeakerBox>

@@ -104,21 +104,21 @@ export default function SpeakersPage() {
   if (speakerUrl == 'https://sessionize.com/api/v2/qlwqpj7m/view/Speakers') {
     renderPastYear = (
       // choose buttons for the divs for a11y
-      <button type='button' onClick={() => changeYear('2018')}>
-        <p className='speakers'>View 2018 Speakers</p>
+      <button type="button" onClick={() => changeYear('2018')}>
+        <p className="speakers">View 2018 Speakers</p>
       </button>
     );
   } else {
     renderPastYear = (
-      <button type='button' onClick={() => changeYear('2019')}>
-        <p className='speakers'>View 2019 Speakers</p>
+      <button type="button" onClick={() => changeYear('2019')}>
+        <p className="speakers">View 2019 Speakers</p>
       </button>
     );
   }
 
   return (
     <Layout>
-      <PageStyles className='center-content'>
+      <PageStyles className="center-content">
         <h1>{speakerYear} Speakers</h1>
         <p>
           <em>in alphabetical order</em>
@@ -126,9 +126,9 @@ export default function SpeakersPage() {
         {renderPastYear}
         {speakers}
         <AgendaManage>
-          <a className='manage' href='https://sessionize.com/'>
-            <span className='strong'>Agenda Management</span> powered by{' '}
-            <span className='strong teal'>Sessionize.com</span>
+          <a className="manage" href="https://sessionize.com/">
+            <span className="strong">Agenda Management</span> powered by{' '}
+            <span className="strong teal">Sessionize.com</span>
           </a>
         </AgendaManage>
       </PageStyles>
