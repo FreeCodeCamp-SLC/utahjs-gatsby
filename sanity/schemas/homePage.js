@@ -53,18 +53,9 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'bodyContent',
-      title: 'Body Content',
-      type: 'array',
-      of: [
-        {
-          type: 'block',
-        },
-      ],
-    },
-    {
       title: 'Conferences Text',
       name: 'conferencesText',
+      validation: (Rule) => Rule.required(),
       type: 'array',
       of: [
         {
@@ -86,7 +77,7 @@ export default {
     },
 
     {
-      title: 'Slack Url',
+      title: 'Slack Button Url',
       name: 'slackUrl',
       type: 'url',
       validation: (Rule) => Rule.required(),
@@ -103,7 +94,7 @@ export default {
       ],
     },
     {
-      title: 'Merch Url',
+      title: 'Merch Button Url',
       name: 'merchUrl',
       type: 'url',
       validation: (Rule) => Rule.required(),
@@ -121,7 +112,7 @@ export default {
       ],
     },
     {
-      title: 'Email Url',
+      title: 'Email Button Url',
       name: 'emailUrl',
       type: 'url',
       validation: (Rule) => Rule.required(),
@@ -139,7 +130,7 @@ export default {
       ],
     },
     {
-      title: 'Lehi Url',
+      title: 'Lehi Button Url',
       name: 'lehiUrl',
       type: 'url',
       validation: (Rule) => Rule.required(),
@@ -157,7 +148,7 @@ export default {
       ],
     },
     {
-      title: 'SLC Url',
+      title: 'SLC Button Url',
       name: 'SLCUrl',
       type: 'url',
       validation: (Rule) => Rule.required(),
@@ -175,7 +166,7 @@ export default {
       ],
     },
     {
-      title: 'Ogden Url',
+      title: 'Ogden Button Url',
       name: 'ogdenUrl',
       type: 'url',
       validation: (Rule) => Rule.required(),
@@ -193,7 +184,7 @@ export default {
       ],
     },
     {
-      title: 'Learners Url',
+      title: 'Learners Button Url',
       name: 'learnersUrl',
       type: 'url',
       validation: (Rule) => Rule.required(),
@@ -211,7 +202,7 @@ export default {
       ],
     },
     {
-      title: 'LinkedIn Url',
+      title: 'LinkedIn Button Url',
       name: 'linkedInUrl',
       type: 'url',
       validation: (Rule) => Rule.required(),
@@ -229,7 +220,7 @@ export default {
       ],
     },
     {
-      title: 'Twitter Url',
+      title: 'Twitter Button Url',
       name: 'twitterUrl',
       type: 'url',
       validation: (Rule) => Rule.required(),
@@ -246,7 +237,7 @@ export default {
       ],
     },
     {
-      title: 'Videos Url',
+      title: 'Videos Button Url',
       name: 'videosUrl',
       type: 'url',
       validation: (Rule) => Rule.required(),
