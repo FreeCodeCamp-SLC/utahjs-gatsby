@@ -64,9 +64,11 @@ export const HomeStyles = styled.div`
     }
     .btn-participate {
       width: 180px;
+      font-size: 16px;
       text-align: center;
       margin-bottom: 8px;
       white-space: nowrap;
+      padding: 8px 12px;
     }
     .hero-buttons .btn:nth-child(1) {
       background-color: #f6e05a;

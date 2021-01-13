@@ -6,27 +6,29 @@ import Img from 'gatsby-image';
 
 const HeroBoxStyles = styled.div`
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
   color: #fff;
   background-color: rgba(22, 29, 14, 0.6);
-  margin-top: 0;
+  //fix the height when shrunk
   padding: 20px;
-  top: 20px;
-  right: 20px;
-  left: 20px;
-  width: auto;
-  max-width: 480px;
-  height: auto;
+  max-width: 460px;
+  margin: 0 auto;
   border-radius: 8px;
-  text-align: center;
   font-size: 14px;
+  .heroContent {
+    margin-left: 30px;
+  }
   h2 {
     font-size: 18px;
     font-weight: bold;
-    padding-top: 5px;
     color: white !important;
+    margin: 0;
   }
   .hero_subtext {
-    margin: 10px 0;
+    margin-top: 10px;
   }
   img {
     display: block;
@@ -36,19 +38,21 @@ const HeroBoxStyles = styled.div`
   }
   .btn {
     display: inline-block;
+    font-weight: bold;
     font-family: 'Fira Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    padding: 5px 9px;
-    margin-right: 5px;
+    padding: 8px 12px;
+    margin-right: 10px;
     border: transparent;
     border-radius: 4px;
     text-transform: uppercase;
   }
+
   .btn:hover {
     opacity: 0.95;
     color: #fff;
   }
   .btn.yellow {
-    color: #000;
+    color: #333;
     background-color: #f6e05a;
   }
   .btn.green {
@@ -57,11 +61,15 @@ const HeroBoxStyles = styled.div`
   }
   @media all and (min-width: 575px) {
     font-size: 18px;
+    height: 240px;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-left: 60px;
+    width: 480px;
+    text-align: left;
+    padding: 30px;
     h2 {
       font-size: 22px;
-    }
-    .btn {
-      margin: 0 20px;
     }
   }
   @media all and (max-width: 288px) {
@@ -96,16 +104,20 @@ const HeroBox = () => {
   const text = data.text.nodes[0];
   return (
     <HeroBoxStyles>
-      <Img className="logo" fixed={data.image.fixed} alt="UtahJS Logo" />
-      <h2>{text.heroHeader}</h2>
-      <p className="hero_subtext">{text.heroSubtext1}</p>
-      <p className="hero_subtext">{text.heroSubtext2}</p>
-      <Button className="btn yellow" href="/conference">
-        Conference
-      </Button>
-      <Button className="btn green" href={text.slackUrl}>
-        Join Slack
-      </Button>
+      <div>
+        <Img className="logo" fixed={data.image.fixed} alt="UtahJS Logo" />
+      </div>
+      <div className="heroContent">
+        <h2>{text.heroHeader}</h2>
+        <p className="hero_subtext">{text.heroSubtext1}</p>
+        <p className="hero_subtext">{text.heroSubtext2}</p>
+        <Button className="btn yellow" href="/conference">
+          Conference
+        </Button>
+        <Button className="btn green" href={text.slackUrl}>
+          Join Slack
+        </Button>
+      </div>
     </HeroBoxStyles>
   );
 };
