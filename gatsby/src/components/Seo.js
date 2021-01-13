@@ -34,20 +34,24 @@ function SEO({ seo }) {
           content: seo.description,
         },
         {
-          property: `og:title`,
-          content: seo.ogTitle,
-        },
-        {
-          property: `og:description`,
-          content: seo.ogDescription,
+          property: `og:url`,
+          content: seo.ogUrl,
         },
         {
           property: `og:type`,
           content: seo.ogType,
         },
         {
-          property: `og:url`,
-          content: seo.ogUrl,
+          property: `og:site_name`,
+          content: seo.ogSiteName,
+        },
+        {
+          property: `og:title`,
+          content: seo.ogTitle,
+        },
+        {
+          property: `og:description`,
+          content: seo.ogDescription,
         },
         {
           property: 'og:image',
@@ -58,16 +62,16 @@ function SEO({ seo }) {
           content: seo.ogImageUrl.asset.url,
         },
         {
+          property: `og:image:type`,
+          content: seo.ogImageType,
+        },
+        {
           property: 'og:image:width',
           content: seo.ogImageWidth,
         },
         {
           property: 'og:image:height',
           content: seo.ogImageHeight,
-        },
-        {
-          property: `og:image:type`,
-          content: seo.ogImageType,
         },
         {
           name: 'twitter:card',
@@ -78,16 +82,16 @@ function SEO({ seo }) {
           content: seo.twitterTitle,
         },
         {
+          name: `twitter:description`,
+          content: seo.twitterDescription,
+        },
+        {
           name: `twitter:site`,
           content: seo.twitterSite,
         },
         {
           name: `twitter:creator`,
           content: seo.twitterAuthor,
-        },
-        {
-          name: `twitter:description`,
-          content: seo.twitterDescription,
         },
         {
           name: `twitter:image`,

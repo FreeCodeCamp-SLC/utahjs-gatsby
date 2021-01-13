@@ -316,7 +316,7 @@ export const query = graphql`
         _rawFooter(resolveReferences: { maxDepth: 10 })
       }
     }
-    allSanitySeo(filter: { page: { eq: "home" } }) {
+    allSanitySeo(filter: { page: { eq: "Home" } }) {
       nodes {
         title
         description

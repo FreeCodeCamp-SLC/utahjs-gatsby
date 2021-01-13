@@ -75,9 +75,11 @@ const Wrapper = styled.div`
 export default function conferencePage({ data }) {
   const conferenceSpeakers = data.allSanitySpeaker.nodes;
   const conferenceContent = data.sanityConferencePage;
+  const seo = data.allSanitySeo.nodes[0];
+
   return (
     <Layout>
-      <SEO title="Conference" />
+      <SEO seo={seo} />
       <Wrapper className="center-content">
         <ConferenceHero />
         <div className="conference-info">
@@ -127,6 +129,35 @@ export const query = graphql`
           _key
           _type
           text
+        }
+      }
+    }
+    allSanitySeo(filter: { page: { eq: "Home" } }) {
+      nodes {
+        title
+        description
+        fbAppId
+        ogUrl
+        ogType
+        ogSiteName
+        ogTitle
+        ogDescription
+        ogImageUrl {
+          asset {
+            url
+          }
+        }
+        ogImageType
+        ogImageWidth
+        ogImageHeight
+        twitterTitle
+        twitterDescription
+        twitterSite
+        twitterCreator
+        twitterImage {
+          asset {
+            url
+          }
         }
       }
     }
