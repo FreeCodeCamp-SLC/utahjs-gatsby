@@ -143,7 +143,7 @@ export default function SpeakersPage({ data }) {
 
 export const query = graphql`
   query {
-    allSanitySeo(filter: { page: { eq: "Home" } }) {
+    allSanitySeo(filter: { page: { eq: "Past Speakers" } }) {
       nodes {
         title
         description
