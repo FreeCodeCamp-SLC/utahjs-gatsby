@@ -8,7 +8,6 @@ import SEO from '../components/Seo';
 const conduct = ({ data }) => {
   const content = data.allSanityCodeOfConduct.nodes[0]._rawContent;
   const seo = data.allSanitySeo.nodes[0];
-  console.log(seo);
 
   return (
     <Layout>
