@@ -10,20 +10,17 @@ import HeroBox from './HeroBox';
 
 const HeroStyles = styled.section`
   position: relative;
-  max-width: 1240px;
-  min-height: 320px;
-  overflow: hidden;
-  height: 35vh;
+  width: 100%;
   margin: 0 auto;
-  z-index: 1;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   .heroImg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
+    min-width: 100%;
     height: 100%;
-    z-index: -10;
+  }
+  @media all and (min-width: 575px) {
+    justify-content: left;
   }
 `;
 
@@ -35,7 +32,7 @@ const Hero = () => {
           eq: "image-4c059eb879e46d170a994f2f9ec198d73296107c-1440x782-jpg"
         }
       ) {
-        fixed(width: 1440, height: 328) {
+        fixed(width: 1440, height: 450) {
           ...GatsbySanityImageFixed
         }
       }
@@ -44,7 +41,7 @@ const Hero = () => {
 
   return (
     <HeroStyles>
-      <Img fixed={data.bg.fixed} className="heroImg" alt="Arch" />
+      <Img fixed={data.bg.fixed} className='heroImg' alt='Arch' />
       <HeroBox />
     </HeroStyles>
   );

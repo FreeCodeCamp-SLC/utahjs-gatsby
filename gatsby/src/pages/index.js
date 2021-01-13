@@ -64,9 +64,11 @@ export const HomeStyles = styled.div`
     }
     .btn-participate {
       width: 180px;
+      font-size: 16px;
       text-align: center;
       margin-bottom: 8px;
       white-space: nowrap;
+      padding: 8px 12px;
     }
     .hero-buttons .btn:nth-child(1) {
       background-color: #f6e05a;
@@ -179,14 +181,14 @@ export default function IndexPage({ data }) {
       <SEO seo={seo} />
       <HomeStyles>
         <Hero />
-        <div className="center-content">
+        <div className='center-content'>
           <section>
-            <h2 id="GetInvolved" className="center-it">
+            <h2 id='GetInvolved' className='center-it'>
               {homeData.contentHeader}
             </h2>
-            <dl className="ways-to-participate clearfix">
+            <dl className='ways-to-participate clearfix'>
               <dt>
-                <Link to="/conference" className="btn btn-participate">
+                <Link to='/conference' className='btn btn-participate'>
                   Conferences
                 </Link>
               </dt>
@@ -194,7 +196,7 @@ export default function IndexPage({ data }) {
                 <BlockContent blocks={homeData._rawConferencesText} />
               </dd>
               <dt>
-                <a href={homeData.slackUrl} className="btn btn-participate">
+                <a href={homeData.slackUrl} className='btn btn-participate'>
                   Join Slack
                 </a>
               </dt>
@@ -202,7 +204,7 @@ export default function IndexPage({ data }) {
                 <BlockContent blocks={homeData._rawSlackText} />
               </dd>
               <dt>
-                <a href={homeData.merchUrl} className="btn btn-participate">
+                <a href={homeData.merchUrl} className='btn btn-participate'>
                   Buy Merch
                 </a>
               </dt>
@@ -210,7 +212,7 @@ export default function IndexPage({ data }) {
                 <BlockContent blocks={homeData._rawMerchText} />
               </dd>
               <dt>
-                <a href={homeData.emailUrl} className="btn btn-participate">
+                <a href={homeData.emailUrl} className='btn btn-participate'>
                   Event Email
                 </a>
               </dt>
@@ -218,7 +220,7 @@ export default function IndexPage({ data }) {
                 <BlockContent blocks={homeData._rawEmailText} />
               </dd>
               <dt>
-                <a href={homeData.lehiUrl} className="btn btn-participate">
+                <a href={homeData.lehiUrl} className='btn btn-participate'>
                   Lehi Meetup
                 </a>
               </dt>
@@ -226,7 +228,7 @@ export default function IndexPage({ data }) {
                 <BlockContent blocks={homeData._rawLehiText} />
               </dd>
               <dt>
-                <a href={homeData.SLCUrl} className="btn btn-participate">
+                <a href={homeData.SLCUrl} className='btn btn-participate'>
                   SLC Meetup
                 </a>
               </dt>
@@ -235,7 +237,7 @@ export default function IndexPage({ data }) {
               </dd>
 
               <dt>
-                <a href={homeData.ogdenUrl} className="btn btn-participate">
+                <a href={homeData.ogdenUrl} className='btn btn-participate'>
                   Ogden Meetup
                 </a>
               </dt>
@@ -243,7 +245,7 @@ export default function IndexPage({ data }) {
                 <BlockContent blocks={homeData._rawOgdenText} />
               </dd>
               <dt>
-                <a href={homeData.learnersUrl} className="btn btn-participate">
+                <a href={homeData.learnersUrl} className='btn btn-participate'>
                   Learners Meetup
                 </a>
               </dt>
@@ -251,7 +253,7 @@ export default function IndexPage({ data }) {
                 <BlockContent blocks={homeData._rawLearnersText} />
               </dd>
               <dt>
-                <a href={homeData.linkedInUrl} className="btn btn-participate">
+                <a href={homeData.linkedInUrl} className='btn btn-participate'>
                   LinkedIn
                 </a>
               </dt>
@@ -259,7 +261,7 @@ export default function IndexPage({ data }) {
                 <BlockContent blocks={homeData._rawLinkedIn} />
               </dd>
               <dt>
-                <a href={homeData.twitterUrl} className="btn btn-participate">
+                <a href={homeData.twitterUrl} className='btn btn-participate'>
                   Twitter
                 </a>
               </dt>
@@ -267,7 +269,7 @@ export default function IndexPage({ data }) {
                 <BlockContent blocks={homeData._rawTwitterText} />
               </dd>
               <dt>
-                <a href={homeData.videosUrl} className="btn btn-participate">
+                <a href={homeData.videosUrl} className='btn btn-participate'>
                   Videos
                 </a>
               </dt>
