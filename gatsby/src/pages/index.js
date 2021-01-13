@@ -192,8 +192,6 @@ export default function IndexPage({ data }) {
               </dt>
               <dd>
                 <BlockContent blocks={homeData._rawConferencesText} />
-                {homeData.conferencesText}{' '}
-                <Link to="/conference">{homeData.conferencesAnchorText}</Link>.
               </dd>
               <dt>
                 <a href={homeData.slackUrl} className="btn btn-participate">
