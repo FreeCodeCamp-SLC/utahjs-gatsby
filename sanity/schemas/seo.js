@@ -77,6 +77,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'twitterDescription',
+      title: 'twitter:description',
+      type: 'string',
+    },
+    {
       name: 'twitterSite',
       title: 'twitter:site',
       type: 'string',
@@ -95,4 +100,9 @@ export default {
       },
     },
   ],
+  preview: {
+    select: {
+      title: 'page',
+    },
+  },
 };

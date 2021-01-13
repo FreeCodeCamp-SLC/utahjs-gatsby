@@ -7,9 +7,11 @@ import SEO from '../components/Seo';
 
 const SponsorPage = ({ data }) => {
   const content = data.allSanitySponsorUs.nodes[0]._rawContent;
+  const seo = data.allSanitySeo.nodes[0];
+
   return (
     <Layout>
-      <SEO title="Sponsor Us" />
+      <SEO seo={seo} />
       <BlockContent className="blockContent center-content" blocks={content} />
     </Layout>
   );
@@ -22,6 +24,35 @@ export const pageQuery = graphql`
     allSanitySponsorUs {
       nodes {
         _rawContent(resolveReferences: { maxDepth: 10 })
+      }
+    }
+    allSanitySeo(filter: { page: { eq: "Sponsor Us" } }) {
+      nodes {
+        title
+        description
+        fbAppId
+        ogUrl
+        ogType
+        ogSiteName
+        ogTitle
+        ogDescription
+        ogImageUrl {
+          asset {
+            url
+          }
+        }
+        ogImageType
+        ogImageWidth
+        ogImageHeight
+        twitterTitle
+        twitterDescription
+        twitterSite
+        twitterCreator
+        twitterImage {
+          asset {
+            url
+          }
+        }
       }
     }
   }

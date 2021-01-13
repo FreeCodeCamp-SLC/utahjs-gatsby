@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import Speaker from '../components/Speaker';
 import Layout from '../components/Layout';
+import SEO from '../components/Seo';
+import Speaker from '../components/Speaker';
 
 const PageStyles = styled.div`
   .wrapper {
@@ -43,7 +45,7 @@ const AgendaManage = styled.div`
   }
 `;
 
-export default function SpeakersPage() {
+export default function SpeakersPage({ data }) {
   // state for managing render of sessionize data
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -116,8 +118,11 @@ export default function SpeakersPage() {
     );
   }
 
+  const seo = data.allSanitySeo.nodes[0];
+
   return (
     <Layout>
+      <SEO seo={seo} />
       <PageStyles className="center-content">
         <h1>{speakerYear} Speakers</h1>
         <p>
@@ -135,3 +140,37 @@ export default function SpeakersPage() {
     </Layout>
   );
 }
+
+export const query = graphql`
+  query {
+    allSanitySeo(filter: { page: { eq: "Home" } }) {
+      nodes {
+        title
+        description
+        fbAppId
+        ogUrl
+        ogType
+        ogSiteName
+        ogTitle
+        ogDescription
+        ogImageUrl {
+          asset {
+            url
+          }
+        }
+        ogImageType
+        ogImageWidth
+        ogImageHeight
+        twitterTitle
+        twitterDescription
+        twitterSite
+        twitterCreator
+        twitterImage {
+          asset {
+            url
+          }
+        }
+      }
+    }
+  }
+`;
