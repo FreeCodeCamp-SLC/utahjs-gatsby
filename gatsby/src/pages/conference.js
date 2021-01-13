@@ -132,7 +132,7 @@ export const query = graphql`
         }
       }
     }
-    allSanitySeo(filter: { page: { eq: "Home" } }) {
+    allSanitySeo(filter: { page: { eq: "Conference" } }) {
       nodes {
         title
         description
