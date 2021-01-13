@@ -32,7 +32,7 @@ const Hero = () => {
           eq: "image-4c059eb879e46d170a994f2f9ec198d73296107c-1440x782-jpg"
         }
       ) {
-        fixed(width: 1440, height: 450) {
+        fixed(width: 1440, height: 775) {
           ...GatsbySanityImageFixed
         }
       }
