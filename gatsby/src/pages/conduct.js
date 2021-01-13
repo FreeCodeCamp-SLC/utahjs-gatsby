@@ -26,7 +26,7 @@ export const pageQuery = graphql`
         _rawContent(resolveReferences: { maxDepth: 10 })
       }
     }
-    allSanitySeo(filter: { page: { eq: "Home" } }) {
+    allSanitySeo(filter: { page: { eq: "Conduct" } }) {
       nodes {
         title
         description
