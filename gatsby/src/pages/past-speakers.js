@@ -101,7 +101,7 @@ export default function SpeakersPage() {
   }
 
   // render different year link
-  if (speakerUrl == 'https://sessionize.com/api/v2/qlwqpj7m/view/Speakers') {
+  if (speakerUrl === 'https://sessionize.com/api/v2/qlwqpj7m/view/Speakers') {
     renderPastYear = (
       // choose buttons for the divs for a11y
       <button type="button" onClick={() => changeYear('2018')}>

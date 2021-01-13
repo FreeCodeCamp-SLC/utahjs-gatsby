@@ -3,12 +3,11 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
-import heroBackgr from '../images/arches-2020-hero.jpg';
 
 // styles
 
 const Hero = styled.section`
-  background: url(${heroBackgr}) no-repeat 50% 50% / cover;
+  background: #fff28b url(${(props) => props.imgUrl}) no-repeat 50% 50% / cover;
   font-family: 'Gothic A1', sans-serif;
   color: #ffffff;
   display: flex;
@@ -128,6 +127,17 @@ export default function ConferenceHero() {
           }
           alt
         }
+        heroBackground {
+          image {
+            asset {
+              fluid(maxWidth: 1440) {
+                ...GatsbySanityImageFluid
+              }
+              url
+            }
+          }
+          alt
+        }
         title
         subTitle
         sponsorTitle
@@ -143,7 +153,7 @@ export default function ConferenceHero() {
   `);
 
   return (
-    <Hero>
+    <Hero imgUrl={data.sanityConferencePage.heroBackground.image.asset.url}>
       <div className="hero-box">
         <Img
           fluid={data.sanityConferencePage.heroImage.image.asset.fluid}

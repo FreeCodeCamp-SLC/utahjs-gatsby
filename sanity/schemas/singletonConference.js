@@ -20,7 +20,15 @@ export default {
       name: 'heroImage',
       title: 'Hero Box Image',
       type: 'imageWithAlt',
+      validation: (Rule) => Rule.required(),
     },
+    {
+      name: 'heroBackground',
+      title: 'Hero Bacground Image',
+      type: 'imageWithAlt',
+      validation: (Rule) => Rule.required(),
+    },
+
     {
       name: 'bodyContent',
       title: 'Body Content',

@@ -101,100 +101,100 @@ const RelatedMeetups = () => {
   const text = data.text.nodes[0];
   return (
     <section>
-      <h2 id='Meetups' className='center-it'>
+      <h2 id="Meetups" className="center-it">
         {text.otherMeetupHeader}
       </h2>
-      <div className='sisters'>
+      <div className="sisters">
         <a
           href={text.angularUrl}
-          target='_blank'
-          rel='noreferrer'
-          className='sister'
+          target="_blank"
+          rel="noreferrer"
+          className="sister"
         >
           <Img
-            className='sister-img'
-            backgroundColor='white'
+            className="sister-img"
+            backgroundColor="white"
             fixed={data.angular.fixed}
-            alt=''
+            alt=""
           />
-          <span className='sister-name'>{text.angularAnchorText}</span>
+          <span className="sister-name">{text.angularAnchorText}</span>
         </a>
         <a
           href={text.lunchUrl}
-          target='_blank'
-          rel='noreferrer'
-          className='sister'
+          target="_blank"
+          rel="noreferrer"
+          className="sister"
         >
-          <Img className='sister-img' fixed={data.lunch.fixed} alt='' />
-          <span className='sister-name'>{text.lunchAnchorText}</span>
+          <Img className="sister-img" fixed={data.lunch.fixed} alt="" />
+          <span className="sister-name">{text.lunchAnchorText}</span>
         </a>
         <a
           href={text.nodeUrl}
-          target='_blank'
-          rel='noreferrer'
-          className='sister'
+          target="_blank"
+          rel="noreferrer"
+          className="sister"
         >
           <Img
-            className='sister-img'
+            className="sister-img"
             imgStyle={{ filter: 'brightness(1.2)' }}
             fixed={data.node.fixed}
-            alt='utah node'
+            alt="utah node"
           />
-          <span className='sister-name'>{text.nodeAnchorText}</span>
+          <span className="sister-name">{text.nodeAnchorText}</span>
         </a>
       </div>
-      <div className='sisters'>
+      <div className="sisters">
         <a
           href={text.reactUrl}
-          target='_blank'
-          rel='noreferrer'
-          className='sister'
+          target="_blank"
+          rel="noreferrer"
+          className="sister"
         >
           <Img
-            className='sister-img'
+            className="sister-img"
             imgStyle={{ filter: 'brightness(0.6)' }}
             fixed={data.react.fixed}
-            alt='react JS'
+            alt="react JS"
           />
-          <span className='sister-name'>{text.reactAnchorText}</span>
+          <span className="sister-name">{text.reactAnchorText}</span>
         </a>
         <a
           href={text.emberUrl}
-          target='_blank'
-          rel='noreferrer'
-          className='sister'
+          target="_blank"
+          rel="noreferrer"
+          className="sister"
         >
-          <Img className='sister-img' fixed={data.ember.fixed} alt='' />
-          <span className='sister-name'>{text.emberAnchorText}</span>
+          <Img className="sister-img" fixed={data.ember.fixed} alt="" />
+          <span className="sister-name">{text.emberAnchorText}</span>
         </a>
         <a
           href={text.ionicUrl}
-          target='_blank'
-          rel='noreferrer'
-          className='sister'
+          target="_blank"
+          rel="noreferrer"
+          className="sister"
         >
-          <Img className='sister-img' fixed={data.ionic.fixed} alt='' />
-          <span className='sister-name'>{text.ionicAnchorText}</span>
+          <Img className="sister-img" fixed={data.ionic.fixed} alt="" />
+          <span className="sister-name">{text.ionicAnchorText}</span>
         </a>
       </div>
-      <div className='sisters'>
+      <div className="sisters">
         <a
           href={text.vueUrl}
-          target='_blank'
-          rel='noreferrer'
-          className='sister'
+          target="_blank"
+          rel="noreferrer"
+          className="sister"
         >
-          <Img className='sister-img' fixed={data.vue.fixed} alt='' />
-          <span className='sister-name'>{text.vueAnchorText}</span>
+          <Img className="sister-img" fixed={data.vue.fixed} alt="" />
+          <span className="sister-name">{text.vueAnchorText}</span>
         </a>
         <a
           href={text.downtownCodingUrl}
-          target='_blank'
-          rel='noreferrer'
-          className='sister'
+          target="_blank"
+          rel="noreferrer"
+          className="sister"
         >
-          <Img className='sister-img' fixed={data.downtown.fixed} alt='' />
-          <span className='sister-name'>{text.downtownCodingAnchorText}</span>
+          <Img className="sister-img" fixed={data.downtown.fixed} alt="" />
+          <span className="sister-name">{text.downtownCodingAnchorText}</span>
         </a>
       </div>
     </section>

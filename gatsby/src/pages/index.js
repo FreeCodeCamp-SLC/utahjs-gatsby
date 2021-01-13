@@ -173,10 +173,10 @@ export const HomeStyles = styled.div`
 
 export default function IndexPage({ data }) {
   const homeData = data.text.nodes[0];
-  console.log(homeData);
+  const seo = data.allSanitySeo.nodes[0];
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO seo={seo} />
       <HomeStyles>
         <Hero />
         <div className="center-content">
@@ -192,6 +192,8 @@ export default function IndexPage({ data }) {
               </dt>
               <dd>
                 <BlockContent blocks={homeData._rawConferencesText} />
+                {homeData.conferencesText}{' '}
+                <Link to="/conference">{homeData.conferencesAnchorText}</Link>.
               </dd>
               <dt>
                 <a href={homeData.slackUrl} className="btn btn-participate">
@@ -285,6 +287,7 @@ export default function IndexPage({ data }) {
     </Layout>
   );
 }
+
 export const query = graphql`
   query {
     text: allSanityHome {
@@ -311,6 +314,34 @@ export const query = graphql`
         _rawTwitterText(resolveReferences: { maxDepth: 10 })
         _rawVideosText(resolveReferences: { maxDepth: 10 })
         _rawFooter(resolveReferences: { maxDepth: 10 })
+      }
+    }
+    allSanitySeo(filter: { page: { eq: "home" } }) {
+      nodes {
+        title
+        description
+        fbAppId
+        ogUrl
+        ogType
+        ogSiteName
+        ogTitle
+        ogDescription
+        ogImageUrl {
+          asset {
+            url
+          }
+        }
+        ogImageType
+        ogImageWidth
+        ogImageHeight
+        twitterTitle
+        twitterSite
+        twitterCreator
+        twitterImage {
+          asset {
+            url
+          }
+        }
       }
     }
   }

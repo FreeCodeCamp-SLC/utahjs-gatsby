@@ -37,7 +37,7 @@ const SpeakerBio = styled.div`
     padding: 0 5px;
     overflow-wrap: break-word;
     word-wrap: break-word;
-    h4 {
+    .speaker-title {
       font-size: 16px;
       padding: 8px 0 6px 0;
       color: #f7dd56;
@@ -62,7 +62,8 @@ const SpeakerBio = styled.div`
     align-items: flex-start;
     .speaker-text {
       margin-left: 1em;
-      h4 {
+      margin-top: 0;
+      .speaker-title {
         font-size: 20px;
       }
       .bio-desc {
@@ -82,7 +83,7 @@ export default function ConferenceSpeaker({ speaker }) {
       <SpeakerBio>
         <Img fixed={speaker.image.asset.fixed} alt={speaker.name} />
         <div className="speaker-text">
-          <h4>
+          <h4 className="speaker-title">
             {speaker.name}, {speaker.role}
           </h4>
           <p className="bio-title">{speaker.presentations}</p>
