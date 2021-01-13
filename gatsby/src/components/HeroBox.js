@@ -105,16 +105,16 @@ const HeroBox = () => {
   return (
     <HeroBoxStyles>
       <div>
-        <Img className='logo' fixed={data.image.fixed} alt='UtahJS Logo' />
+        <Img className="logo" fixed={data.image.fixed} alt="UtahJS Logo" />
       </div>
-      <div className='heroContent'>
+      <div className="heroContent">
         <h2>{text.heroHeader}</h2>
-        <p className='hero_subtext'>{text.heroSubtext1}</p>
-        <p className='hero_subtext'>{text.heroSubtext2}</p>
-        <Button className='btn yellow' href='/conference'>
+        <p className="hero_subtext">{text.heroSubtext1}</p>
+        <p className="hero_subtext">{text.heroSubtext2}</p>
+        <Button className="btn yellow" href="/conference">
           Conference
         </Button>
-        <Button className='btn green' href={text.slackUrl}>
+        <Button className="btn green" href={text.slackUrl}>
           Join Slack
         </Button>
       </div>
