@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import styled from 'styled-components';
-
+import BlockContent from '@sanity/block-content-to-react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Hero from '../components/Hero';
@@ -191,59 +191,47 @@ export default function IndexPage({ data }) {
                 </Link>
               </dt>
               <dd>
-                {homeData.conferencesText}{' '}
-                <Link to="/conference">{homeData.conferencesAnchorText}</Link>.
+                <BlockContent blocks={homeData._rawConferencesText} />
               </dd>
-
               <dt>
                 <a href={homeData.slackUrl} className="btn btn-participate">
                   Join Slack
                 </a>
               </dt>
               <dd>
-                {homeData.slackText1}{' '}
-                <a href={homeData.slackUrl}>{homeData.slackAnchorText}</a>
-                {homeData.slackText2}
+                <BlockContent blocks={homeData._rawSlackText} />
               </dd>
-
               <dt>
                 <a href={homeData.merchUrl} className="btn btn-participate">
                   Buy Merch
                 </a>
               </dt>
               <dd>
-                {homeData.merchText}{' '}
-                <a href={homeData.merchUrl}>{homeData.merchAnchorText}</a>
+                <BlockContent blocks={homeData._rawMerchText} />
               </dd>
-
               <dt>
                 <a href={homeData.emailUrl} className="btn btn-participate">
                   Event Email
                 </a>
               </dt>
               <dd>
-                {homeData.emailText}
-                <a href={homeData.emailUrl}>{homeData.emailAnchorText}</a>.
+                <BlockContent blocks={homeData._rawEmailText} />
               </dd>
-
               <dt>
                 <a href={homeData.lehiUrl} className="btn btn-participate">
                   Lehi Meetup
                 </a>
               </dt>
               <dd>
-                {homeData.lehiText}{' '}
-                <a href={homeData.lehiUrl}>{homeData.lehiAnchorText}</a>
+                <BlockContent blocks={homeData._rawLehiText} />
               </dd>
-
               <dt>
                 <a href={homeData.SLCUrl} className="btn btn-participate">
                   SLC Meetup
                 </a>
               </dt>
               <dd>
-                {homeData.SLCText}
-                <a href={homeData.SLCUrl}>{homeData.SLCAnchorText}</a>
+                <BlockContent blocks={homeData._rawSlcText} />
               </dd>
 
               <dt>
@@ -252,57 +240,45 @@ export default function IndexPage({ data }) {
                 </a>
               </dt>
               <dd>
-                {homeData.ogdenText}{' '}
-                <a href={homeData.ogdenUrl}>{homeData.ogdenAnchorText}</a>
+                <BlockContent blocks={homeData._rawOgdenText} />
               </dd>
-
               <dt>
                 <a href={homeData.learnersUrl} className="btn btn-participate">
                   Learners Meetup
                 </a>
               </dt>
               <dd>
-                {homeData.learnersText}{' '}
-                <a href={homeData.learnersUrl}>{homeData.learnersAnchorText}</a>
+                <BlockContent blocks={homeData._rawLearnersText} />
               </dd>
-
               <dt>
                 <a href={homeData.linkedInUrl} className="btn btn-participate">
                   LinkedIn
                 </a>
               </dt>
               <dd>
-                {homeData.linkedInText}{' '}
-                <a href={homeData.linkedInUrl}>LinkedIn Group</a>.
+                <BlockContent blocks={homeData._rawLinkedIn} />
               </dd>
-
               <dt>
                 <a href={homeData.twitterUrl} className="btn btn-participate">
                   Twitter
                 </a>
               </dt>
               <dd>
-                {homeData.twitterText}{' '}
-                <a href={homeData.twitterUrl}>{homeData.twitterAnchorText}</a>.
+                <BlockContent blocks={homeData._rawTwitterText} />
               </dd>
-
               <dt>
                 <a href={homeData.videosUrl} className="btn btn-participate">
                   Videos
                 </a>
               </dt>
               <dd>
-                {homeData.videosText}{' '}
-                <a href={homeData.videosUrl}>{homeData.videosAnchorText}</a>.
+                <BlockContent blocks={homeData._rawVideosText} />
               </dd>
             </dl>
           </section>
           <RelatedMeetups />
           <section>
-            <p className="about">
-              {homeData.footerText}{' '}
-              <a href={homeData.contactEmail}>{homeData.contactAnchorText}</a>
-            </p>
+            <BlockContent blocks={homeData._rawFooter} />
           </section>
         </div>
       </HomeStyles>
@@ -314,43 +290,28 @@ export const query = graphql`
   query {
     text: allSanityHome {
       nodes {
-        SLCText
-        SLCUrl
-        conferencesText
-        conferencesAnchorText
         contentHeader
-        emailText
-        emailUrl
-        learnersText
-        learnersUrl
-        lehiText
-        lehiUrl
-        linkedInText
-        linkedInUrl
-        merchText
-        merchUrl
-        ogdenText
-        ogdenUrl
         slackUrl
-        twitterText
+        merchUrl
+        emailUrl
+        lehiUrl
+        SLCUrl
+        ogdenUrl
+        linkedInUrl
         twitterUrl
-        videosText
         videosUrl
-        slackText1
-        slackText2
-        slackAnchorText
-        SLCAnchorText
-        emailAnchorText
-        learnersAnchorText
-        lehiAnchorText
-        linkedInAnchorText
-        ogdenAnchorText
-        twitterAnchorText
-        videosAnchorText
-        merchAnchorText
-        footerText
-        contactAnchorText
-        contactEmail
+        _rawConferencesText(resolveReferences: { maxDepth: 10 })
+        _rawEmailText(resolveReferences: { maxDepth: 10 })
+        _rawLearnersText(resolveReferences: { maxDepth: 10 })
+        _rawLehiText(resolveReferences: { maxDepth: 10 })
+        _rawMerchText(resolveReferences: { maxDepth: 10 })
+        _rawOgdenText(resolveReferences: { maxDepth: 10 })
+        _rawLinkedIn(resolveReferences: { maxDepth: 10 })
+        _rawSlackText(resolveReferences: { maxDepth: 10 })
+        _rawSlcText(resolveReferences: { maxDepth: 10 })
+        _rawTwitterText(resolveReferences: { maxDepth: 10 })
+        _rawVideosText(resolveReferences: { maxDepth: 10 })
+        _rawFooter(resolveReferences: { maxDepth: 10 })
       }
     }
     allSanitySeo(filter: { page: { eq: "Home" } }) {
