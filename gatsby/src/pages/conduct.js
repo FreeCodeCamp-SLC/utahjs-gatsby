@@ -8,6 +8,7 @@ import SEO from '../components/Seo';
 const conduct = ({ data }) => {
   const content = data.allSanityCodeOfConduct.nodes[0]._rawContent;
   const seo = data.allSanitySeo.nodes[0];
+  console.log(seo);
 
   return (
     <Layout>
@@ -26,7 +27,7 @@ export const pageQuery = graphql`
         _rawContent(resolveReferences: { maxDepth: 10 })
       }
     }
-    allSanitySeo(filter: { page: { eq: "Home" } }) {
+    allSanitySeo(filter: { page: { eq: "Conduct" } }) {
       nodes {
         title
         description
