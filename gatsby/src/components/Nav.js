@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link as GatsbyLink } from 'gatsby';
-import styled from 'styled-components';
+import React from "react";
+import { Link as GatsbyLink } from "gatsby";
+import styled from "styled-components";
 
 const NavStyles = styled.nav`
   background-color: #000;
@@ -18,9 +18,9 @@ const NavStyles = styled.nav`
       line-height: 1;
       padding: 0.7em 0;
       margin-right: 1.5em;
+      font-weight: 600;
       a {
         font-weight: sans-serif;
-        font-weight: bolder;
         padding: 0;
         margin: 0;
         color: #aaa;
@@ -29,8 +29,7 @@ const NavStyles = styled.nav`
         &:hover {
           color: white;
         }
-        @media (max-width: 768px) {
-        }
+
         @media (min-width: 520px) {
           font-size: 17px;
           line-height: 1.5;
@@ -38,6 +37,14 @@ const NavStyles = styled.nav`
         }
       }
     }
+  }
+  @media (max-width: 980px) {
+    .mobile {
+      display: none;
+    }
+  }
+  .is-active {
+    display: initial;
   }
 `;
 
@@ -57,37 +64,39 @@ const StyledLink = styled(GatsbyLink)`
   }
 `;
 
-const Nav = () => (
+const Nav = (props) => (
   <NavStyles>
-    <ul>
-      <li>
-        <StyledLink to="/">Home</StyledLink>
-      </li>
-      <li>
-        <StyledLink to="/conference">Conferences</StyledLink>
-      </li>
-      <li>
-        <a href="https://vi.to/hubs/utahjs-conference-series">Tickets</a>
-      </li>
-      <li>
-        <StyledLink to="/conduct">Code of Conduct</StyledLink>
-      </li>
-      <li>
-        <a href="https://teespring.com/utahjs-2020-online-series">Merch</a>
-      </li>
-      <li>
-        <StyledLink to="/sponsor">Sponsor Us</StyledLink>
-      </li>
-      <li>
-        <StyledLink to="/past-speakers">Past Speakers</StyledLink>
-      </li>
-      <li>
-        <a href="http://eepurl.com/hcwmDf">Mailing List</a>
-      </li>
-      <li>
-        <a href="http://slack.utahjs.com/">Slack</a>
-      </li>
-    </ul>
+    <div className={!props.toggle ? "mobile" : "is-active"}>
+      <ul>
+        <li>
+          <StyledLink to="/">Home</StyledLink>
+        </li>
+        <li>
+          <StyledLink to="/conference">Conferences</StyledLink>
+        </li>
+        <li>
+          <a href="https://vi.to/hubs/utahjs-conference-series">Tickets</a>
+        </li>
+        <li>
+          <StyledLink to="/conduct">Code of Conduct</StyledLink>
+        </li>
+        <li>
+          <a href="https://teespring.com/utahjs-2020-online-series">Merch</a>
+        </li>
+        <li>
+          <StyledLink to="/sponsor">Sponsor Us</StyledLink>
+        </li>
+        <li>
+          <StyledLink to="/past-speakers">Past Speakers</StyledLink>
+        </li>
+        <li>
+          <a href="http://eepurl.com/hcwmDf">Mailing List</a>
+        </li>
+        <li>
+          <a href="http://slack.utahjs.com/">Slack</a>
+        </li>
+      </ul>
+    </div>
   </NavStyles>
 );
 

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const Burger = styled.div`
   .hamburger {
     padding: 15px 15px;
-    display: inline-block;
+    display: none;
     cursor: pointer;
     transition-property: opacity, filter;
     transition-duration: 0.15s;
@@ -265,30 +265,29 @@ const Burger = styled.div`
     transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
       transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
+  @media (max-width: 980px) {
+    .hamburger {
+      display: inline-block;
+    }
+  }
 `;
 
-const Hamburger = () => {
-  //state to trigger animation off/on
-  const [animationState, setAnimationState] = useState(false);
-  const clickHandler = () =>
-    !animationState ? setAnimationState(true) : setAnimationState(false);
-  return (
-    <Burger>
-      <button
-        type="button"
-        onClick={clickHandler}
-        className={
-          !animationState
-            ? "hamburger hamburger--collapse"
-            : "hamburger hamburger--collapse is-active"
-        }
-      >
-        <span className="hamburger-box">
-          <span className="hamburger-inner" />
-        </span>
-      </button>
-    </Burger>
-  );
-};
+const Hamburger = (props) => (
+  <Burger>
+    <button
+      type="button"
+      onClick={props.clickMe}
+      className={
+        !props.toggle
+          ? "hamburger hamburger--collapse"
+          : "hamburger hamburger--collapse is-active"
+      }
+    >
+      <span className="hamburger-box">
+        <span className="hamburger-inner" />
+      </span>
+    </button>
+  </Burger>
+);
 
 export default Hamburger;

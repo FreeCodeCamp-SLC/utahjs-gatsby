@@ -1,14 +1,14 @@
-import React from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
-import styled from 'styled-components';
-import Button from 'react-bootstrap/Button';
+import React from "react";
+import { Link, useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
+import styled from "styled-components";
+import Button from "react-bootstrap/Button";
 
 // styles
 
 const Hero = styled.section`
   background: #fff28b url(${(props) => props.imgUrl}) no-repeat 50% 50% / cover;
-  font-family: 'Gothic A1', sans-serif;
+  font-family: "Gothic A1", sans-serif;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -107,6 +107,11 @@ const Hero = styled.section`
   @media (min-width: 768px) {
     .hero-box {
       margin-right: 150px;
+    }
+  }
+  @media (max-width: 360px) {
+    .hero-box {
+      padding: 5px 30px;
     }
   }
 `;
