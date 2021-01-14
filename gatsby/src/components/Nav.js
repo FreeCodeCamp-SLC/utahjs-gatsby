@@ -19,6 +19,9 @@ const NavStyles = styled.nav`
       padding: 0.7em 0;
       margin-right: 1.5em;
       font-weight: 600;
+      @media (max-width: 1100px) {
+        font-size: 6px;
+      }
       a {
         font-weight: sans-serif;
         padding: 0;
@@ -31,7 +34,7 @@ const NavStyles = styled.nav`
         }
 
         @media (min-width: 520px) {
-          font-size: 17px;
+          /* font-size: 17px; */
           line-height: 1.5;
           padding: 1em 0;
         }
