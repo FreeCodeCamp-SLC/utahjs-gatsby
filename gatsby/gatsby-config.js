@@ -1,6 +1,6 @@
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 
-dotenv.config({ path: '.env' });
+dotenv.config({ path: ".env" });
 
 module.exports = {
   siteMetadata: {
@@ -41,10 +41,10 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ['Fira Sans', 'Sanchez', 'Gothic A1', 'Domine'],
+          families: ["Fira Sans", "Sanchez", "Gothic A1", "Domine"],
         },
       },
     },

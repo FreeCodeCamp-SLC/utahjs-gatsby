@@ -1,11 +1,14 @@
-import { Link, useStaticQuery, graphql } from 'gatsby';
-import React from 'react';
-import styled from 'styled-components';
-import Img from 'gatsby-image';
+import { Link, useStaticQuery, graphql } from "gatsby";
+import React from "react";
+import styled from "styled-components";
+import Img from "gatsby-image";
+import Hamburger from "./Hamburger";
 
 const Wrapper = styled.header`
   background: #2b2b2b;
   .header-content {
+    display: flex;
+    justify-content: space-between;
     max-width: 1240px;
     margin: 0 auto;
     text-align: left;
@@ -17,6 +20,9 @@ const Wrapper = styled.header`
   }
   .gatsby-image-wrapper {
     margin-right: 20px;
+  }
+  .header-main {
+    display: flex;
   }
   h1 {
     color: #f7dd56;
@@ -53,10 +59,13 @@ function Header() {
   return (
     <Wrapper>
       <div className="header-content">
-        <Link to="/">
-          <Img fixed={data.utahjs.childImageSharp.fixed} alt="Utah JS Logo" />
-        </Link>
-        <h1>{new Date().getFullYear()} UtahJS Conference - Online Series</h1>
+        <div className="header-main">
+          <Link to="/">
+            <Img fixed={data.utahjs.childImageSharp.fixed} alt="Utah JS Logo" />
+          </Link>
+          <h1>{new Date().getFullYear()} UtahJS Conference - Online Series</h1>
+        </div>
+        <Hamburger />
       </div>
     </Wrapper>
   );
