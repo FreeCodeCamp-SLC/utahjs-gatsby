@@ -49,7 +49,6 @@ const SocialLinksDiv = styled.div`
 `;
 
 export default function Speaker({ speaker }) {
-  console.log(speaker);
   return (
     <SpeakerBox>
       <Person>
