@@ -20,7 +20,7 @@ const Hero = styled.section`
     flex-direction: column;
     height: fit-content;
     align-items: center;
-    padding: 30px;
+    padding: 5px 30px;
     margin: 0px 20px;
     background-color: rgba(22, 29, 14, 0.75);
     border-radius: 12px;
@@ -50,7 +50,7 @@ const Hero = styled.section`
     .hero-buttons {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
       a {
         font-size: 16px;
       }
@@ -109,9 +109,12 @@ const Hero = styled.section`
       margin-right: 150px;
     }
   }
-  @media (max-width: 360px) {
+  @media (min-width: 360px) {
     .hero-box {
-      padding: 5px 30px;
+      padding: 30px;
+    }
+    .hero-buttons {
+      gap: 10px;
     }
   }
 `;

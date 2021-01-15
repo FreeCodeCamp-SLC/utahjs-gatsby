@@ -103,14 +103,15 @@ export const HomeStyles = styled.div`
       padding-bottom: 0;
     }
     dl.ways-to-participate dt {
-      float: left;
-      clear: both;
-      width: 140px;
+      float: none;
+      text-align: center;
+      width: auto;
     }
     dl.ways-to-participate dd {
-      height: 90px;
-      float: right;
-      max-width: 425px;
+      float: none;
+      width: 100%;
+      margin: 10px auto;
+      text-align: center;
     }
     dt,
     dd {
@@ -157,17 +158,16 @@ export const HomeStyles = styled.div`
     .about {
       margin: 0;
     }
-    @media (max-width: 665px) {
+    @media (min-width: 665px) {
       dl.ways-to-participate dt {
-        float: none;
-        text-align: center;
-        width: auto;
+        float: left;
+        clear: both;
+        width: 140px;
       }
       dl.ways-to-participate dd {
-        float: none;
-        width: 100%;
-        margin: 10px auto;
-        text-align: center;
+        height: 90px;
+        float: right;
+        max-width: 425px;
       }
     }
   }
