@@ -41,7 +41,7 @@ const HeroBoxStyles = styled.div`
     font-weight: bold;
     font-family: 'Fira Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     padding: 8px 12px;
-    margin-right: 10px;
+    margin: 5px 20px 0 0;
     border: transparent;
     border-radius: 4px;
     text-transform: uppercase;
@@ -70,11 +70,6 @@ const HeroBoxStyles = styled.div`
     padding: 30px;
     h2 {
       font-size: 22px;
-    }
-  }
-  @media all and (max-width: 288px) {
-    .btn {
-      margin: 5px 20px;
     }
   }
 `;

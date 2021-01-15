@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Burger = styled.div`
   .hamburger {
     padding: 15px 15px;
-    display: none;
+    display: inline-block;
     cursor: pointer;
     transition-property: opacity, filter;
     transition-duration: 0.15s;
@@ -263,20 +263,20 @@ const Burger = styled.div`
     transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
       transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
-  @media (max-width: 980px) {
+  @media (min-width: 980px) {
     .hamburger {
-      display: inline-block;
+      display: none;
     }
   }
 `;
 
-const Hamburger = (props) => (
+const Hamburger = ({ clickMe, toggle }) => (
   <Burger>
     <button
       type="button"
-      onClick={props.clickMe}
+      onClick={clickMe}
       className={
-        !props.toggle
+        !toggle
           ? 'hamburger hamburger--collapse'
           : 'hamburger hamburger--collapse is-active'
       }

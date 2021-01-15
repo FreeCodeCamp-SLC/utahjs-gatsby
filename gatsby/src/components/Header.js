@@ -6,6 +6,7 @@ import Hamburger from './Hamburger';
 
 const Wrapper = styled.header`
   background: #2b2b2b;
+  padding-bottom: 30px;
   .header-content {
     display: flex;
     justify-content: space-between;
@@ -43,8 +44,8 @@ const Wrapper = styled.header`
       font-size: 25px;
     }
   }
-  @media (max-width: 328px) {
-    padding-bottom: 30px;
+  @media (min-width: 328px) {
+    padding-bottom: 0;
   }
 `;
 
