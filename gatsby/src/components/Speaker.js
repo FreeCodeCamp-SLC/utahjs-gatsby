@@ -22,7 +22,7 @@ const Person = styled.div`
   font-family: Domine, serif;
   display: flex;
   h2 {
-    margin-bottom: 2px;
+    margin: 0 2px 0 0;
     font-size: 20px;
     line-height: 1.25;
     font-weight: bold;
@@ -49,6 +49,7 @@ const SocialLinksDiv = styled.div`
 `;
 
 export default function Speaker({ speaker }) {
+  console.log(speaker);
   return (
     <SpeakerBox>
       <Person>
@@ -56,7 +57,7 @@ export default function Speaker({ speaker }) {
 
         <div className="info">
           <h2>{speaker.fullName}</h2>
-          <h3>{speaker.tageLine}</h3>
+          <h3>{speaker.tagLine}</h3>
           {/* not every speaker has social links so we would need to build logic for this */}
           <SocialLinksDiv>
             {speaker.links.map((link, i) => (
