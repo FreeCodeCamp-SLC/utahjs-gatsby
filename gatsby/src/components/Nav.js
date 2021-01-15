@@ -24,8 +24,8 @@ const NavStyles = styled.nav`
     align-items: center;
     li {
       line-height: 1;
-      padding: 1em 0;
-      margin-right: 1.5em;
+      padding: 12px 0;
+      margin-right: 25.5px;
       font-weight: 600;
       a {
         font-weight: sans-serif;
@@ -36,11 +36,6 @@ const NavStyles = styled.nav`
         cursor: pointer;
         &:hover {
           color: white;
-        }
-        @media (min-width: 520px) {
-          /* font-size: 17px; */
-          line-height: 1.5;
-          padding: 1em 0;
         }
       }
     }
