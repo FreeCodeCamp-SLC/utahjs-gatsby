@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 const NavStyles = styled.nav`
   background-color: #000;
-
   ul {
     max-width: 1240px;
     margin: 0 auto;
@@ -18,9 +17,12 @@ const NavStyles = styled.nav`
       line-height: 1;
       padding: 0.7em 0;
       margin-right: 1.5em;
+      font-weight: 600;
+      @media (max-width: 1100px) {
+        font-size: 6px;
+      }
       a {
         font-weight: sans-serif;
-        font-weight: bolder;
         padding: 0;
         margin: 0;
         color: #aaa;
@@ -29,18 +31,29 @@ const NavStyles = styled.nav`
         &:hover {
           color: white;
         }
-        @media (max-width: 768px) {
-        }
         @media (min-width: 520px) {
-          font-size: 17px;
+          /* font-size: 17px; */
           line-height: 1.5;
           padding: 1em 0;
         }
       }
     }
   }
+  @media (max-width: 980px) {
+    .mobile {
+      display: none;
+    }
+    .is-active {
+      display: initial;
+    }
+    ul {
+      flex-direction: column;
+    }
+    ul li {
+      padding: 2em 0;
+    }
+  }
 `;
-
 const StyledLink = styled(GatsbyLink)`
   color: #aaa;
   text-transform: uppercase;
@@ -56,39 +69,43 @@ const StyledLink = styled(GatsbyLink)`
     font-size: 0.8rem;
   }
 `;
-
-const Nav = () => (
+const Nav = ({ toggle }) => (
   <NavStyles>
-    <ul>
-      <li>
-        <StyledLink to="/">Home</StyledLink>
-      </li>
-      <li>
-        <StyledLink to="/conference">Conferences</StyledLink>
-      </li>
-      <li>
-        <a href="https://vi.to/hubs/utahjs-conference-series">Tickets</a>
-      </li>
-      <li>
-        <StyledLink to="/conduct">Code of Conduct</StyledLink>
-      </li>
-      <li>
-        <a href="https://teespring.com/utahjs-2020-online-series">Merch</a>
-      </li>
-      <li>
-        <StyledLink to="/sponsor">Sponsor Us</StyledLink>
-      </li>
-      <li>
-        <StyledLink to="/past-speakers">Past Speakers</StyledLink>
-      </li>
-      <li>
-        <a href="http://eepurl.com/hcwmDf">Mailing List</a>
-      </li>
-      <li>
-        <a href="http://slack.utahjs.com/">Slack</a>
-      </li>
-    </ul>
+    <div className={!toggle ? 'mobile' : 'is-active'}>
+      <ul>
+        <li>
+          <StyledLink to="/">Home</StyledLink>
+        </li>
+        <li>
+          <StyledLink to="/conference">Conferences</StyledLink>
+        </li>
+        <li>
+          <StyledLink href="https://vi.to/hubs/utahjs-conference-series">
+            Tickets
+          </StyledLink>
+        </li>
+        <li>
+          <StyledLink to="/conduct">Code of Conduct</StyledLink>
+        </li>
+        <li>
+          <StyledLink href="https://teespring.com/utahjs-2020-online-series">
+            Merch
+          </StyledLink>
+        </li>
+        <li>
+          <StyledLink to="/sponsor">Sponsor Us</StyledLink>
+        </li>
+        <li>
+          <StyledLink to="/past-speakers">Past Speakers</StyledLink>
+        </li>
+        <li>
+          <StyledLink href="http://eepurl.com/hcwmDf">Mailing List</StyledLink>
+        </li>
+        <li>
+          <StyledLink href="http://slack.utahjs.com/">Slack</StyledLink>
+        </li>
+      </ul>
+    </div>
   </NavStyles>
 );
-
 export default Nav;

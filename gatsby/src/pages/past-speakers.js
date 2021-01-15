@@ -46,20 +46,23 @@ const AgendaManage = styled.div`
 `;
 
 export default function SpeakersPage({ data }) {
+  // Object holding the urls for each year
+  const speakerUrls = {};
+  // loop through our speaker data and destucture it into our speakerUrls object
+  const speakerUrlData = data.speakerUrls.nodes;
+  speakerUrlData.forEach((yearUrl) => {
+    speakerUrls[yearUrl.year] = yearUrl.sessionizeUrl;
+  });
+
+  // states for which year's speakers we want to render
+  const [speakerUrl, setspeakerUrl] = useState(speakerUrls[2019]);
+  const [speakerYear, setspeakerYear] = useState(2019);
+
   // state for managing render of sessionize data
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [speakerData, setSpeakerData] = useState([]);
 
-  // Object holding the urls for each year
-  const speakerUrls = {
-    2019: 'https://sessionize.com/api/v2/qlwqpj7m/view/Speakers',
-    2018: 'https://sessionize.com/api/v2/8c8rnjbo/view/Speakers',
-  };
-
-  // states for which year's speakers we want to render
-  const [speakerUrl, setspeakerUrl] = useState(speakerUrls['2019']);
-  const [speakerYear, setspeakerYear] = useState('2019');
   // method for changing speaker year state
   const changeYear = (year) => {
     setspeakerUrl(speakerUrls[year]);
@@ -106,13 +109,13 @@ export default function SpeakersPage({ data }) {
   if (speakerUrl === 'https://sessionize.com/api/v2/qlwqpj7m/view/Speakers') {
     renderPastYear = (
       // choose buttons for the divs for a11y
-      <button type="button" onClick={() => changeYear('2018')}>
+      <button type="button" onClick={() => changeYear(2018)}>
         <p className="speakers">View 2018 Speakers</p>
       </button>
     );
   } else {
     renderPastYear = (
-      <button type="button" onClick={() => changeYear('2019')}>
+      <button type="button" onClick={() => changeYear(2019)}>
         <p className="speakers">View 2019 Speakers</p>
       </button>
     );
@@ -143,6 +146,12 @@ export default function SpeakersPage({ data }) {
 
 export const query = graphql`
   query {
+    speakerUrls: allSanitySpeakerUrls {
+      nodes {
+        sessionizeUrl
+        year
+      }
+    }
     allSanitySeo(filter: { page: { eq: "Past Speakers" } }) {
       nodes {
         title

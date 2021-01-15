@@ -109,6 +109,11 @@ const Hero = styled.section`
       margin-right: 150px;
     }
   }
+  @media (max-width: 360px) {
+    .hero-box {
+      padding: 5px 30px;
+    }
+  }
 `;
 
 // GraphQL Data Query //
