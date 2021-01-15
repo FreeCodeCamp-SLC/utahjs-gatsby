@@ -6,8 +6,9 @@ import Hamburger from './Hamburger';
 
 const Wrapper = styled.header`
   background: #2b2b2b;
-  padding-bottom: 30px;
   .header-content {
+    background: #2b2b2b;
+    padding-bottom: 30px;
     display: flex;
     justify-content: space-between;
     max-width: 1240px;
@@ -19,6 +20,7 @@ const Wrapper = styled.header`
     background: #2b2b2b;
     padding: 20px 20px 0 20px;
   }
+
   .gatsby-image-wrapper {
     margin-right: 20px;
   }
