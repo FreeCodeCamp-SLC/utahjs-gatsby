@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { graphql } from "gatsby";
-import styled from "styled-components";
-import Layout from "../components/Layout";
-import SEO from "../components/Seo";
-import Speaker from "../components/Speaker";
+import React, { useEffect, useState } from 'react';
+import { graphql } from 'gatsby';
+import styled from 'styled-components';
+import Layout from '../components/Layout';
+import SEO from '../components/Seo';
+import Speaker from '../components/Speaker';
 
 const PageStyles = styled.div`
   .wrapper {
@@ -106,7 +106,7 @@ export default function SpeakersPage({ data }) {
   }
 
   // render different year link
-  if (speakerUrl === "https://sessionize.com/api/v2/qlwqpj7m/view/Speakers") {
+  if (speakerUrl === 'https://sessionize.com/api/v2/qlwqpj7m/view/Speakers') {
     renderPastYear = (
       // choose buttons for the divs for a11y
       <button type="button" onClick={() => changeYear(2018)}>
@@ -135,7 +135,7 @@ export default function SpeakersPage({ data }) {
         {speakers}
         <AgendaManage>
           <a className="manage" href="https://sessionize.com/">
-            <span className="strong">Agenda Management</span> powered by{" "}
+            <span className="strong">Agenda Management</span> powered by{' '}
             <span className="strong teal">Sessionize.com</span>
           </a>
         </AgendaManage>
