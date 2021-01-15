@@ -1,6 +1,6 @@
-import React from "react";
-import { Link as GatsbyLink } from "gatsby";
-import styled from "styled-components";
+import React from 'react';
+import { Link as GatsbyLink } from 'gatsby';
+import styled from 'styled-components';
 
 const NavStyles = styled.nav`
   background-color: #000;
@@ -49,6 +49,13 @@ const NavStyles = styled.nav`
   .is-active {
     display: initial;
   }
+  @media (max-width: 450px) {
+    ul {
+      flex-direction: column;
+    }
+    ul li{
+      padding: 2em 0;
+    }
 `;
 
 const StyledLink = styled(GatsbyLink)`
@@ -69,7 +76,7 @@ const StyledLink = styled(GatsbyLink)`
 
 const Nav = (props) => (
   <NavStyles>
-    <div className={!props.toggle ? "mobile" : "is-active"}>
+    <div className={!props.toggle ? 'mobile' : 'is-active'}>
       <ul>
         <li>
           <StyledLink to="/">Home</StyledLink>
@@ -78,13 +85,17 @@ const Nav = (props) => (
           <StyledLink to="/conference">Conferences</StyledLink>
         </li>
         <li>
-          <a href="https://vi.to/hubs/utahjs-conference-series">Tickets</a>
+          <StyledLink href="https://vi.to/hubs/utahjs-conference-series">
+            Tickets
+          </StyledLink>
         </li>
         <li>
           <StyledLink to="/conduct">Code of Conduct</StyledLink>
         </li>
         <li>
-          <a href="https://teespring.com/utahjs-2020-online-series">Merch</a>
+          <StyledLink href="https://teespring.com/utahjs-2020-online-series">
+            Merch
+          </StyledLink>
         </li>
         <li>
           <StyledLink to="/sponsor">Sponsor Us</StyledLink>
@@ -93,10 +104,10 @@ const Nav = (props) => (
           <StyledLink to="/past-speakers">Past Speakers</StyledLink>
         </li>
         <li>
-          <a href="http://eepurl.com/hcwmDf">Mailing List</a>
+          <StyledLink href="http://eepurl.com/hcwmDf">Mailing List</StyledLink>
         </li>
         <li>
-          <a href="http://slack.utahjs.com/">Slack</a>
+          <StyledLink href="http://slack.utahjs.com/">Slack</StyledLink>
         </li>
       </ul>
     </div>

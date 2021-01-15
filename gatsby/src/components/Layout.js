@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import "normalize.css";
-import GlobalStyles from "../styles/globalStyles";
-import Header from "./Header";
-import Nav from "./Nav";
-import Footer from "./Footer";
+import React, { useState } from 'react';
+import 'normalize.css';
+import GlobalStyles from '../styles/globalStyles';
+import Header from './Header';
+import Nav from './Nav';
+import Footer from './Footer';
 
 const Layout = ({ children }) => {
   // state/function to toggle hamburger/Nav bar

@@ -1,8 +1,8 @@
-import { Link, useStaticQuery, graphql } from "gatsby";
-import React from "react";
-import styled from "styled-components";
-import Img from "gatsby-image";
-import Hamburger from "./Hamburger";
+import { Link, useStaticQuery, graphql } from 'gatsby';
+import React from 'react';
+import styled from 'styled-components';
+import Img from 'gatsby-image';
+import Hamburger from './Hamburger';
 
 const Wrapper = styled.header`
   background: #2b2b2b;

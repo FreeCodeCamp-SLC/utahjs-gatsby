@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Burger = styled.div`
   .hamburger {
@@ -60,7 +60,7 @@ const Burger = styled.div`
   }
   .hamburger-inner::before,
   .hamburger-inner::after {
-    content: "";
+    content: '';
     display: block;
   }
   .hamburger-inner::before {
@@ -279,8 +279,8 @@ const Hamburger = (props) => (
       onClick={props.clickMe}
       className={
         !props.toggle
-          ? "hamburger hamburger--collapse"
-          : "hamburger hamburger--collapse is-active"
+          ? 'hamburger hamburger--collapse'
+          : 'hamburger hamburger--collapse is-active'
       }
     >
       <span className="hamburger-box">
