@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaTwitter, FaLinkedinIn } from 'react-icons/fa';
 import styled from 'styled-components';
 
@@ -15,24 +15,32 @@ const SocialWrapper = styled.div`
     color: #f80;
     border-radius: 2px;
   }
-  .wrapper:hover {
-    background-color: orange;
-  }
-  .socialLink {
-    width: 100%;
-  }
-  .socialLink:hover {
-    color: white;
+  .hover {
+    background-color: #f80;
+    color: #fff;
   }
 `;
 
 const SocialLinks = ({ link }) => {
+  // state/functions for icon hover effect
+  const [animationState, setAnimationState] = useState(false);
+  const hoverHandler = () => {
+    setAnimationState(true);
+  };
+  const hoverExitHandler = () => {
+    setAnimationState(false);
+  };
+
   let twitter;
   let linkedIn;
   if (link.title === 'Twitter') {
     twitter = (
       <a href={link.url}>
-        <div className="wrapper">
+        <div
+          onMouseEnter={hoverHandler}
+          onMouseLeave={hoverExitHandler}
+          className={!animationState ? 'wrapper' : 'wrapper hover'}
+        >
           <FaTwitter className="socialLink" />
         </div>
       </a>
@@ -41,7 +49,11 @@ const SocialLinks = ({ link }) => {
   if (link.title === 'LinkedIn') {
     linkedIn = (
       <a href={link.url}>
-        <div className="wrapper">
+        <div
+          onMouseEnter={() => hoverHandler()}
+          onMouseLeave={() => hoverExitHandler()}
+          className={!animationState ? 'wrapper' : 'wrapper hover'}
+        >
           <FaLinkedinIn className="socialLink" />
         </div>
       </a>

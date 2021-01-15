@@ -8,9 +8,8 @@ import Footer from './Footer';
 const Layout = ({ children }) => {
   // state/function to toggle hamburger/Nav bar
   const [hamburgerState, setHamburgerState] = useState(false);
-  const clickHandler = () => {
+  const clickHandler = () =>
     !hamburgerState ? setHamburgerState(true) : setHamburgerState(false);
-  };
 
   return (
     <>

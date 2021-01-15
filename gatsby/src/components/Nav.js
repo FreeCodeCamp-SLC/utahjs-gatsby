@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 const NavStyles = styled.nav`
   background-color: #000;
-
   ul {
     max-width: 1240px;
     margin: 0 auto;
@@ -32,7 +31,6 @@ const NavStyles = styled.nav`
         &:hover {
           color: white;
         }
-
         @media (min-width: 520px) {
           /* font-size: 17px; */
           line-height: 1.5;
@@ -45,19 +43,17 @@ const NavStyles = styled.nav`
     .mobile {
       display: none;
     }
-  }
-  .is-active {
-    display: initial;
-  }
-  @media (max-width: 450px) {
+    .is-active {
+      display: initial;
+    }
     ul {
       flex-direction: column;
     }
-    ul li{
+    ul li {
       padding: 2em 0;
     }
+  }
 `;
-
 const StyledLink = styled(GatsbyLink)`
   color: #aaa;
   text-transform: uppercase;
@@ -73,10 +69,9 @@ const StyledLink = styled(GatsbyLink)`
     font-size: 0.8rem;
   }
 `;
-
-const Nav = (props) => (
+const Nav = ({ toggle }) => (
   <NavStyles>
-    <div className={!props.toggle ? 'mobile' : 'is-active'}>
+    <div className={!toggle ? 'mobile' : 'is-active'}>
       <ul>
         <li>
           <StyledLink to="/">Home</StyledLink>
@@ -113,5 +108,4 @@ const Nav = (props) => (
     </div>
   </NavStyles>
 );
-
 export default Nav;

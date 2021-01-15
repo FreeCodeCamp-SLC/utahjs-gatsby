@@ -46,10 +46,8 @@ const Burger = styled.div`
   .hamburger-inner::before,
   .hamburger-inner::after {
     //controls thickness of hamburger slices
-    /* width: 40px;
-    height: 4px; */
-    width: 45px;
-    height: 5px;
+    width: 40px;
+    height: 4px;
     // this changes the color of hamburger 2/2
     background-color: #f7dd56;
     border-radius: 4px;

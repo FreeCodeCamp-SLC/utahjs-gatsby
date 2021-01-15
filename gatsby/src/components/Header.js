@@ -45,8 +45,10 @@ const Wrapper = styled.header`
   }
   @media (max-width: 328px) {
     padding-bottom: 30px;
+  }
 `;
-function Header(props) {
+
+function Header({ clickMe, toggle }) {
   const data = useStaticQuery(graphql`
     query {
       utahjs: file(relativePath: { eq: "utahjs-logo.png" }) {
@@ -67,7 +69,7 @@ function Header(props) {
           </Link>
           <h1>{new Date().getFullYear()} UtahJS Conference - Online Series</h1>
         </div>
-        <Hamburger clickMe={props.clickMe} toggle={props.toggle} />
+        <Hamburger clickMe={clickMe} toggle={toggle} />
       </div>
     </Wrapper>
   );
