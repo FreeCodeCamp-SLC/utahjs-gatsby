@@ -5,6 +5,9 @@ import Img from 'gatsby-image';
 import Hamburger from './Hamburger';
 
 const Wrapper = styled.header`
+  position: relative;
+  width: 100%;
+  z-index: 2;
   background: #2b2b2b;
   .header-content {
     display: flex;

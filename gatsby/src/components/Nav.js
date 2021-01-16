@@ -9,10 +9,10 @@ const NavStyles = styled.nav`
     background-color: #000;
     position: absolute;
     transition: transform 0.3s ease-out;
+    z-index: 1;
   }
   .Open {
     transform: translateY(0);
-    position: inherit;
   }
 
   .Close {
@@ -61,7 +61,6 @@ const NavStyles = styled.nav`
   }
   @media (min-width: 980px) {
     .navDiv {
-      position: inherit;
       transform: translateY(0);
     }
     ul {

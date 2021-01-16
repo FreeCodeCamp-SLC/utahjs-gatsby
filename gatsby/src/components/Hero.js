@@ -10,6 +10,7 @@ import HeroBox from './HeroBox';
 
 const HeroStyles = styled.section`
   position: relative;
+
   width: 100%;
   margin: 0 auto;
   display: flex;
