@@ -14,11 +14,9 @@ const NavStyles = styled.nav`
   .Open {
     transform: translateY(0);
   }
-
   .Close {
     transform: translateY(-150%);
   }
-
   a {
     color: #aaa;
     text-transform: uppercase;
@@ -34,7 +32,6 @@ const NavStyles = styled.nav`
   ul {
     max-width: 1240px;
     margin: 0 auto;
-
     padding: 0 20px;
     list-style: none;
     display: flex;
