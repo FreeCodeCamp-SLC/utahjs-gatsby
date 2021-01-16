@@ -2,8 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import BlockContent from '@sanity/block-content-to-react';
 
+import styled from 'styled-components';
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
+
+const SponsorWrapper = styled.div`
+  margin-top: 40px;
+`;
 
 const SponsorPage = ({ data }) => {
   const content = data.allSanitySponsorUs.nodes[0]._rawContent;
@@ -11,8 +16,13 @@ const SponsorPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO seo={seo} />
-      <BlockContent className="blockContent center-content" blocks={content} />
+      <SponsorWrapper>
+        <SEO seo={seo} />
+        <BlockContent
+          className="blockContent center-content"
+          blocks={content}
+        />
+      </SponsorWrapper>
     </Layout>
   );
 };

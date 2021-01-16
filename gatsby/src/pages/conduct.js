@@ -2,8 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import BlockContent from '@sanity/block-content-to-react';
 
+import styled from 'styled-components';
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
+
+const ConductWrapper = styled.div`
+  margin-top: 40px;
+`;
 
 const conduct = ({ data }) => {
   const content = data.allSanityCodeOfConduct.nodes[0]._rawContent;
@@ -11,8 +16,13 @@ const conduct = ({ data }) => {
 
   return (
     <Layout>
-      <SEO seo={seo} />
-      <BlockContent className="blockContent center-content" blocks={content} />
+      <ConductWrapper>
+        <SEO seo={seo} />
+        <BlockContent
+          className="blockContent center-content"
+          blocks={content}
+        />
+      </ConductWrapper>
     </Layout>
   );
 };

@@ -6,6 +6,7 @@ import SEO from '../components/Seo';
 import Speaker from '../components/Speaker';
 
 const PageStyles = styled.div`
+  margin-top: 40px;
   .wrapper {
     display: flex;
     flex-direction: column;
