@@ -19,7 +19,7 @@ const NavStyles = styled.nav`
     transform: translateY(-150%);
   }
 
-  .linkDiv {
+  a {
     color: #aaa;
     text-transform: uppercase;
     cursor: pointer;
@@ -87,7 +87,6 @@ const StyledLink = styled(GatsbyLink)`
 const Nav = ({ toggle }) => (
   <NavStyles>
     <div className={!toggle ? 'navDiv Close' : 'navDiv Open'}>
-      {/* <div className={!toggle ? 'navDiv' : 'is-active'}> */}
       <ul>
         <li>
           <StyledLink to="/">Home</StyledLink>
@@ -96,23 +95,23 @@ const Nav = ({ toggle }) => (
           <StyledLink to="/conference">Conferences</StyledLink>
         </li>
         <li>
-          <div
+          <a
             className="linkDiv"
             href="https://vi.to/hubs/utahjs-conference-series"
           >
             Tickets
-          </div>
+          </a>
         </li>
         <li>
           <StyledLink to="/conduct">Code of Conduct</StyledLink>
         </li>
         <li>
-          <div
+          <a
             className="linkDiv"
             href="https://teespring.com/utahjs-2020-online-series"
           >
             Merch
-          </div>
+          </a>
         </li>
         <li>
           <StyledLink to="/sponsor">Sponsor Us</StyledLink>
@@ -121,14 +120,14 @@ const Nav = ({ toggle }) => (
           <StyledLink to="/past-speakers">Past Speakers</StyledLink>
         </li>
         <li>
-          <div className="linkDiv" href="http://eepurl.com/hcwmDf">
+          <a className="linkDiv" href="http://eepurl.com/hcwmDf">
             Mailing List
-          </div>
+          </a>
         </li>
         <li>
-          <div className="linkDiv" href="http://slack.utahjs.com/">
+          <a className="linkDiv" href="http://slack.utahjs.com/">
             Slack
-          </div>
+          </a>
         </li>
       </ul>
     </div>
