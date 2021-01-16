@@ -42,6 +42,11 @@ const Wrapper = styled.div`
       font-size: 22px;
     }
   }
+  @media (min-width: 980px) {
+    .padding {
+      padding-top: 40px;
+    }
+  }
 
   @media (min-width: 768px) {
     .conference-info {
@@ -81,6 +86,7 @@ export default function conferencePage({ data }) {
     <Layout>
       <SEO seo={seo} />
       <Wrapper className="center-content">
+        <div className="padding" />
         <ConferenceHero />
         <div className="conference-info">
           <BlockContent blocks={conferenceContent.bodyContent} />

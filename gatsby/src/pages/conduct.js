@@ -7,7 +7,9 @@ import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 
 const ConductWrapper = styled.div`
-  margin-top: 40px;
+  @media (min-width: 980px) {
+    padding-top: 40px;
+  }
 `;
 
 const conduct = ({ data }) => {

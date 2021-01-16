@@ -6,7 +6,6 @@ import SEO from '../components/Seo';
 import Speaker from '../components/Speaker';
 
 const PageStyles = styled.div`
-  margin-top: 40px;
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -21,6 +20,11 @@ const PageStyles = styled.div`
     color: transparent;
     background: transparent;
     border: none;
+  }
+  @media (min-width: 980px) {
+    .padding {
+      padding-top: 40px;
+    }
   }
 `;
 
@@ -128,6 +132,7 @@ export default function SpeakersPage({ data }) {
     <Layout>
       <SEO seo={seo} />
       <PageStyles className="center-content">
+        <div className="padding" />
         <h1>{speakerYear} Speakers</h1>
         <p>
           <em>in alphabetical order</em>
