@@ -7,8 +7,6 @@ import Hamburger from './Hamburger';
 const Wrapper = styled.header`
   background: #2b2b2b;
   .header-content {
-    background: #2b2b2b;
-    padding-bottom: 30px;
     display: flex;
     justify-content: space-between;
     max-width: 1240px;
@@ -18,7 +16,7 @@ const Wrapper = styled.header`
     align-items: center;
     height: 100px;
     background: #2b2b2b;
-    padding: 20px 20px 0 20px;
+    padding: 20px 20px 30px 20px;
   }
 
   .gatsby-image-wrapper {
@@ -47,7 +45,9 @@ const Wrapper = styled.header`
     }
   }
   @media (min-width: 328px) {
-    padding-bottom: 0;
+    .header-content {
+      padding-bottom: 0;
+    }
   }
 `;
 
