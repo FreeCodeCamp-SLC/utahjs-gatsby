@@ -5,8 +5,10 @@ import Img from 'gatsby-image';
 import Hamburger from './Hamburger';
 
 const Wrapper = styled.header`
+  position: relative;
+  width: 100%;
+  z-index: 2;
   background: #2b2b2b;
-  padding-bottom: 30px;
   .header-content {
     display: flex;
     justify-content: space-between;
@@ -17,8 +19,9 @@ const Wrapper = styled.header`
     align-items: center;
     height: 100px;
     background: #2b2b2b;
-    padding: 20px 20px 0 20px;
+    padding: 20px 20px 30px 20px;
   }
+
   .gatsby-image-wrapper {
     margin-right: 20px;
   }
@@ -45,7 +48,9 @@ const Wrapper = styled.header`
     }
   }
   @media (min-width: 328px) {
-    padding-bottom: 0;
+    .header-content {
+      padding-bottom: 0;
+    }
   }
 `;
 

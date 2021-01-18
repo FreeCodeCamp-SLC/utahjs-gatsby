@@ -3,19 +3,35 @@ import { Link as GatsbyLink } from 'gatsby';
 import styled from 'styled-components';
 
 const NavStyles = styled.nav`
-  background-color: #000;
   .navDiv {
-    display: none;
+    width: 100%;
+    overflow-y: hidden;
+    background-color: #000;
+    position: absolute;
+    transition: transform 0.3s ease-out;
+    z-index: 1;
   }
-
-  .is-active {
-    display: initial;
+  .Open {
+    transform: translateY(0);
   }
-
+  .Close {
+    transform: translateY(-150%);
+  }
+  a {
+    color: #aaa;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 13px;
+    &:hover {
+      color: white;
+    }
+    @media (min-width: 1120px) {
+      font-size: 17px;
+    }
+  }
   ul {
     max-width: 1240px;
     margin: 0 auto;
-
     padding: 0 20px;
     list-style: none;
     display: flex;
@@ -42,7 +58,7 @@ const NavStyles = styled.nav`
   }
   @media (min-width: 980px) {
     .navDiv {
-      display: initial;
+      transform: translateY(0);
     }
     ul {
       flex-direction: row;
@@ -66,7 +82,7 @@ const StyledLink = styled(GatsbyLink)`
 `;
 const Nav = ({ toggle }) => (
   <NavStyles>
-    <div className={!toggle ? 'navDiv' : 'is-active'}>
+    <div className={!toggle ? 'navDiv Close' : 'navDiv Open'}>
       <ul>
         <li>
           <StyledLink to="/">Home</StyledLink>
@@ -75,17 +91,23 @@ const Nav = ({ toggle }) => (
           <StyledLink to="/conference">Conferences</StyledLink>
         </li>
         <li>
-          <StyledLink href="https://vi.to/hubs/utahjs-conference-series">
+          <a
+            className="linkDiv"
+            href="https://vi.to/hubs/utahjs-conference-series"
+          >
             Tickets
-          </StyledLink>
+          </a>
         </li>
         <li>
           <StyledLink to="/conduct">Code of Conduct</StyledLink>
         </li>
         <li>
-          <StyledLink href="https://teespring.com/utahjs-2020-online-series">
+          <a
+            className="linkDiv"
+            href="https://teespring.com/utahjs-2020-online-series"
+          >
             Merch
-          </StyledLink>
+          </a>
         </li>
         <li>
           <StyledLink to="/sponsor">Sponsor Us</StyledLink>
@@ -94,10 +116,14 @@ const Nav = ({ toggle }) => (
           <StyledLink to="/past-speakers">Past Speakers</StyledLink>
         </li>
         <li>
-          <StyledLink href="http://eepurl.com/hcwmDf">Mailing List</StyledLink>
+          <a className="linkDiv" href="http://eepurl.com/hcwmDf">
+            Mailing List
+          </a>
         </li>
         <li>
-          <StyledLink href="http://slack.utahjs.com/">Slack</StyledLink>
+          <a className="linkDiv" href="http://slack.utahjs.com/">
+            Slack
+          </a>
         </li>
       </ul>
     </div>
