@@ -116,8 +116,6 @@ const Nav = ({ toggle }) => {
     }
   `);
 
-  console.log(sanityNavigation);
-
   return (
     <NavStyles>
       <div className={!toggle ? 'navDiv Close' : 'navDiv Open'}>
