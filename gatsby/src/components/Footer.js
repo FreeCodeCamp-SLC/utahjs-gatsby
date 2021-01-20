@@ -5,35 +5,16 @@ const FooterStyles = styled.footer`
   background-color: #000;
   padding: 8px 0;
   width: 100%;
-  .center-content {
-    display: flex;
-    flex-direction: column;
+  p {
+    margin: 0;
+    line-height: 24px;
+    font-size: 16px;
+    color: #fff;
     text-align: center;
   }
-  .item {
-    margin: 0 10px;
-    line-height: 24px;
-    font-size: 14px;
-    color: #fff;
-    a {
-      text-decoration: underline;
-      color: #fff;
-    }
-    a:hover {
-      text-decoration: underline;
-      opacity: 0.8;
-    }
-    a.glyphicon,
-    a.glyphicon:hover {
-      color: #ccc;
-      text-decoration: none;
-      font-size: 12px;
-    }
-  }
   @media all and (min-width: 415px) {
-    .center-content {
+    p {
       text-align: left;
-      display: inline-block;
     }
   }
 `;
@@ -41,14 +22,7 @@ const FooterStyles = styled.footer`
 const Footer = () => (
   <FooterStyles>
     <div className="center-content">
-      <span className="item">© 2020 UtahJS</span>
-      <span className="item">
-        Built by{' '}
-        <a href="https://www.linkedin.com/in/barrowbrian/">Brian Barrow</a> and{' '}
-        <a href="https://kendsnyder.com" target="_blank" rel="noreferrer">
-          Ken Snyder
-        </a>
-      </span>
+      <p className="item">© 2020 UtahJS Built by FreeCodeCamp SLC</p>
     </div>
   </FooterStyles>
 );

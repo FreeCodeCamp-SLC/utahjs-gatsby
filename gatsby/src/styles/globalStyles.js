@@ -64,7 +64,7 @@ const GlobalStyles = createGlobalStyle`
   }
   main {
     background-color: #fff;
-    min-height: calc(100vh - 195px);
+    min-height: calc(100vh - 140px);
     text-align: center;
   }
   .center-it {
