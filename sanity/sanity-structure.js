@@ -6,6 +6,16 @@ export default () =>
     .title('Content')
     .items([
       S.listItem()
+        .title('Navigation')
+        .icon(icon)
+        .child(
+          S.editor()
+            .title('Navigation Editor')
+            .id('navigation')
+            .schemaType('navigation')
+            .documentId('singleton-navigation')
+        ),
+      S.listItem()
         .title('Home Page')
         .icon(icon)
         .child(
@@ -47,8 +57,12 @@ export default () =>
         ),
       ...S.documentTypeListItems().filter(
         (listItem) =>
-          !['home', 'conferencePage', 'codeOfConduct', 'sponsorUs'].includes(
-            listItem.getId()
-          )
+          ![
+            'navigation',
+            'home',
+            'conferencePage',
+            'codeOfConduct',
+            'sponsorUs',
+          ].includes(listItem.getId())
       ),
     ]);

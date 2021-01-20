@@ -11,6 +11,7 @@ import codeOfConduct from './codeOfConduct';
 import sponsorUs from './sponsorUs';
 import imageWithAlt from './imageWithAlt';
 import seo from './seo';
+import navigation from './navigation';
 import speakerUrls from './speakerUrls';
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -27,6 +28,7 @@ export default createSchema({
     codeOfConduct,
     sponsorUs,
     seo,
+    navigation,
     speakerUrls,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
