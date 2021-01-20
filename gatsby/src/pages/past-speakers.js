@@ -59,9 +59,11 @@ export default function SpeakersPage({ data }) {
     speakerUrls[yearUrl.year] = yearUrl.sessionizeUrl;
   });
 
+  const latestYear = data.speakerUrls.nodes[0].year;
+
   // states for which year's speakers we want to render
-  const [speakerUrl, setspeakerUrl] = useState(speakerUrls[2019]);
-  const [speakerYear, setspeakerYear] = useState(2019);
+  const [speakerUrl, setspeakerUrl] = useState(speakerUrls[latestYear]);
+  const [speakerYear, setspeakerYear] = useState(latestYear);
 
   // state for managing render of sessionize data
   const [error, setError] = useState(null);
@@ -152,7 +154,7 @@ export default function SpeakersPage({ data }) {
 
 export const query = graphql`
   query {
-    speakerUrls: allSanitySpeakerUrls {
+    speakerUrls: allSanitySpeakerUrls(sort: { fields: year, order: DESC }) {
       nodes {
         sessionizeUrl
         year
