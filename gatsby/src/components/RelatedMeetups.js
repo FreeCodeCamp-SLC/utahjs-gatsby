@@ -115,7 +115,7 @@ const RelatedMeetups = () => {
             className="sister-img"
             backgroundColor="white"
             fixed={data.angular.fixed}
-            alt=""
+            alt="Angular"
           />
           <span className="sister-name">{text.angularAnchorText}</span>
         </a>
@@ -125,7 +125,7 @@ const RelatedMeetups = () => {
           rel="noreferrer"
           className="sister"
         >
-          <Img className="sister-img" fixed={data.lunch.fixed} alt="" />
+          <Img className="sister-img" fixed={data.lunch.fixed} alt="Lunch.JS" />
           <span className="sister-name">{text.lunchAnchorText}</span>
         </a>
         <a
@@ -138,7 +138,7 @@ const RelatedMeetups = () => {
             className="sister-img"
             imgStyle={{ filter: 'brightness(1.2)' }}
             fixed={data.node.fixed}
-            alt="utah node"
+            alt="NodeJS SLC"
           />
           <span className="sister-name">{text.nodeAnchorText}</span>
         </a>
@@ -164,7 +164,7 @@ const RelatedMeetups = () => {
           rel="noreferrer"
           className="sister"
         >
-          <Img className="sister-img" fixed={data.ember.fixed} alt="" />
+          <Img className="sister-img" fixed={data.ember.fixed} alt="Ember.js" />
           <span className="sister-name">{text.emberAnchorText}</span>
         </a>
         <a
@@ -173,7 +173,7 @@ const RelatedMeetups = () => {
           rel="noreferrer"
           className="sister"
         >
-          <Img className="sister-img" fixed={data.ionic.fixed} alt="" />
+          <Img className="sister-img" fixed={data.ionic.fixed} alt="Ionic" />
           <span className="sister-name">{text.ionicAnchorText}</span>
         </a>
       </div>
@@ -184,7 +184,7 @@ const RelatedMeetups = () => {
           rel="noreferrer"
           className="sister"
         >
-          <Img className="sister-img" fixed={data.vue.fixed} alt="" />
+          <Img className="sister-img" fixed={data.vue.fixed} alt="Vue.js" />
           <span className="sister-name">{text.vueAnchorText}</span>
         </a>
         <a
@@ -193,7 +193,11 @@ const RelatedMeetups = () => {
           rel="noreferrer"
           className="sister"
         >
-          <Img className="sister-img" fixed={data.downtown.fixed} alt="" />
+          <Img
+            className="sister-img"
+            fixed={data.downtown.fixed}
+            alt="Downtown Coding"
+          />
           <span className="sister-name">{text.downtownCodingAnchorText}</span>
         </a>
       </div>
