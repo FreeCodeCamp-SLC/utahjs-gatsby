@@ -1,7 +1,10 @@
+import { GiHamburgerMenu as icon } from 'react-icons/gi';
+
 export default {
   name: 'navigation',
   title: 'Navigation',
   type: 'document',
+  icon,
   fields: [
     {
       name: 'link_text',
