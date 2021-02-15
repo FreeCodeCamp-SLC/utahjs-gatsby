@@ -90,7 +90,6 @@ const Nav = ({ toggle }) => {
           internal_link
           external_link
           new_tab
-          no_follow
           order
         }
       }
