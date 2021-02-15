@@ -30,12 +30,14 @@ export default {
       name: 'new_tab',
       title: 'Open in new tab',
       type: 'boolean',
-      description: 'Read https://css-tricks.com/use-target_blank/',
+      description: 'This will open the link in a new tab if turned on.',
     },
     {
       name: 'order',
       title: 'Order',
       type: 'number',
+      description:
+        'This will determine the order the links appear in the navbar',
     },
   ],
   orderings: [
