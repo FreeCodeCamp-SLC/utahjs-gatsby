@@ -33,12 +33,6 @@ export default {
       description: 'Read https://css-tricks.com/use-target_blank/',
     },
     {
-      name: 'no_follow',
-      title: 'No follow',
-      type: 'boolean',
-      description: 'Make this link no follow',
-    },
-    {
       name: 'order',
       title: 'Order',
       type: 'number',
