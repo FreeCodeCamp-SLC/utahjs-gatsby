@@ -97,7 +97,6 @@ const Nav = ({ toggle }) => {
     }
   `);
   const navArray = allSanityNavigation.nodes;
-  console.log(navArray);
 
   return (
     <NavStyles>
