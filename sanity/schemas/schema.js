@@ -24,11 +24,11 @@ export default createSchema({
     // in the studio.
     home,
     singletonConference,
-    speaker,
     codeOfConduct,
     sponsorUs,
     seo,
     navigation,
+    speaker,
     speakerUrls,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
