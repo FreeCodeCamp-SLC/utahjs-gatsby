@@ -1,7 +1,10 @@
+import { GrOptimize as icon } from 'react-icons/gr';
+
 export default {
   name: 'seo',
   title: 'SEO',
   type: 'document',
+  icon,
   fields: [
     {
       name: 'page',
