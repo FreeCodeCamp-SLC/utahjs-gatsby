@@ -49,5 +49,13 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: '@sentry/gatsby',
+      options: {
+        dsn:
+          'https://be0a2dc3017040a89747b71bd6387245@o524884.ingest.sentry.io/5638095',
+        sampleRate: 0.7,
+      },
+    },
   ],
 };
