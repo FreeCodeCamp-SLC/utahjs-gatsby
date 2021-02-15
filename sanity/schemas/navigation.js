@@ -4,157 +4,60 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'link_1_text',
-      title: 'Link 1 Text',
+      name: 'link_text',
+      title: 'Link Text',
       type: 'string',
     },
     {
-      name: 'link_1_url',
-      title: 'Link 1 URL',
-      type: 'string',
+      name: 'internal_link',
+      title: 'Internal Link',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.uri({
+          allowRelative: true,
+        }),
     },
     {
-      name: 'link_1_target',
-      title: 'Link 1 Target Property',
-      type: 'string',
+      name: 'external_link',
+      title: 'External Link',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.uri({
+          schema: ['http', 'https'],
+        }),
+    },
+    {
+      name: 'new_tab',
+      title: 'Open in new tab',
+      type: 'boolean',
+      description: 'This will open the link in a new tab if turned on.',
+    },
+    {
+      name: 'order',
+      title: 'Order',
+      type: 'number',
       description:
-        'Type _blank below to open in a new tab, otherwise leave it blank for the default behavior.',
-    },
-    {
-      name: 'link_2_text',
-      title: 'Link 2 Text',
-      type: 'string',
-    },
-    {
-      name: 'link_2_url',
-      title: 'Link 2 URL',
-      type: 'string',
-    },
-    {
-      name: 'link_2_target',
-      title: 'Link 2 Target Property',
-      type: 'string',
-      description:
-        'Type _blank below to open in a new tab, otherwise leave it blank for the default behavior.',
-    },
-    {
-      name: 'link_3_text',
-      title: 'Link 3 Text',
-      type: 'string',
-    },
-    {
-      name: 'link_3_url',
-      title: 'Link 3 URL',
-      type: 'string',
-    },
-    {
-      name: 'link_3_target',
-      title: 'Link 3 Target Property',
-      type: 'string',
-      description:
-        'Type _blank below to open in a new tab, otherwise leave it blank for the default behavior.',
-    },
-    {
-      name: 'link_4_text',
-      title: 'Link 4 Text',
-      type: 'string',
-    },
-    {
-      name: 'link_4_url',
-      title: 'Link 4 URL',
-      type: 'string',
-    },
-    {
-      name: 'link_4_target',
-      title: 'Link 4 Target Property',
-      type: 'string',
-      description:
-        'Type _blank below to open in a new tab, otherwise leave it blank for the default behavior.',
-    },
-    {
-      name: 'link_5_text',
-      title: 'Link 5 Text',
-      type: 'string',
-    },
-    {
-      name: 'link_5_url',
-      title: 'Link 5 URL',
-      type: 'string',
-    },
-    {
-      name: 'link_5_target',
-      title: 'Link 5 Target Property',
-      type: 'string',
-      description:
-        'Type _blank below to open in a new tab, otherwise leave it blank for the default behavior.',
-    },
-    {
-      name: 'link_6_text',
-      title: 'Link 6 Text',
-      type: 'string',
-    },
-    {
-      name: 'link_6_url',
-      title: 'Link 6 URL',
-      type: 'string',
-    },
-    {
-      name: 'link_6_target',
-      title: 'Link 6 Target Property',
-      type: 'string',
-      description:
-        'Type _blank below to open in a new tab, otherwise leave it blank for the default behavior.',
-    },
-    {
-      name: 'link_7_text',
-      title: 'Link 7 Text',
-      type: 'string',
-    },
-    {
-      name: 'link_7_url',
-      title: 'Link 7 URL',
-      type: 'string',
-    },
-    {
-      name: 'link_7_target',
-      title: 'Link 7 Target Property',
-      type: 'string',
-      description:
-        'Type _blank below to open in a new tab, otherwise leave it blank for the default behavior.',
-    },
-    {
-      name: 'link_8_text',
-      title: 'Link 8 Text',
-      type: 'string',
-    },
-    {
-      name: 'link_8_url',
-      title: 'Link 8 URL',
-      type: 'string',
-    },
-    {
-      name: 'link_8_target',
-      title: 'Link 8 Target Property',
-      type: 'string',
-      description:
-        'Type _blank below to open in a new tab, otherwise leave it blank for the default behavior.',
-    },
-    {
-      name: 'link_9_text',
-      title: 'Link 9 Text',
-      type: 'string',
-    },
-    {
-      name: 'link_9_url',
-      title: 'Link 9 URL',
-      type: 'string',
-    },
-    {
-      name: 'link_9_target',
-      title: 'Link 9 Target Property',
-      type: 'string',
-      description:
-        'Type _blank below to open in a new tab, otherwise leave it blank for the default behavior.',
+        'This will determine the order the links appear in the navbar',
     },
   ],
+  orderings: [
+    {
+      title: 'Order',
+      name: 'Order',
+      by: [{ field: 'order', direction: 'asc' }],
+    },
+  ],
+  preview: {
+    select: {
+      title: 'link_text',
+      subtitle: 'order',
+    },
+    prepare: ({ title, subtitle }) => {
+      const order = `Order: ${subtitle}`;
+      return {
+        title,
+        subtitle: order,
+      };
+    },
+  },
 };
