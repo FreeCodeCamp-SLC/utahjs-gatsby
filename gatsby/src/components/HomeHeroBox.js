@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 
@@ -81,7 +80,14 @@ const HeroBox = () => {
           heroHeader
           heroSubtext1
           heroSubtext2
-          slackUrl
+          heroButtonOneText
+          heroButtonOneInternalLink
+          heroButtonOneExternalLink
+          heroButtonOneNewTab
+          heroButtonTwoText
+          heroButtonTwoInternalLink
+          heroButtonTwoExternalLink
+          heroButtonTwoNewTab
         }
       }
       image: sanityImageAsset(
@@ -96,6 +102,57 @@ const HeroBox = () => {
     }
   `);
   const text = data.text.nodes[0];
+
+  let buttonOne = null;
+  if (text.heroButtonOneInternalLink !== null) {
+    buttonOne = (
+      <Link
+        to={`/${text.heroButtonOneInternalLink}`}
+        rel="noreferrer"
+        target={text.heroButtonOneNewTab === true ? '_blank' : ''}
+        className="btn yellow"
+      >
+        {text.heroButtonOneText}
+      </Link>
+    );
+  } else {
+    buttonOne = (
+      <a
+        href={text.heroButtonOneExternalLink}
+        rel="noreferrer"
+        target={text.heroButtonOneNewTab === true ? '_blank' : ''}
+        className="btn yellow"
+      >
+        {text.heroButtonOneText}
+      </a>
+    );
+  }
+
+  let buttonTwo = null;
+  if (text.heroButtonTwoInternalLink !== null) {
+    buttonTwo = (
+      <Link
+        to={`/${text.heroButtonTwoInternalLink}`}
+        rel="noreferrer"
+        target={text.heroButtonTwoNewTab === true ? '_blank' : ''}
+        className="btn green"
+      >
+        {text.heroButtonOneText}
+      </Link>
+    );
+  } else {
+    buttonTwo = (
+      <a
+        href={text.heroButtonTwoExternalLink}
+        rel="noreferrer"
+        target={text.heroButtonTwoNewTab === true ? '_blank' : ''}
+        className="btn green"
+      >
+        {text.heroButtonTwoText}
+      </a>
+    );
+  }
+
   return (
     <HeroBoxStyles>
       <div>
@@ -105,12 +162,8 @@ const HeroBox = () => {
         <h2>{text.heroHeader}</h2>
         <p className="hero_subtext">{text.heroSubtext1}</p>
         <p className="hero_subtext">{text.heroSubtext2}</p>
-        <Button className="btn yellow" href="/conference">
-          Conference
-        </Button>
-        <Button className="btn green" href={text.slackUrl}>
-          Join Slack
-        </Button>
+        {buttonOne}
+        {buttonTwo}
       </div>
     </HeroBoxStyles>
   );
