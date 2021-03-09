@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'normalize.css';
-import GlobalStyles from '../styles/globalStyles';
+import GlobalStyles from '../../styles/globalStyles';
 import Header from './Header';
 import Nav from './Nav';
 import Footer from './Footer';

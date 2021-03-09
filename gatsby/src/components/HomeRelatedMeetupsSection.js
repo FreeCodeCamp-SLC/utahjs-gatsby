@@ -1,6 +1,32 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
+
 import Img from 'gatsby-image';
+
+export const RelatedMeetupsStyles = styled.section`
+  .sisters {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .sister {
+    flex: 100px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .sister-img,
+  .sister-name {
+    display: block;
+    margin: 0 auto;
+  }
+  .sister-name {
+    margin-top: 5px;
+  }
+`;
 
 const RelatedMeetups = () => {
   const data = useStaticQuery(graphql`
@@ -100,7 +126,7 @@ const RelatedMeetups = () => {
   `);
   const text = data.text.nodes[0];
   return (
-    <section>
+    <RelatedMeetupsStyles>
       <h2 id="Meetups" className="center-it">
         {text.otherMeetupHeader}
       </h2>
@@ -201,7 +227,7 @@ const RelatedMeetups = () => {
           <span className="sister-name">{text.downtownCodingAnchorText}</span>
         </a>
       </div>
-    </section>
+    </RelatedMeetupsStyles>
   );
 };
 
