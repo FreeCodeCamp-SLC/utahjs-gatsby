@@ -2,7 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-import HeroBox from './HeroBox';
+import HeroBox from './HomeHeroBox';
 
 // In order to use gatsby-image and its benefits the background image is
 // queried with GraphQL then fed to an Img component. The component is then

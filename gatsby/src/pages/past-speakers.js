@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import Layout from '../components/Layout';
+import Layout from '../components/layout/Layout';
 import SEO from '../components/Seo';
 import Speaker from '../components/Speaker';
 

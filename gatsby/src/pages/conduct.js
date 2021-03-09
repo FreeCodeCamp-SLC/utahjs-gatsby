@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import BlockContent from '@sanity/block-content-to-react';
 
 import styled from 'styled-components';
-import Layout from '../components/Layout';
+import Layout from '../components/layout/Layout';
 import SEO from '../components/Seo';
 
 const ConductWrapper = styled.div`
