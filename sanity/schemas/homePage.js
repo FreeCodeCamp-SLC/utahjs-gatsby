@@ -14,6 +14,22 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'HeroBgImage',
+      title: 'Hero Background Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'heroImage',
+      title: 'Hero Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
       title: 'Hero Header',
       name: 'heroHeader',
       type: 'string',
@@ -32,20 +48,62 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'heroImage',
-      title: 'Hero Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      title: 'Hero Button 1 Text',
+      name: 'heroButtonOneText',
+      type: 'string',
     },
     {
-      name: 'HeroBgImage',
-      title: 'Hero Background Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      title: 'Hero Button 1 Internal Link',
+      name: 'heroButtonOneInternalLink',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.uri({
+          allowRelative: true,
+        }),
+    },
+    {
+      title: 'Hero Button 1 External Link',
+      name: 'heroButtonOneExternalLink',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.uri({
+          schema: ['http', 'https'],
+        }),
+    },
+    {
+      title: 'Open Hero Button 1 New Tab',
+      name: 'heroButtonOneNewTab',
+      type: 'boolean',
+      description: 'This will open the link in a new tab if turned on.',
+    },
+    {
+      title: 'Hero Button 2 Text',
+      name: 'heroButtonTwoText',
+      type: 'string',
+    },
+    {
+      title: 'Hero Button 2 Internal Link',
+      name: 'heroButtonTwoInternalLink',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.uri({
+          allowRelative: true,
+        }),
+    },
+    {
+      title: 'Hero Button 2 External Link',
+      name: 'heroButtonTwoExternalLink',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.uri({
+          schema: ['http', 'https'],
+        }),
+    },
+    {
+      title: 'Open Hero Button 2 New Tab',
+      name: 'heroButtonTwoNewTab',
+      type: 'boolean',
+      description: 'This will open the link in a new tab if turned on.',
     },
     {
       title: 'Other Meetup Header',
