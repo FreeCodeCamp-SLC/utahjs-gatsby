@@ -108,132 +108,62 @@ export const GetInvolvedStyles = styled.section`
 `;
 
 export default function GetInvolvedSection() {
-  const data = useStaticQuery(graphql`
+  const { allSanityHomeGetInvolved } = useStaticQuery(graphql`
     query {
-      allSanityHome {
+      allSanityHomeGetInvolved(sort: { order: ASC, fields: order }) {
         nodes {
-          contentHeader
-          slackUrl
-          merchUrl
-          emailUrl
-          lehiUrl
-          SLCUrl
-          ogdenUrl
-          linkedInUrl
-          twitterUrl
-          videosUrl
-          _rawConferencesText(resolveReferences: { maxDepth: 10 })
-          _rawEmailText(resolveReferences: { maxDepth: 10 })
-          _rawLearnersText(resolveReferences: { maxDepth: 10 })
-          _rawLehiText(resolveReferences: { maxDepth: 10 })
-          _rawMerchText(resolveReferences: { maxDepth: 10 })
-          _rawOgdenText(resolveReferences: { maxDepth: 10 })
-          _rawLinkedIn(resolveReferences: { maxDepth: 10 })
-          _rawSlackText(resolveReferences: { maxDepth: 10 })
-          _rawSlcText(resolveReferences: { maxDepth: 10 })
-          _rawTwitterText(resolveReferences: { maxDepth: 10 })
-          _rawVideosText(resolveReferences: { maxDepth: 10 })
+          link_text
+          internal_link
+          external_link
+          new_tab
+          _rawText
+          order
         }
       }
     }
   `);
-  const homeData = data.allSanityHome.nodes[0];
+  const getInvolvedArray = allSanityHomeGetInvolved.nodes;
 
   return (
     <GetInvolvedStyles>
       <h2 id="GetInvolved" className="center-it">
-        {homeData.contentHeader}
+        Get involved in JavaScript in Utah
       </h2>
       <dl className="ways-to-participate clearfix">
-        <dt>
-          <Link to="/conference" className="btn btn-participate">
-            Conferences
-          </Link>
-        </dt>
-        <dd>
-          <BlockContent blocks={homeData._rawConferencesText} />
-        </dd>
-        <dt>
-          <a href={homeData.slackUrl} className="btn btn-participate">
-            Join Slack
-          </a>
-        </dt>
-        <dd>
-          <BlockContent blocks={homeData._rawSlackText} />
-        </dd>
-        <dt>
-          <a href={homeData.merchUrl} className="btn btn-participate">
-            Buy Merch
-          </a>
-        </dt>
-        <dd>
-          <BlockContent blocks={homeData._rawMerchText} />
-        </dd>
-        <dt>
-          <a href={homeData.emailUrl} className="btn btn-participate">
-            Event Email
-          </a>
-        </dt>
-        <dd>
-          <BlockContent blocks={homeData._rawEmailText} />
-        </dd>
-        <dt>
-          <a href={homeData.lehiUrl} className="btn btn-participate">
-            Lehi Meetup
-          </a>
-        </dt>
-        <dd>
-          <BlockContent blocks={homeData._rawLehiText} />
-        </dd>
-        <dt>
-          <a href={homeData.SLCUrl} className="btn btn-participate">
-            SLC Meetup
-          </a>
-        </dt>
-        <dd>
-          <BlockContent blocks={homeData._rawSlcText} />
-        </dd>
-
-        <dt>
-          <a href={homeData.ogdenUrl} className="btn btn-participate">
-            Ogden Meetup
-          </a>
-        </dt>
-        <dd>
-          <BlockContent blocks={homeData._rawOgdenText} />
-        </dd>
-        <dt>
-          <a href={homeData.learnersUrl} className="btn btn-participate">
-            Learners Meetup
-          </a>
-        </dt>
-        <dd>
-          <BlockContent blocks={homeData._rawLearnersText} />
-        </dd>
-        <dt>
-          <a href={homeData.linkedInUrl} className="btn btn-participate">
-            LinkedIn
-          </a>
-        </dt>
-        <dd>
-          <BlockContent blocks={homeData._rawLinkedIn} />
-        </dd>
-        <dt>
-          <a href={homeData.twitterUrl} className="btn btn-participate">
-            Twitter
-          </a>
-        </dt>
-        <dd>
-          <BlockContent blocks={homeData._rawTwitterText} />
-        </dd>
-        <dt>
-          <a href={homeData.videosUrl} className="btn btn-participate">
-            Videos
-          </a>
-        </dt>
-        <dd>
-          <BlockContent blocks={homeData._rawVideosText} />
-        </dd>
+        {getInvolvedArray.map((item, id) =>
+          item.internal_link !== null ? (
+            <>
+              <dt key={id}>
+                <Link
+                  to={`/${item.internal_link}`}
+                  target={item.new_tab === true ? '_blank' : ''}
+                  rel="noreferrer"
+                  className="btn btn-participate"
+                >
+                  {item.link_text}
+                </Link>
+              </dt>
+              <dd>
+                <BlockContent blocks={item._rawText} />
+              </dd>
+            </>
+          ) : (
+            <>
+              <dt key={id}>
+                <a
+                  href={item.external_link}
+                  target={item.new_tab === true ? '_blank' : ''}
+                  className="btn btn-participate"
+                >
+                  {item.link_text}
+                </a>
+              </dt>
+              <dd>
+                <BlockContent blocks={item._rawText} />
+              </dd>
+            </>
+          )
+        )}
       </dl>
     </GetInvolvedStyles>
   );
