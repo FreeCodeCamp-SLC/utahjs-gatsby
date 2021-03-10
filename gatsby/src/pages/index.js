@@ -78,6 +78,16 @@ export const HomeStyles = styled.div`
       font-weight: 500;
     }
   }
+  .info > p > a {
+    color: #2095f2;
+    text-decoration: none;
+  }
+  .info > p > a:hover,
+  .info > p > a:focus,
+  .info > p > a:visited {
+    color: #2095f2;
+    text-decoration: none;
+  }
 `;
 
 export default function IndexPage({ data }) {
@@ -91,7 +101,7 @@ export default function IndexPage({ data }) {
         <div className="center-content">
           <GetInvolved />
           <RelatedMeetups />
-          <section>
+          <section className="info">
             <BlockContent blocks={homeData._rawFooter} />
           </section>
         </div>
