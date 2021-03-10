@@ -37,6 +37,12 @@ export const GetInvolvedStyles = styled.section`
     font-weight: 600;
     color: #ffffff;
   }
+  a:hover,
+  a:focus,
+  a:visited {
+    text-decoration: none;
+  }
+
   p > a {
     color: #2095f2;
     font-weight: 600;
