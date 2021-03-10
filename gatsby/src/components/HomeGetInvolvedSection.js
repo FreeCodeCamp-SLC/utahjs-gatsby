@@ -8,101 +8,94 @@ export const GetInvolvedStyles = styled.section`
   background-color: #222;
   border-radius: 8px;
   padding: 20px;
+  .flexBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  h2 {
+    text-align: center;
+  }
   p {
-    padding-bottom: 0.25em;
+    margin-bottom: 40px;
   }
-  .btn,
-  .btn:visited {
-    font-weight: 400;
-    text-transform: uppercase;
-    color: #fff;
-  }
-  .btn:hover {
-    opacity: 0.82;
-    color: #fff;
-  }
-  .btn-participate {
-    width: 180px;
+  button {
+    min-width: 180px;
+    max-width: 180px;
+    height: 40px;
     font-size: 16px;
     text-align: center;
     margin-bottom: 8px;
+    margin-right: 25px;
     white-space: nowrap;
-    padding: 8px 12px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: none;
   }
-  .hero-buttons .btn:nth-child(1) {
+  a {
+    font-weight: 600;
+    color: #ffffff;
+  }
+  a:hover,
+  a:focus,
+  a:visited {
+    text-decoration: none;
+  }
+
+  p > a {
+    color: #2095f2;
+    font-weight: 600;
+  }
+  .btnNum0,
+  .aNum0 {
     background-color: #f6e05a;
-    color: #333;
+    color: #333333;
   }
-  .hero-buttons .btn:nth-child(2) {
+  .btnNum1,
+  .aNum1 {
     background-color: #0fa513;
   }
-  .ways-to-participate dt:nth-child(14n + 1) .btn {
-    background-color: #f6e05a;
-    color: #333;
-  }
-  .ways-to-participate dt:nth-child(14n + 3) .btn {
-    background-color: #0fa513;
-  }
-  .ways-to-participate dt:nth-child(14n + 5) .btn {
+  .btnNum2,
+  .aNum2 {
     background-color: #2095f2;
   }
-  .ways-to-participate dt:nth-child(14n + 7) .btn {
+  .btnNum3,
+  .aNum3 {
     background-color: #6516d9;
   }
-  .ways-to-participate dt:nth-child(14n + 9) .btn {
+  .btnNum4,
+  .aNum4 {
     background-color: #b113ba;
   }
-  .ways-to-participate dt:nth-child(14n + 11) .btn {
+  .btnNum5,
+  .aNum5 {
     background-color: #e81d62;
   }
-  .ways-to-participate dt:nth-child(14n + 13) .btn {
+  .btnNum6,
+  .aNum6 {
     background-color: #fe5621;
   }
-  .ways-to-participate {
-    padding-bottom: 0;
+  .btnNum7,
+  .aNum7 {
+    background-color: #f6e05a;
+    color: #333333;
   }
-  dl.ways-to-participate dt {
-    float: left;
-    clear: both;
-    width: 140px;
+  .btnNum8,
+  .aNum8 {
+    background-color: #0fa513;
   }
-  dl.ways-to-participate dd {
-    height: 90px;
-    float: right;
-    max-width: 425px;
+  .btnNum9,
+  .aNum9 {
+    background-color: #2095f2;
   }
-  dt,
-  dd {
-    line-height: 1.42857143;
-  }
-  dd {
-    margin-bottom: 0;
-  }
-  b,
-  strong,
-  legend,
-  label,
-  button,
-  th,
-  dt {
-    font-weight: 500;
-  }
-  a,
-  a:hover,
-  a:visited {
-    color: #2095f2;
-  }
-  @media (max-width: 665px) {
-    dl.ways-to-participate dt {
-      float: none;
-      text-align: center;
-      width: auto;
+  @media (min-width: 550px) {
+    .flexBox {
+      flex-direction: row;
+      text-align: left;
     }
-    dl.ways-to-participate dd {
-      float: none;
-      width: 100%;
-      margin: 10px auto;
-      text-align: center;
+    button {
+      margin-bottom: 40px;
     }
   }
 `;
@@ -123,48 +116,43 @@ export default function GetInvolvedSection() {
     }
   `);
   const getInvolvedArray = allSanityHomeGetInvolved.nodes;
-
   return (
     <GetInvolvedStyles>
-      <h2 id="GetInvolved" className="center-it">
-        Get involved in JavaScript in Utah
-      </h2>
-      <dl className="ways-to-participate clearfix">
+      <h2>Get involved in JavaScript in Utah</h2>
+      <div>
         {getInvolvedArray.map((item, id) =>
           item.internal_link !== null ? (
-            <>
-              <dt key={id}>
+            <div className="flexBox" key={`link${id}`}>
+              <button className={`btnNum${id}`} type="button">
                 <Link
                   to={`/${item.internal_link}`}
                   target={item.new_tab === true ? '_blank' : ''}
                   rel="noreferrer"
-                  className="btn btn-participate"
+                  className={`aNum${id}`}
                 >
                   {item.link_text}
                 </Link>
-              </dt>
-              <dd>
-                <BlockContent blocks={item._rawText} />
-              </dd>
-            </>
+              </button>
+
+              <BlockContent blocks={item._rawText} />
+            </div>
           ) : (
-            <>
-              <dt key={id}>
+            <div className="flexBox" key={`link${id}`}>
+              <button className={`btnNum${id}`} type="button">
                 <a
                   href={item.external_link}
                   target={item.new_tab === true ? '_blank' : ''}
-                  className="btn btn-participate"
+                  className={`aNum${id}`}
                 >
                   {item.link_text}
                 </a>
-              </dt>
-              <dd>
-                <BlockContent blocks={item._rawText} />
-              </dd>
-            </>
+              </button>
+
+              <BlockContent className="blockContent" blocks={item._rawText} />
+            </div>
           )
         )}
-      </dl>
+      </div>
     </GetInvolvedStyles>
   );
 }

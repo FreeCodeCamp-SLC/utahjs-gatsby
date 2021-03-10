@@ -10,6 +10,13 @@ const SponsorWrapper = styled.div`
   @media (min-width: 980px) {
     padding-top: 40px;
   }
+  a,
+  a:hover,
+  a:focus,
+  a:visited {
+    color: #ff9000;
+    text-decoration: none;
+  }
 `;
 
 const SponsorPage = ({ data }) => {

@@ -52,16 +52,6 @@ const GlobalStyles = createGlobalStyle`
   dt {
     font-weight: 700;
   }
-  a {
-	color: #ff9000;
-  text-decoration: none;
-  }
-  a:hover,
-  a:focus,
-  a:visited {
-    color: #ff9000;
-    text-decoration: none;
-  }
   main {
     background-color: #fff;
     min-height: calc(100vh - 140px);

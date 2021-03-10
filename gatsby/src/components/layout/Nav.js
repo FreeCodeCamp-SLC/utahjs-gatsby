@@ -25,7 +25,9 @@ const NavStyles = styled.nav`
     font-size: 13px;
     &:hover {
       color: white;
+      text-decoration: none;
     }
+
     @media (min-width: 1120px) {
       font-size: 17px;
     }

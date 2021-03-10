@@ -26,6 +26,13 @@ export const RelatedMeetupsStyles = styled.section`
   .sister-name {
     margin-top: 5px;
   }
+  a,
+  a:hover,
+  a:focus,
+  a:visited {
+    color: #2095f2;
+    text-decoration: none;
+  }
 `;
 
 const RelatedMeetups = () => {
