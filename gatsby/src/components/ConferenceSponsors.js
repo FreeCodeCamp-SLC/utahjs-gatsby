@@ -32,39 +32,33 @@ const Wrapper = styled.div`
 const Sponsors = () => {
   const data = useStaticQuery(graphql`
     query {
-      workfront: file(relativePath: { eq: "workfront.png" }) {
-        childImageSharp {
-          fixed(height: 32, width: 185) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      auth: file(relativePath: { eq: "auth.png" }) {
-        childImageSharp {
-          fixed(height: 54, width: 150) {
-            ...GatsbyImageSharpFixed
+      allSanitySponsors {
+        nodes {
+          altText
+          sponsorUrl
+          sponsor {
+            asset {
+              fixed(width: 185) {
+                ...GatsbySanityImageFixed
+              }
+            }
           }
         }
       }
     }
   `);
-
   return (
     <Wrapper>
       <h2>Thank you to our 2020 sponsors!</h2>
       <div className="wrapper">
-        <div className="spacer">
-          <a href="https://www.workfront.com/">
-            <Img
-              fixed={data.workfront.childImageSharp.fixed}
-              alt="workfront logo"
-            />
-          </a>
-        </div>
-        <br />
-        <a href="https://www.authO.com/">
-          <Img fixed={data.auth.childImageSharp.fixed} alt="authO logo" />
-        </a>
+        {data.allSanitySponsors.nodes.map((sponsor) => (
+          <div className="spacer">
+            <a href={sponsor.sponsorUrl}>
+              <Img fixed={sponsor.sponsor.asset.fixed} alt={sponsor.altText} />
+            </a>
+            <br />
+          </div>
+        ))}
       </div>
     </Wrapper>
   );
