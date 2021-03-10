@@ -53,13 +53,13 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 700;
   }
   a {
-	color: #ff9000;
+  color: #2095f2;
   text-decoration: none;
   }
   a:hover,
   a:focus,
   a:visited {
-    color: #ff9000;
+    color: #2095f2
     text-decoration: none;
   }
   main {

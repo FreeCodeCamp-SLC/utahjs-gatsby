@@ -77,11 +77,6 @@ export const HomeStyles = styled.div`
     dt {
       font-weight: 500;
     }
-    a,
-    a:hover,
-    a:visited {
-      color: #2095f2;
-    }
   }
 `;
 
