@@ -78,10 +78,7 @@ export const HomeStyles = styled.div`
       font-weight: 500;
     }
   }
-  .info > p > a {
-    color: #2095f2;
-    text-decoration: none;
-  }
+  .info > p > a,
   .info > p > a:hover,
   .info > p > a:focus,
   .info > p > a:visited {

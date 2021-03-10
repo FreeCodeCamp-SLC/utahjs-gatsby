@@ -10,10 +10,7 @@ const SponsorWrapper = styled.div`
   @media (min-width: 980px) {
     padding-top: 40px;
   }
-  a {
-    color: #ff9000;
-    text-decoration: none;
-  }
+  a,
   a:hover,
   a:focus,
   a:visited {
