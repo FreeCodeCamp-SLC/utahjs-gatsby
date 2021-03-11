@@ -18,7 +18,7 @@ const Wrapper = styled.div`
     align-items: center;
   }
   .spacer {
-    margin-top: 10px;
+    margin-top: 20px;
   }
   @media (min-width: 768px) {
     align-items: center;
