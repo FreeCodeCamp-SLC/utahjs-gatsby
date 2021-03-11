@@ -36,6 +36,7 @@ export const GetInvolvedStyles = styled.section`
   a {
     font-weight: 600;
     color: #ffffff;
+    letter-spacing: 0.6px;
   }
   a:hover,
   a:focus,

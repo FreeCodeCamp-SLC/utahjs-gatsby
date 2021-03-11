@@ -14,6 +14,7 @@ import seo from './seo';
 import navigation from './navigation';
 import getInvolved from './homeGetInvolved';
 import speakerUrls from './speakerUrls';
+import sponsors from './sponsors';
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -32,6 +33,7 @@ export default createSchema({
     getInvolved,
     speaker,
     speakerUrls,
+    sponsors,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     imageWithAlt,
