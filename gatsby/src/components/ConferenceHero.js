@@ -148,17 +148,69 @@ export default function ConferenceHero() {
         }
         title
         subTitle
-        sponsorTitle
-        bodyContent {
-          children {
-            text
-          }
-          _type
-          _key
-        }
+        heroButtonOneText
+        heroButtonOneInternalLink
+        heroButtonOneExternalLink
+        heroButtonOneNewTab
+        heroButtonTwoText
+        heroButtonTwoInternalLink
+        heroButtonTwoExternalLink
+        heroButtonTwoNewTab
       }
     }
   `);
+
+  const text = data.sanityConferencePage;
+
+  let buttonOne = null;
+  if (text.heroButtonOneInternalLink !== null) {
+    buttonOne = (
+      <Link
+        to={`/${text.heroButtonOneInternalLink}`}
+        rel="noreferrer"
+        target={text.heroButtonOneNewTab === true ? '_blank' : ''}
+        className="btn btn-primary"
+      >
+        {text.heroButtonOneText}
+      </Link>
+    );
+  } else {
+    buttonOne = (
+      <a
+        href={text.heroButtonOneExternalLink}
+        rel="noreferrer"
+        target={text.heroButtonOneNewTab === true ? '_blank' : ''}
+        className="btn btn-primary"
+      >
+        {text.heroButtonOneText}
+      </a>
+    );
+  }
+
+  let buttonTwo = null;
+  if (text.heroButtonTwoInternalLink !== null) {
+    buttonTwo = (
+      <Link
+        to={`/${text.heroButtonTwoInternalLink}`}
+        rel="noreferrer"
+        target={text.heroButtonTwoNewTab === true ? '_blank' : ''}
+        className="btn btn-secondary"
+      >
+        {text.heroButtonTwoText}
+      </Link>
+    );
+  } else {
+    buttonTwo = (
+      <a
+        href={text.heroButtonTwoExternalLink}
+        rel="noreferrer"
+        target={text.heroButtonTwoNewTab === true ? '_blank' : ''}
+        className="btn btn-secondary"
+      >
+        {text.heroButtonTwoText}
+      </a>
+    );
+  }
 
   return (
     <Hero imgUrl={data.sanityConferencePage.heroBackground.image.asset.url}>
@@ -175,15 +227,8 @@ export default function ConferenceHero() {
             </div>
           </div>
           <div className="hero-buttons">
-            <Button
-              className="btn btn-primary"
-              href="https://vi.to/hubs/utahjs-conference-series"
-            >
-              BUY TICKETS
-            </Button>
-            <Link className="btn btn-secondary" to="/sponsor">
-              SPONSOR
-            </Link>
+            {buttonOne}
+            {buttonTwo}
           </div>
         </div>
       </div>
