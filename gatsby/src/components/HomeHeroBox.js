@@ -46,7 +46,7 @@ const HeroBoxStyles = styled.div`
   }
 
   .btn:hover {
-    opacity: 0.95;
+    opacity: 0.82;
     color: #fff;
   }
   .btn.yellow {

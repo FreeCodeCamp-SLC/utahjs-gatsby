@@ -38,7 +38,9 @@ export const GetInvolvedStyles = styled.section`
     color: #ffffff;
     letter-spacing: 0.6px;
   }
-  a:hover,
+  .link:hover {
+    text-decoration: underline;
+  }
   a:focus,
   a:visited {
     text-decoration: none;
@@ -124,12 +126,12 @@ export default function GetInvolvedSection() {
         {getInvolvedArray.map((item, id) =>
           item.internal_link !== null ? (
             <div className="flexBox" key={`link${id}`}>
-              <button className={`btnNum${id}`} type="button">
+              <button className={`btn btnNum${id}`} type="button">
                 <Link
                   to={`/${item.internal_link}`}
                   target={item.new_tab === true ? '_blank' : ''}
                   rel="noreferrer"
-                  className={`aNum${id}`}
+                  className={`link aNum${id}`}
                 >
                   {item.link_text}
                 </Link>
@@ -139,11 +141,11 @@ export default function GetInvolvedSection() {
             </div>
           ) : (
             <div className="flexBox" key={`link${id}`}>
-              <button className={`btnNum${id}`} type="button">
+              <button className={`btn btnNum${id}`} type="button">
                 <a
                   href={item.external_link}
                   target={item.new_tab === true ? '_blank' : ''}
-                  className={`aNum${id}`}
+                  className={`link aNum${id}`}
                 >
                   {item.link_text}
                 </a>

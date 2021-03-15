@@ -79,11 +79,13 @@ export const HomeStyles = styled.div`
     }
   }
   .info > p > a,
-  .info > p > a:hover,
   .info > p > a:focus,
   .info > p > a:visited {
     color: #2095f2;
     text-decoration: none;
+  }
+  .info > p > a:hover {
+    text-decoration: underline;
   }
 `;
 
