@@ -137,7 +137,7 @@ const HeroBox = () => {
         target={text.heroButtonTwoNewTab === true ? '_blank' : ''}
         className="btn green"
       >
-        {text.heroButtonOneText}
+        {text.heroButtonTwoText}
       </Link>
     );
   } else {
