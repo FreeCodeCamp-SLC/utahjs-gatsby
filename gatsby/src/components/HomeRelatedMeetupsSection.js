@@ -27,11 +27,13 @@ export const RelatedMeetupsStyles = styled.section`
     margin-top: 5px;
   }
   a,
-  a:hover,
   a:focus,
   a:visited {
     color: #2095f2;
     text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
   }
 `;
 

@@ -53,7 +53,7 @@ const Sponsors = () => {
       <div className="wrapper">
         {data.allSanitySponsors.nodes.map((sponsor, id) => (
           <div className="spacer" key={`sponsor${id}`}>
-            <a href={sponsor.sponsorUrl}>
+            <a href={sponsor.sponsorUrl} target="_blank" rel="noreferrer">
               <Img fixed={sponsor.sponsor.asset.fixed} alt={sponsor.altText} />
             </a>
             <br />

@@ -6,7 +6,11 @@ const FooterStyles = styled.footer`
   padding: 8px 0;
   width: 100%;
   a {
-    color: #2095f2;
+    color: #fff;
+    text-decoration: underline;
+    :hover {
+      opacity: 0.8;
+    }
   }
   p {
     margin: 0;
