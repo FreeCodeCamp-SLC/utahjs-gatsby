@@ -38,17 +38,17 @@ export const GetInvolvedStyles = styled.section`
     color: #ffffff;
     letter-spacing: 0.6px;
   }
-  .link:hover {
-    text-decoration: underline;
-  }
+  a:hover,
   a:focus,
   a:visited {
     text-decoration: none;
   }
-
   p > a {
     color: #2095f2;
     font-weight: 600;
+    :hover {
+      text-decoration: underline;
+    }
   }
   .btnNum0,
   .aNum0 {
@@ -131,7 +131,7 @@ export default function GetInvolvedSection() {
                   to={`/${item.internal_link}`}
                   target={item.new_tab === true ? '_blank' : ''}
                   rel="noreferrer"
-                  className={`link aNum${id}`}
+                  className={`aNum${id}`}
                 >
                   {item.link_text}
                 </Link>
@@ -145,7 +145,7 @@ export default function GetInvolvedSection() {
                 <a
                   href={item.external_link}
                   target={item.new_tab === true ? '_blank' : ''}
-                  className={`link aNum${id}`}
+                  className={`aNum${id}`}
                 >
                   {item.link_text}
                 </a>
