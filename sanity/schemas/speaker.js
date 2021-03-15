@@ -14,16 +14,6 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      validation: (Rule) => Rule.required(),
-      options: {
-        source: 'name',
-        maxLength: 100,
-      },
-    },
-    {
       name: 'role',
       title: 'Role',
       type: 'string',
@@ -73,6 +63,13 @@ export default {
       options: {
         hotspot: true,
       },
+    },
+  ],
+  orderings: [
+    {
+      title: 'Date/Time',
+      name: 'Date/Time',
+      by: [{ field: 'date_time', direction: 'asc' }],
     },
   ],
 };
