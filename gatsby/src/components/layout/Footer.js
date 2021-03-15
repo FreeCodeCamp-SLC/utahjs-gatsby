@@ -5,6 +5,9 @@ const FooterStyles = styled.footer`
   background-color: #000;
   padding: 8px 0;
   width: 100%;
+  a {
+    color: #2095f2;
+  }
   p {
     margin: 0;
     line-height: 24px;
@@ -22,7 +25,25 @@ const FooterStyles = styled.footer`
 const Footer = () => (
   <FooterStyles>
     <div className="center-content">
-      <p className="item">© 2020 UtahJS Built by FreeCodeCamp SLC</p>
+      <p className="item">
+        © 2020 UtahJS Built by{' '}
+        <a href="https://www.alexpuhl.com/" target="_blank" rel="noreferrer">
+          Alex Puhl
+        </a>
+        {', '}
+        <a href="https://johnbowser.dev/ " target="_blank" rel="noreferrer">
+          John Bowser
+        </a>
+        {', '}
+        <a href="https://justinhoward.codes" target="_blank" rel="noreferrer">
+          Justin Howard
+        </a>
+        {' and '}
+        <a href="https://stevesaunders.dev/" target="_blank" rel="noreferrer">
+          Steven Saunders
+        </a>{' '}
+        as part of FreeCodeCamp SLC
+      </p>
     </div>
   </FooterStyles>
 );
