@@ -83,3 +83,4 @@ export default function returnDateTime(dateTime, duration) {
   dateAndTime.time = convertTime(startingDateTime, duration);
   return dateAndTime;
 }
+
