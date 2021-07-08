@@ -49,7 +49,7 @@ const Sponsors = () => {
   `);
   return (
     <Wrapper>
-      <h2>Thank you to our 2020 sponsors!</h2>
+      <h2>Thank you to our 2021 sponsors!</h2>
       <div className="wrapper">
         {data.allSanitySponsors.nodes.map((sponsor, id) => (
           <div className="spacer" key={`sponsor${id}`}>
