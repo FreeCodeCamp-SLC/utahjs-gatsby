@@ -98,7 +98,7 @@ export default function conferencePage({ data }) {
               <ConferenceSpeaker speaker={speaker} key={speaker._id} />
             ))}
           </div>
-          <Sponsors />
+          {/* <Sponsors /> */}
         </div>
       </Wrapper>
     </Layout>
