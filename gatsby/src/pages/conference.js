@@ -99,7 +99,7 @@ export default function conferencePage({ data }) {
             ))} */}
             <h4>The speakers are being chosen. The list will be posted once all speakers have been chosen and they have accepted.</h4>
           </div>
-          <Sponsors />
+          {/* <Sponsors /> */}
         </div>
       </Wrapper>
     </Layout>
