@@ -73,7 +73,7 @@ function Header({ clickMe, toggle }) {
           <Link to="/">
             <Img fixed={data.utahjs.childImageSharp.fixed} alt="Utah JS Logo" />
           </Link>
-          <h1>{new Date().getFullYear()} UtahJS Conference - Online Series</h1>
+          <h1>{new Date().getFullYear()} UtahJS Conference</h1>
         </div>
         <Hamburger clickMe={clickMe} toggle={toggle} />
       </div>
