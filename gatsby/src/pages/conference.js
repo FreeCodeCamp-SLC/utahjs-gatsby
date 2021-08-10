@@ -94,12 +94,21 @@ export default function conferencePage({ data }) {
         <div className="speaker-sponsor-container">
           <div className="speaker-section">
             <h2>Schedule</h2>
-            {/* {conferenceSpeakers.map((speaker) => (
+            {conferenceSpeakers.map((speaker) => (
               <ConferenceSpeaker speaker={speaker} key={speaker._id} />
-            ))} */}
-            <h4>The speakers are being chosen. The list will be posted once all speakers have been chosen and they have accepted.</h4>
+            ))}
+            {conferenceSpeakers.length < 0 ? (
+              <h4>
+                The speakers are being chosen. The list will be posted once all
+                speakers have been chosen and they have accepted.
+              </h4>
+            ) : (
+              conferenceSpeakers.map((speaker) => (
+                <ConferenceSpeaker speaker={speaker} key={speaker._id} />
+              ))
+            )}
           </div>
-          {/* <Sponsors /> */}
+          <Sponsors />
         </div>
       </Wrapper>
     </Layout>
