@@ -93,7 +93,7 @@ export default function conferencePage({ data }) {
         </div>
         <div className="speaker-sponsor-container">
           <div className="speaker-section">
-            <h2>Schedule</h2>
+            <h2>Featured Speakers</h2>
             {conferenceSpeakers.length < 0 ? (
               <h4>
                 The speakers are being chosen. The list will be posted once all
@@ -104,6 +104,9 @@ export default function conferencePage({ data }) {
                 <ConferenceSpeaker speaker={speaker} key={speaker._id} />
               ))
             )}
+            <p className="schedule-link">
+              <a href="/schedule">See full schedule &rsaquo;</a>
+            </p>
           </div>
           <Sponsors />
         </div>

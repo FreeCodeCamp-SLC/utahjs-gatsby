@@ -51,82 +51,85 @@ const AgendaManage = styled.div`
 `;
 
 export default function SpeakersPage({ data }) {
-  // Object holding the urls for each year
-  const speakerUrls = {};
-  // loop through our speaker data and destucture it into our speakerUrls object
-  const speakerUrlData = data.speakerUrls.nodes;
-  speakerUrlData.forEach((yearUrl) => {
-    speakerUrls[yearUrl.year] = yearUrl.sessionizeUrl;
-  });
+  const speakerList = data.speakerUrls.nodes;
+  const [currentYear, setCurrentYear] = useState(speakerList[0]);
 
-  const latestYear = data.speakerUrls.nodes[0].year;
-
-  // states for which year's speakers we want to render
-  const [speakerUrl, setspeakerUrl] = useState(speakerUrls[latestYear]);
-  const [speakerYear, setspeakerYear] = useState(latestYear);
-
-  // state for managing render of sessionize data
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [speakerData, setSpeakerData] = useState([]);
-
-  // method for changing speaker year state
-  const changeYear = (year) => {
-    setspeakerUrl(speakerUrls[year]);
-    setspeakerYear(year);
-  };
-
-  // fetch speaker data
-  useEffect(() => {
-    // url dependent on our speakerUrl state
-    fetch(speakerUrl)
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setIsLoaded(true);
-          setSpeakerData(result);
-        },
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      );
-  }, [speakerUrl]);
-
-  // variables for dynamic jsx
-  let speakers;
-  let renderPastYear;
-
-  // render speakers
-  if (error) {
-    speakers = <p>Error loading speakers</p>;
-  } else if (!isLoaded) {
-    speakers = <p>Loading...</p>;
-  } else {
-    speakers = (
-      <ul>
-        {speakerData.map((speaker) => (
-          <Speaker speaker={speaker} key={speaker.id} />
-        ))}
-      </ul>
-    );
-  }
-
-  // render different year link
-  if (speakerUrl === 'https://sessionize.com/api/v2/qlwqpj7m/view/Speakers') {
-    renderPastYear = (
-      // choose buttons for the divs for a11y
-      <button type="button" onClick={() => changeYear(2018)}>
-        <p className="speakers">View 2018 Speakers</p>
-      </button>
-    );
-  } else {
-    renderPastYear = (
-      <button type="button" onClick={() => changeYear(2019)}>
-        <p className="speakers">View 2019 Speakers</p>
-      </button>
-    );
-  }
+  // // Object holding the urls for each year
+  // const speakerUrls = {};
+  // // loop through our speaker data and destucture it into our speakerUrls object
+  // const speakerUrlData = data.speakerUrls.nodes;
+  // speakerUrlData.forEach((yearUrl) => {
+  //   speakerUrls[yearUrl.year] = yearUrl.sessionizeUrl;
+  // });
+  //
+  // const latestYear = data.speakerUrls.nodes[0].year;
+  //
+  // // states for which year's speakers we want to render
+  // const [speakerUrl, setspeakerUrl] = useState(speakerUrls[latestYear]);
+  // const [speakerYear, setspeakerYear] = useState(latestYear);
+  //
+  // // state for managing render of sessionize data
+  // const [error, setError] = useState(null);
+  // const [isLoaded, setIsLoaded] = useState(false);
+  // const [speakerData, setSpeakerData] = useState([]);
+  //
+  // // method for changing speaker year state
+  // const changeYear = (year) => {
+  //   setspeakerUrl(speakerUrls[year]);
+  //   setspeakerYear(year);
+  // };
+  //
+  // // fetch speaker data
+  // useEffect(() => {
+  //   // url dependent on our speakerUrl state
+  //   fetch(speakerUrl)
+  //     .then((res) => res.json())
+  //     .then(
+  //       (result) => {
+  //         setIsLoaded(true);
+  //         setSpeakerData(result);
+  //       },
+  //       (error) => {
+  //         setIsLoaded(true);
+  //         setError(error);
+  //       }
+  //     );
+  // }, [speakerUrl]);
+  //
+  // // variables for dynamic jsx
+  // let speakers;
+  // let renderPastYear;
+  //
+  // // render speakers
+  // if (error) {
+  //   speakers = <p>Error loading speakers</p>;
+  // } else if (!isLoaded) {
+  //   speakers = <p>Loading...</p>;
+  // } else {
+  //   speakers = (
+  //     <ul>
+  //       {speakerData.map((speaker) => (
+  //         <Speaker speaker={speaker} key={speaker.id} />
+  //       ))}
+  //     </ul>
+  //   );
+  // }
+  //
+  // // render different year link
+  // if (speakerUrl === 'https://sessionize.com/api/v2/qlwqpj7m/view/Speakers') {
+  //   renderPastYear = (
+  //     // choose buttons for the divs for a11y
+  //     <button type="button" onClick={() => changeYear(2018)}>
+  //       <p className="speakers">View 2018 Speakers</p>
+  //     </button>
+  //   );
+  // } else {
+  //   renderPastYear = (
+  //     <button type="button" onClick={() => changeYear(2019)}>
+  //       <p className="speakers">View 2019 Speakers</p>
+  //     </button>
+  //   );
+  // }
 
   const seo = data.allSanitySeo.nodes[0];
 
@@ -135,18 +138,18 @@ export default function SpeakersPage({ data }) {
       <SEO seo={seo} />
       <PageStyles className="center-content">
         <div className="padding" />
-        <h1>{speakerYear} Speakers</h1>
-        <p>
-          <em>in alphabetical order</em>
-        </p>
-        {renderPastYear}
-        {speakers}
-        <AgendaManage>
-          <a className="manage" href="https://sessionize.com/">
-            <span className="strong">Agenda Management</span> powered by{' '}
-            <span className="strong teal">Sessionize.com</span>
-          </a>
-        </AgendaManage>
+        <div className="year-chooser">
+          {speakerList.map((list) => (
+            <span
+              role="link"
+              key={list.year}
+              className={`year-choice ${list === currentYear ? 'current' : ''}`}
+              onClick={() => setCurrentYear(list)}
+            >
+              {list.year}
+            </span>
+          ))}
+        </div>
       </PageStyles>
     </Layout>
   );
