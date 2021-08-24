@@ -71,7 +71,7 @@ function Header({ clickMe, toggle }) {
       <div className="header-content">
         <div className="header-main">
           <Link to="/">
-            <Img fixed={data.utahjs.childImageSharp.fixed} alt="Utah JS Logo" />
+            <Img fixed={data.utahjs.childImageSharp.fixed} alt="UtahJS Logo" />
           </Link>
           <h1>UtahJS - JavaScript Engineers of Utah</h1>
         </div>
