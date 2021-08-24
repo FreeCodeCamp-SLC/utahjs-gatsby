@@ -42,6 +42,9 @@ const Wrapper = styled.div`
       font-size: 22px;
     }
   }
+  .schedule-link {
+    margin-top: 16px;
+  }
   @media (min-width: 980px) {
     .padding {
       padding-top: 40px;
