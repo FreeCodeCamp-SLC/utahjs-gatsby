@@ -82,7 +82,7 @@ const Wrapper = styled.div`
 
 export default function conferencePage({ data }) {
   const conferenceSpeakers = data.allSanitySpeaker.nodes;
-  const conferenceContent = data.sanityConferencePage;
+  const conferenceContent = data.sanityConferencePage._rawBodyContent;
   const seo = data.allSanitySeo.nodes[0];
 
   return (
@@ -92,7 +92,7 @@ export default function conferencePage({ data }) {
         <div className="padding" />
         <ConferenceHero />
         <div className="conference-info">
-          <BlockContent blocks={conferenceContent.bodyContent} />
+          <BlockContent blocks={conferenceContent} />
         </div>
         <div className="speaker-sponsor-container">
           <div className="speaker-section">
@@ -140,16 +140,7 @@ export const query = graphql`
     }
     sanityConferencePage {
       id
-      bodyContent {
-        _key
-        _type
-        style
-        children {
-          _key
-          _type
-          text
-        }
-      }
+      _rawBodyContent
     }
     allSanitySeo(filter: { page: { eq: "Conference" } }) {
       nodes {
