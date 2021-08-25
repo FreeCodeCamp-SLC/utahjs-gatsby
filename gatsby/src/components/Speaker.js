@@ -36,6 +36,9 @@ const Person = styled.div`
   }
   .avatar {
     height: 96px;
+    width: 96px;
+    object-fit: cover;
+    background-color: #eee;
   }
   .info {
     display: flex;

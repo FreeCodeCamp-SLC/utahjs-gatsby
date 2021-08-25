@@ -10,7 +10,7 @@ import Hero from '../components/HomeHero';
 import GetInvolved from '../components/HomeGetInvolvedSection';
 import RelatedMeetups from '../components/HomeRelatedMeetupsSection';
 
-export const HomeStyles = styled.div`
+const HomeStyles = styled.div`
   background-color: #000;
   padding-bottom: 20px;
   font-family: 'Fira Sans', sans-serif;

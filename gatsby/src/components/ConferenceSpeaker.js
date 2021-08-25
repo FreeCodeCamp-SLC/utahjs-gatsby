@@ -3,8 +3,6 @@ import Img from 'gatsby-image';
 
 import styled from 'styled-components';
 
-import returnDateTime from '../utils/dateTime';
-
 const OnlineSeriesTalk = styled.div`
   border-bottom: 1px solid gainsboro;
   padding-bottom: 10px;
@@ -74,12 +72,8 @@ const SpeakerBio = styled.div`
 `;
 
 export default function ConferenceSpeaker({ speaker }) {
-  const dateAndTime = returnDateTime(speaker.date_time, speaker.duration);
   return (
     <OnlineSeriesTalk>
-      <h3>
-        {dateAndTime.date} <span className="talk-time">{dateAndTime.time}</span>
-      </h3>
       <SpeakerBio>
         <Img fixed={speaker.image.asset.fixed} alt={speaker.name} />
         <div className="speaker-text">
