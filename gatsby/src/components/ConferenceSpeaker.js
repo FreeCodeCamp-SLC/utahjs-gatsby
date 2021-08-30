@@ -3,14 +3,6 @@ import Img from 'gatsby-image';
 
 import styled from 'styled-components';
 
-const OnlineSeriesTalk = styled.div`
-  border-bottom: 1px solid gainsboro;
-  padding-bottom: 10px;
-  .talk-time {
-    font-size: 16px;
-  }
-`;
-
 const SpeakerBio = styled.div`
   display: flex;
   flex-direction: column;
@@ -22,6 +14,7 @@ const SpeakerBio = styled.div`
   border-radius: 60px 4px 60px 4px;
   color: #ccc;
   text-shadow: -1px 1px 0 rgba(0, 0, 0, 0.25);
+  font-size: 16px;
   .gatsby-image-wrapper {
     flex: none;
   }
@@ -73,17 +66,15 @@ const SpeakerBio = styled.div`
 
 export default function ConferenceSpeaker({ speaker }) {
   return (
-    <OnlineSeriesTalk>
-      <SpeakerBio>
-        <Img fixed={speaker.image.asset.fixed} alt={speaker.name} />
-        <div className="speaker-text">
-          <h4 className="speaker-title">
-            {speaker.name}, {speaker.role}
-          </h4>
-          <p className="bio-title">{speaker.presentations}</p>
-          <p className="bio-desc">{speaker.description}</p>
-        </div>
-      </SpeakerBio>
-    </OnlineSeriesTalk>
+    <SpeakerBio>
+      <Img fixed={speaker.image.asset.fixed} alt={speaker.name} />
+      <div className="speaker-text">
+        <h4 className="speaker-title">
+          {speaker.name}, {speaker.role}
+        </h4>
+        <p className="bio-title">{speaker.presentations}</p>
+        <p className="bio-desc">{speaker.description}</p>
+      </div>
+    </SpeakerBio>
   );
 }

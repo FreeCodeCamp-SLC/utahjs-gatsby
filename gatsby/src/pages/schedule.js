@@ -30,10 +30,14 @@ const PageStyles = styled.div`
     color: #0d66c4 !important;
   }
   .sz-session__card {
-    background-color: ##5ba4f3 !important;
+    background-color: #5ba4f3 !important;
   }
   .sz-session--service {
     background-color: #b4d7ff;
+  }
+  .sz-modal-container .sz-session__title,
+  .sz-modal-container .sz-speaker__tagline {
+    color: #111 !important;
   }
 `;
 
@@ -68,7 +72,7 @@ export default function Schedule({ data }) {
 
 export const query = graphql`
   query {
-    allSanitySeo(filter: { page: { eq: "Past Speakers" } }) {
+    allSanitySeo(filter: { page: { eq: "Schedule" } }) {
       nodes {
         title
         description
