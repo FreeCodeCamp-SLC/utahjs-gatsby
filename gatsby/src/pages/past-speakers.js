@@ -86,7 +86,7 @@ export const query = graphql`
         year
       }
     }
-    allSanitySeo(filter: { page: { eq: "Past Speakers" } }) {
+    allSanitySeo(filter: { page: { eq: "Speakers" } }) {
       nodes {
         title
         description
