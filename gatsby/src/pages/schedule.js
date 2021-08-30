@@ -35,6 +35,10 @@ const PageStyles = styled.div`
   .sz-session--service {
     background-color: #b4d7ff;
   }
+  .sz-modal-container .sz-session__title,
+  .sz-modal-container .sz-speaker__tagline {
+    color: #111 !important;
+  }
 `;
 
 export default function Schedule({ data }) {

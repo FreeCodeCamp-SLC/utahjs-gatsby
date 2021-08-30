@@ -4,8 +4,6 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 
 const OnlineSeriesTalk = styled.div`
-  border-bottom: 1px solid gainsboro;
-  padding-bottom: 10px;
   .talk-time {
     font-size: 16px;
   }
