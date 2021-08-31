@@ -10,7 +10,7 @@ const PageStyles = styled.div`
       padding-top: 40px;
     }
   }
-  
+
   /* hide some confusing session elements */
   .sz-day__title,
   .sz-powered-by,
@@ -19,54 +19,53 @@ const PageStyles = styled.div`
   [data-sessionid='4a79a880-88a7-4d7c-8e5f-c8cc5be63631'] .sz-session__room {
     display: none !important;
   }
-  /* remove borders from sections */  
+  /* remove borders from sections */
   [data-sessionid] .sz-session_card {
     border: none;
-  }  
+  }
   /* times and colors */
   /* auditorium: purple */
-  [data-sessionid="271921"] .sz-session__card,
-  [data-sessionid="268480"] .sz-session__card,
-  [data-sessionid="269358"] .sz-session__card,
-  [data-sessionid="272085"] .sz-session__card,
-  [data-sessionid="268811"] .sz-session__card,
-  [data-sessionid="272329"] .sz-session__card,
-  [data-sessionid="280182"] .sz-session__card,
-  [data-sessionid="269599"] .sz-session__card,
-  [data-sessionid="272333"] .sz-session__card,
-  [data-sessionid="270052"] .sz-session__card,
-  [data-sessionid="7312e754-f287-4d12-877e-a5526f021c88"] .sz-session__card {
+  [data-sessionid='271921'] .sz-session__card,
+  [data-sessionid='268480'] .sz-session__card,
+  [data-sessionid='269358'] .sz-session__card,
+  [data-sessionid='272085'] .sz-session__card,
+  [data-sessionid='268811'] .sz-session__card,
+  [data-sessionid='272329'] .sz-session__card,
+  [data-sessionid='280182'] .sz-session__card,
+  [data-sessionid='269599'] .sz-session__card,
+  [data-sessionid='272333'] .sz-session__card,
+  [data-sessionid='270052'] .sz-session__card,
+  [data-sessionid='7312e754-f287-4d12-877e-a5526f021c88'] .sz-session__card {
     background-color: #9f55ec !important;
   }
   /* breakout: blue */
-  7312e754-f287-4d12-877e-a5526f021c88
-  [data-sessionid="268373"] .sz-session__card,
-  [data-sessionid="282520"] .sz-session__card,
-  [data-sessionid="268831"] .sz-session__card,
-  [data-sessionid="272070"] .sz-session__card,
-  [data-sessionid="272082"] .sz-session__card,
-  [data-sessionid="268779"] .sz-session__card,
-  [data-sessionid="272304"] .sz-session__card,
-  [data-sessionid="268876"] .sz-session__card,
-  [data-sessionid="271918"] .sz-session__card {
-    background-color: #197be4 !important;    
+  [data-sessionid='268373'] .sz-session__card,
+  [data-sessionid='282520'] .sz-session__card,
+  [data-sessionid='268831'] .sz-session__card,
+  [data-sessionid='272070'] .sz-session__card,
+  [data-sessionid='272082'] .sz-session__card,
+  [data-sessionid='268779'] .sz-session__card,
+  [data-sessionid='272304'] .sz-session__card,
+  [data-sessionid='268876'] .sz-session__card,
+  [data-sessionid='271918'] .sz-session__card {
+    background-color: #197be4 !important;
   }
   /* breaks: green */
-  [data-sessionid="5963dd06-8cf4-418e-8baf-d64c7ddd5237"] .sz-session__card,
-  [data-sessionid="74520220-bf4b-4971-8d4b-2dbe0d121acb"] .sz-session__card,
-  [data-sessionid="5bfc9237-e39c-4448-abe7-c70d2230532d"] .sz-session__card,
-  [data-sessionid="c7644e09-4f54-43c7-8ce1-5c30619e98fa"] .sz-session__card,
-  [data-sessionid="f50a26ef-69e9-491f-86fe-1f0442e92c61"] .sz-session__card,
-  [data-sessionid="d0f8cf17-0c09-495d-8397-6f4195aaa780"] .sz-session__card {
+  [data-sessionid='5963dd06-8cf4-418e-8baf-d64c7ddd5237'] .sz-session__card,
+  [data-sessionid='74520220-bf4b-4971-8d4b-2dbe0d121acb'] .sz-session__card,
+  [data-sessionid='5bfc9237-e39c-4448-abe7-c70d2230532d'] .sz-session__card,
+  [data-sessionid='c7644e09-4f54-43c7-8ce1-5c30619e98fa'] .sz-session__card,
+  [data-sessionid='f50a26ef-69e9-491f-86fe-1f0442e92c61'] .sz-session__card,
+  [data-sessionid='d0f8cf17-0c09-495d-8397-6f4195aaa780'] .sz-session__card {
     background-color: #3eb353 !important;
-  }  
+  }
   /* update some colors */
   .sz-session__title,
   .sz-session__title a {
     color: white !important;
   }
   .sz-session__time {
-    color: rgba(255,255,255,0.9) !important;
+    color: rgba(255, 255, 255, 0.9) !important;
   }
   .sz-session .sz-session__speakers {
     color: #fdde00 !important;
