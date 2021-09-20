@@ -3,14 +3,31 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../components/layout/Layout';
 import SEO from '../components/Seo';
+import Sponsors from '../components/ConferenceSponsors.js';
 
 const PageStyles = styled.div`
-  @media (min-width: 980px) {
-    .padding {
-      padding-top: 40px;
+  @media (max-width: 600px) {
+    .headings {
+      display: block !important;
+      text-align: center;
+    }
+    .sponsors-column {
+      transform-origin: center top !important;
     }
   }
-
+  .headings {
+    display: flex;
+    padding-top: 40px;
+    justify-content: space-between;
+  }
+  h1 {
+    padding: 0 40px 0 0;
+    margin: 22px 0 0 0;
+  }
+  .sponsors-column {
+    transform: scale(0.75);
+    transform-origin: right top;
+  }
   /* hide some confusing session elements */
   .sz-day__title,
   .sz-powered-by,
@@ -100,8 +117,12 @@ export default function Schedule({ data }) {
     <Layout>
       <SEO seo={seo} />
       <PageStyles className="center-content">
-        <div className="padding" />
-        <h1>Conference Schedule: Friday, October 8, 2021</h1>
+        <div className="headings">
+          <h1>Conference Schedule: Friday, October 8, 2021</h1>
+          <div className="sponsors-column">
+            <Sponsors />
+          </div>
+        </div>
         <div id="EmbedWrapper" />
       </PageStyles>
     </Layout>
