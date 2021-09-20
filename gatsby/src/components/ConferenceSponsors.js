@@ -14,11 +14,15 @@ const Wrapper = styled.div`
   .wrapper {
     border-top: 2px dotted #ccc;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
   }
   .spacer {
     margin-top: 20px;
+  }
+  a[href*='aumni.fund'] {
+    transform: scale(1.5);
+    display: block;
   }
   @media (min-width: 768px) {
     align-items: center;
