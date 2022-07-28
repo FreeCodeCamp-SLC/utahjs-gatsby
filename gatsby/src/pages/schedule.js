@@ -97,21 +97,20 @@ const PageStyles = styled.div`
 `;
 
 export default function Schedule({ data }) {
-  // FIXME: uncomment once the 2022 schedule is ready to be pulled in from sessionize
-  // useEffect(() => {
-  //   // load sessionize embed
-  //   const script = document.createElement('script');
-  //   script.src = 'https://sessionize.com/api/v2/bxy86zel/view/GridSmart';
-  //   script.onload = () => window.sessionize.loader();
-  //   // sessionize embed uses document.write, so we need to override it with
-  //   // code that will insert CSS and html into the right place
-  //   document.write = (html) => {
-  //     const div = document.createElement('div');
-  //     div.innerHTML = html;
-  //     document.querySelector('#EmbedWrapper').appendChild(div);
-  //   };
-  //   document.body.appendChild(script);
-  // }, []);
+  useEffect(() => {
+    // load sessionize embed
+    const script = document.createElement('script');
+    script.src = 'https://sessionize.com/api/v2/bxy86zel/view/GridSmart';
+    script.onload = () => window.sessionize.loader();
+    // sessionize embed uses document.write, so we need to override it with
+    // code that will insert CSS and html into the right place
+    document.write = (html) => {
+      const div = document.createElement('div');
+      div.innerHTML = html;
+      document.querySelector('#EmbedWrapper').appendChild(div);
+    };
+    document.body.appendChild(script);
+  }, []);
   const seo = data.allSanitySeo.nodes[0];
 
   return (
@@ -120,14 +119,11 @@ export default function Schedule({ data }) {
       <PageStyles className="center-content">
         <div className="headings">
           <h1>Conference Schedule: Friday, September 23, 2022</h1>
-          {/* FIXME: Commenting out until 2022 details are finalized
           <div className="sponsors-column">
             <Sponsors />
-          </div> */}
+          </div>
         </div>
-        <h3>2022 Schedule TBA.</h3>
-        <p>Please come back later for updates.</p>
-        {/* FIXME <div id="EmbedWrapper" /> */}
+        <div id="EmbedWrapper" />
       </PageStyles>
     </Layout>
   );

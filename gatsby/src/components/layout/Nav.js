@@ -103,14 +103,8 @@ const Nav = ({ toggle }) => {
     <NavStyles>
       <div className={!toggle ? 'navDiv Close' : 'navDiv Open'}>
         <ul>
-          {navArray.map((nav, id) => {
-            // FIXME: This is a janky temp fix to change the schedule link text in the nav.
-            // Looks like this can be updated by someone in sanity, then this can be removed
-            nav.link_text =
-              nav.link_text === '2021 Schedule'
-                ? '2022 Schedule'
-                : nav.link_text;
-            return nav.internal_link !== null ? (
+          {navArray.map((nav, id) =>
+            nav.internal_link !== null ? (
               <li key={id}>
                 <StyledLink
                   to={nav.internal_link}
@@ -130,8 +124,8 @@ const Nav = ({ toggle }) => {
                   {nav.link_text}
                 </a>
               </li>
-            );
-          })}
+            )
+          )}
         </ul>
       </div>
     </NavStyles>
