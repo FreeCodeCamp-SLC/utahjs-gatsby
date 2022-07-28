@@ -119,9 +119,9 @@ export default function Schedule({ data }) {
       <PageStyles className="center-content">
         <div className="headings">
           <h1>Conference Schedule: Friday, September 23, 2022</h1>
-          <div className="sponsors-column">
+          {/* FIXME: uncomment when sponsors are up to date <div className="sponsors-column">
             <Sponsors />
-          </div>
+          </div> */}
         </div>
         <div id="EmbedWrapper" />
       </PageStyles>

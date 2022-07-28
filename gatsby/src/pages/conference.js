@@ -111,7 +111,7 @@ export default function conferencePage({ data }) {
               <a href="/schedule">See full schedule &rsaquo;</a>
             </p>
           </div>
-          <Sponsors />
+          {/* FIXME: uncomment when sponsors are up to date <Sponsors /> */}
         </div>
       </Wrapper>
     </Layout>
