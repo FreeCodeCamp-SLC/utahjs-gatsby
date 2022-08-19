@@ -3,6 +3,20 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 
+const Level = (sponsors, level) => (
+  <div className="level">
+    <h3 className="level-heading">{level} Sponsors</h3>
+    {sponsors.map((sponsor, id) => (
+      <div className="spacer" key={`sponsor${id}`}>
+        <a href={sponsor.sponsorUrl} target="_blank" rel="noreferrer">
+          <Img fixed={sponsor.sponsor.asset.fixed} alt={sponsor.altText} />
+        </a>
+        <br />
+      </div>
+    ))}
+  </div>
+);
+
 const Wrapper = styled.div`
   align-items: flex-start;
   font-family: Domine, serif;
@@ -14,8 +28,19 @@ const Wrapper = styled.div`
   .wrapper {
     border-top: 2px dotted #ccc;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
+  }
+  .wrapper.stacked {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .level {
+    display: flex;
+    flex-direction: column;
+  }
+  .level-heading {
+    align-self: start;
   }
   .spacer {
     margin-top: 20px;
@@ -31,9 +56,14 @@ const Wrapper = styled.div`
       text-align: left;
     }
   }
+  @media (max-width: 600px) {
+    .wrapper.stacked {
+      flex-direction: column;
+    }
+  }
 `;
 
-const Sponsors = () => {
+const Sponsors = ({ display }) => {
   const data = useStaticQuery(graphql`
     query {
       allSanitySponsors {
@@ -51,18 +81,27 @@ const Sponsors = () => {
       }
     }
   `);
+
+  const goldSponsors = [];
+  const silverSponsors = [];
+  const bronzeSponsors = [];
+
+  data.allSanitySponsors.nodes.forEach((sponsor) => {
+    if (sponsor.altText.includes('Gold')) {
+      goldSponsors.push(sponsor);
+    } else if (sponsor.altText.includes('Silver')) {
+      silverSponsors.push(sponsor);
+    } else if (sponsor.altText.includes('Bronze')) {
+      bronzeSponsors.push(sponsor);
+    }
+  });
   return (
     <Wrapper>
       <h2>Thank you to our 2022 sponsors!</h2>
-      <div className="wrapper">
-        {data.allSanitySponsors.nodes.map((sponsor, id) => (
-          <div className="spacer" key={`sponsor${id}`}>
-            <a href={sponsor.sponsorUrl} target="_blank" rel="noreferrer">
-              <Img fixed={sponsor.sponsor.asset.fixed} alt={sponsor.altText} />
-            </a>
-            <br />
-          </div>
-        ))}
+      <div className={`wrapper ${display}`}>
+        {goldSponsors.length !== 0 && Level(goldSponsors, 'Gold')}
+        {silverSponsors.length !== 0 && Level(silverSponsors, 'Silver')}
+        {bronzeSponsors.length !== 0 && Level(bronzeSponsors, 'Bronze')}
       </div>
     </Wrapper>
   );
