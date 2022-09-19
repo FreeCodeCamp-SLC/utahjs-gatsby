@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import BlockContent from '@sanity/block-content-to-react';
 import Layout from '../components/layout/Layout';
 import SEO from '../components/Seo';
-import ConferenceSpeaker from '../components/ConferenceSpeaker';
 import ConferenceHero from '../components/ConferenceHero';
 import Sponsors from '../components/ConferenceSponsors';
 
