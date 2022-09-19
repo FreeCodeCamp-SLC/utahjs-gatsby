@@ -117,6 +117,12 @@ export default function Schedule({ data }) {
       <PageStyles className="center-content">
         <div className="headings">
           <h1>Conference Schedule: Friday, September 23, 2022</h1>
+          <h2>
+            Location:{' '}
+            <a href="https://goo.gl/maps/jami8aBUUy3qVhqKA">
+              Megaplex Theaters at Jordan Commons
+            </a>
+          </h2>
           <div className="sponsors-column">
             <Sponsors display="stacked" />
           </div>
