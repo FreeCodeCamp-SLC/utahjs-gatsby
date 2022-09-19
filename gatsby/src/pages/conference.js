@@ -98,9 +98,6 @@ export default function conferencePage({ data }) {
             <Link to="/speakers" rel="noreferrer">
               View the speakers
             </Link>
-            <p className="schedule-link">
-              <a href="/schedule">See full schedule &rsaquo;</a>
-            </p>
           </div>
           <Sponsors />
         </div>
