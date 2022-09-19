@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 import BlockContent from '@sanity/block-content-to-react';
 import Layout from '../components/layout/Layout';
@@ -96,17 +96,9 @@ export default function conferencePage({ data }) {
         </div>
         <div className="speaker-sponsor-container">
           <div className="speaker-section">
-            <h2>Featured Speakers</h2>
-            {conferenceSpeakers.length <= 0 ? (
-              <h4>
-                The speakers are being chosen. The list will be posted once all
-                speakers have been chosen and they have accepted.
-              </h4>
-            ) : (
-              conferenceSpeakers.map((speaker) => (
-                <ConferenceSpeaker speaker={speaker} key={speaker._id} />
-              ))
-            )}
+            <Link to="/speakers" rel="noreferrer">
+              View the speakers
+            </Link>
             <p className="schedule-link">
               <a href="/schedule">See full schedule &rsaquo;</a>
             </p>
