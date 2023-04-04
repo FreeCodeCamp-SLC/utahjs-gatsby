@@ -95,11 +95,11 @@ export default function conferencePage({ data }) {
         </div>
         <div className="speaker-sponsor-container">
           <div className="speaker-section">
-            <Link to="/speakers" rel="noreferrer">
+            {/* <Link to="/speakers" rel="noreferrer">
               View the speakers
-            </Link>
+            </Link> */}
           </div>
-          <Sponsors />
+          {/* <Sponsors /> */}
         </div>
       </Wrapper>
     </Layout>

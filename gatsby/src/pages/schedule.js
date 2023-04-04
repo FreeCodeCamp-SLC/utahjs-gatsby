@@ -95,20 +95,21 @@ const PageStyles = styled.div`
 `;
 
 export default function Schedule({ data }) {
-  useEffect(() => {
-    // load sessionize embed
-    const script = document.createElement('script');
-    script.src = 'https://sessionize.com/api/v2/80q91g4w/view/GridSmart';
-    script.onload = () => window.sessionize.loader();
-    // sessionize embed uses document.write, so we need to override it with
-    // code that will insert CSS and html into the right place
-    document.write = (html) => {
-      const div = document.createElement('div');
-      div.innerHTML = html;
-      document.querySelector('#EmbedWrapper').appendChild(div);
-    };
-    document.body.appendChild(script);
-  }, []);
+  // FIXME: uncomment once the 2023 schedule is ready
+  // useEffect(() => {
+  //   // load sessionize embed
+  //   const script = document.createElement('script');
+  //   script.src = 'https://sessionize.com/api/v2/80q91g4w/view/GridSmart';
+  //   script.onload = () => window.sessionize.loader();
+  //   // sessionize embed uses document.write, so we need to override it with
+  //   // code that will insert CSS and html into the right place
+  //   document.write = (html) => {
+  //     const div = document.createElement('div');
+  //     div.innerHTML = html;
+  //     document.querySelector('#EmbedWrapper').appendChild(div);
+  //   };
+  //   document.body.appendChild(script);
+  // }, []);
   const seo = data.allSanitySeo.nodes[0];
 
   return (
@@ -116,18 +117,20 @@ export default function Schedule({ data }) {
       <SEO seo={seo} />
       <PageStyles className="center-content">
         <div className="headings">
-          <h1>Conference Schedule: Friday, September 23, 2022</h1>
+          <h1>Conference Schedule: Friday, September 15, 2023</h1>
           <h2>
             Location:{' '}
             <a href="https://goo.gl/maps/jami8aBUUy3qVhqKA">
               Megaplex Theaters at Jordan Commons
             </a>
           </h2>
-          <div className="sponsors-column">
+          {/* <div className="sponsors-column">
             <Sponsors display="stacked" />
-          </div>
+          </div> */}
         </div>
-        <div id="EmbedWrapper" />
+        <h3>2023 Schedule TBA</h3>
+        <p>Please check back later for updates.</p>
+        {/* <div id="EmbedWrapper" /> */}
       </PageStyles>
     </Layout>
   );
