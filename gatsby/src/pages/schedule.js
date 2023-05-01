@@ -95,21 +95,20 @@ const PageStyles = styled.div`
 `;
 
 export default function Schedule({ data }) {
-  // FIXME: uncomment once the 2023 schedule is ready
-  // useEffect(() => {
-  //   // load sessionize embed
-  //   const script = document.createElement('script');
-  //   script.src = 'https://sessionize.com/api/v2/80q91g4w/view/GridSmart';
-  //   script.onload = () => window.sessionize.loader();
-  //   // sessionize embed uses document.write, so we need to override it with
-  //   // code that will insert CSS and html into the right place
-  //   document.write = (html) => {
-  //     const div = document.createElement('div');
-  //     div.innerHTML = html;
-  //     document.querySelector('#EmbedWrapper').appendChild(div);
-  //   };
-  //   document.body.appendChild(script);
-  // }, []);
+  useEffect(() => {
+    // load sessionize embed
+    const script = document.createElement('script');
+    script.src = 'https://sessionize.com/api/v2/kwe4y6ee/view/GridSmart';
+    script.onload = () => window.sessionize.loader();
+    // sessionize embed uses document.write, so we need to override it with
+    // code that will insert CSS and html into the right place
+    document.write = (html) => {
+      const div = document.createElement('div');
+      div.innerHTML = html;
+      document.querySelector('#EmbedWrapper').appendChild(div);
+    };
+    document.body.appendChild(script);
+  }, []);
   const seo = data.allSanitySeo.nodes[0];
 
   return (
@@ -128,9 +127,10 @@ export default function Schedule({ data }) {
             <Sponsors display="stacked" />
           </div> */}
         </div>
-        <h3>2023 Schedule TBA</h3>
-        <p>Please check back later for updates.</p>
-        {/* <div id="EmbedWrapper" /> */}
+        <div id="EmbedWrapper" />
+        <p>
+          <em>Schedule is subject to change</em>
+        </p>
       </PageStyles>
     </Layout>
   );
