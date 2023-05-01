@@ -98,7 +98,7 @@ export default function Schedule({ data }) {
   useEffect(() => {
     // load sessionize embed
     const script = document.createElement('script');
-    script.src = 'https://sessionize.com/api/v2/kwe4y6ee/view/GridSmart';
+    script.src = 'https://sessionize.com/api/v2/uce3x9i3/view/GridSmart';
     script.onload = () => window.sessionize.loader();
     // sessionize embed uses document.write, so we need to override it with
     // code that will insert CSS and html into the right place
