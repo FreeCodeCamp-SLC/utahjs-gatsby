@@ -29,6 +29,10 @@ const PageStyles = styled.div`
     color: #666;
     margin-top: 2em;
   }
+  .call-to-actions {
+    display: flex;
+    gap: 3em;
+  }
   .sponsors-column {
   }
   /* hide some confusing session elements */
@@ -99,12 +103,29 @@ export default function Schedule({ data }) {
       <PageStyles className="center-content">
         <div className="headings">
           <h1>Conference Schedule: Friday, September 15, 2023</h1>
-          <h2>
-            Location:{' '}
-            <a href="https://goo.gl/maps/jami8aBUUy3qVhqKA">
-              Megaplex Theaters at Jordan Commons
+          <div className="call-to-actions">
+            <a
+              href="https://ti.to/utahjs/2023"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Buy Tickets
             </a>
-          </h2>
+            <a
+              href="https://bit.ly/3NxkDmr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Sponsor Us
+            </a>
+            <a
+              href="https://goo.gl/maps/jami8aBUUy3qVhqKA"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Map
+            </a>
+          </div>
           {/* <div className="sponsors-column">
             <Sponsors display="stacked" />
           </div> */}
