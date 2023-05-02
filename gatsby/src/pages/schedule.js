@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../components/layout/Layout';
 import SEO from '../components/Seo';
-import Sponsors from '../components/ConferenceSponsors.js';
+// import Sponsors from '../components/ConferenceSponsors.js';
 
 const PageStyles = styled.div`
   @media (max-width: 600px) {
@@ -22,7 +22,8 @@ const PageStyles = styled.div`
   }
   h1 {
     padding: 0 40px 0 0;
-    margin: 22px 0 0 0;
+    margin: 35px 0 0 0;
+    text-align: center;
   }
   .disclaimer {
     text-align: center;
@@ -32,6 +33,8 @@ const PageStyles = styled.div`
   .call-to-actions {
     display: flex;
     gap: 3em;
+    padding: 0.5em 0 2em 0;
+    justify-content: center;
   }
   .sponsors-column {
   }
@@ -60,6 +63,11 @@ const PageStyles = styled.div`
   .sz-session.sz-session--service .sz-session__card {
     background-color: #333 !important;
   }
+  /* center track names */
+  .sz-cssgrid__track-label {
+    justify-content: center;
+  }
+
   /* update some colors */
   .sz-session__title,
   .sz-session__title a {
@@ -71,12 +79,27 @@ const PageStyles = styled.div`
   .sz-session .sz-session__speakers {
     color: #fdde00 !important;
   }
+  /* modal tweaks */
+  #sessionize.sessionize-wrapper .sz-modal-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .sz-modal-container .sz-session__room {
+    background-color: #333 !important;
+  }
+  .sz-modal-container .sz-session__time {
+    background-color: #2f76de !important;
+  }
+  .sz-modal-container .sz-session__speakers a {
+    color: #333 !important;
+    font-weight: normal;
+  }
+
   .sz-session--service .sz-session__title {
     color: #0d66c4 !important;
   }
   .sz-modal-container .sz-session__title,
   .sz-modal-container .sz-speaker__tagline {
-    color: #111 !important;
+    color: #333 !important;
   }
 `;
 
