@@ -99,7 +99,7 @@ export default function conferencePage({ data }) {
               View the speakers
             </Link> */}
           </div>
-          {/* <Sponsors /> */}
+          <Sponsors />
         </div>
       </Wrapper>
     </Layout>

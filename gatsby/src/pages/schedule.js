@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../components/layout/Layout';
 import SEO from '../components/Seo';
-// import Sponsors from '../components/ConferenceSponsors.js';
+import Sponsors from '../components/ConferenceSponsors.js';
 
 const PageStyles = styled.div`
   @media (max-width: 600px) {
@@ -149,9 +149,9 @@ export default function Schedule({ data }) {
               View Map
             </a>
           </div>
-          {/* <div className="sponsors-column">
+          <div className="sponsors-column">
             <Sponsors display="stacked" />
-          </div> */}
+          </div>
         </div>
         <div id="EmbedWrapper" />
         <p className="disclaimer">
