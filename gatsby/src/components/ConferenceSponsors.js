@@ -97,7 +97,7 @@ const Sponsors = ({ display }) => {
   });
   return (
     <Wrapper>
-      <h2>Thank you to our 2022 sponsors!</h2>
+      <h2>Thank you to our 2023 sponsors!</h2>
       <div className={`wrapper ${display}`}>
         {goldSponsors.length !== 0 && Level(goldSponsors, 'Gold')}
         {silverSponsors.length !== 0 && Level(silverSponsors, 'Silver')}
