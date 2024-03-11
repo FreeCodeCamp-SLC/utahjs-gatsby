@@ -107,7 +107,7 @@ export default function Schedule({ data }) {
   useEffect(() => {
     // load sessionize embed
     const script = document.createElement('script');
-    script.src = 'https://sessionize.com/api/v2/uce3x9i3/view/GridSmart';
+    script.src = 'https://sessionize.com/api/v2/fmuedlhi/view/GridSmart';
     script.onload = () => window.sessionize.loader();
     // sessionize embed uses document.write, so we need to override it with
     // code that will insert CSS and html into the right place
@@ -125,7 +125,7 @@ export default function Schedule({ data }) {
       <SEO seo={seo} />
       <PageStyles className="center-content">
         <div className="headings">
-          <h1>Conference Schedule: Friday, September 15, 2023</h1>
+          <h1>Conference Schedule: Friday, September 13, 2024</h1>
           <div className="call-to-actions">
             <a
               href="https://ti.to/utahjs/2023"

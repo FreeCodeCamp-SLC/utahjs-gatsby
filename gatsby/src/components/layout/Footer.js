@@ -30,7 +30,7 @@ const Footer = () => (
   <FooterStyles>
     <div className="center-content">
       <p className="item">
-        © 2022 UtahJS Built by{' '}
+        © 2024 UtahJS Built by{' '}
         <a href="https://www.alexpuhl.com/" target="_blank" rel="noreferrer">
           Alex Puhl
         </a>
