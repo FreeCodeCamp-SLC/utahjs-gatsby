@@ -95,9 +95,16 @@ const Sponsors = ({ display }) => {
       bronzeSponsors.push(sponsor);
     }
   });
+  if (
+    goldSponsors.length === 0 &&
+    silverSponsors.length === 0 &&
+    bronzeSponsors.length === 0
+  ) {
+    return '';
+  }
   return (
     <Wrapper>
-      <h2>Thank you to our 2023 sponsors!</h2>
+      <h2>Thank you to our sponsors!</h2>
       <div className={`wrapper ${display}`}>
         {goldSponsors.length !== 0 && Level(goldSponsors, 'Gold')}
         {silverSponsors.length !== 0 && Level(silverSponsors, 'Silver')}
