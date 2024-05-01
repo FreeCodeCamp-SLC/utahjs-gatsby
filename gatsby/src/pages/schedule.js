@@ -128,14 +128,14 @@ export default function Schedule({ data }) {
           <h1>Conference Schedule: Friday, September 13, 2024</h1>
           <div className="call-to-actions">
             <a
-              href="https://ti.to/utahjs/2023"
+              href="https://ti.to/utahjs/2024"
               target="_blank"
               rel="noopener noreferrer"
             >
               Buy Tickets
             </a>
             <a
-              href="https://bit.ly/3NxkDmr"
+              href="https://bit.ly/utahjs-prospectus-2024"
               target="_blank"
               rel="noopener noreferrer"
             >
