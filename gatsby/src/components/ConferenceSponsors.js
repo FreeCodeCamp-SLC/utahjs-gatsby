@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 
 const Level = (sponsors, level) => (
-  <div className="level">
+  <div className={`${level} level-${level}`}>
     <h3 className="level-heading">{level} Sponsors</h3>
     {sponsors.map((sponsor, id) => (
       <div className="spacer" key={`sponsor${id}`}>
@@ -38,6 +38,7 @@ const Wrapper = styled.div`
   .level {
     display: flex;
     flex-direction: column;
+    padding-bottom: 40px;
   }
   .level-heading {
     align-self: start;
@@ -45,9 +46,13 @@ const Wrapper = styled.div`
   .spacer {
     margin-top: 20px;
   }
-  a[href*='aumni.fund'] {
-    transform: scale(1.5);
-    display: block;
+  .level-Silver .spacer {
+    margin-top: 15px;
+    scale: 0.75;
+  }
+  .level-Bronze .spacer {
+    margin-top: 10px;
+    scale: 0.5;
   }
   @media (min-width: 768px) {
     align-items: center;
