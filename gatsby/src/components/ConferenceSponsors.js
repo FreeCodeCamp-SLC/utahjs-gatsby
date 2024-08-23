@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 
 const Level = (sponsors, level) => (
-  <div className={`${level} level-${level}`}>
+  <div className={`level level-${level}`}>
     <h3 className="level-heading">{level} Sponsors</h3>
     {sponsors.map((sponsor, id) => (
       <div className="spacer" key={`sponsor${id}`}>
@@ -29,11 +29,12 @@ const Wrapper = styled.div`
     border-top: 2px dotted #ccc;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
   .wrapper.stacked {
     flex-direction: row;
     justify-content: space-around;
+    align-items: flex-start;
   }
   .level {
     display: flex;
@@ -58,7 +59,6 @@ const Wrapper = styled.div`
     align-items: center;
     h2 {
       font-size: 22px;
-      text-align: left;
     }
   }
   @media (max-width: 600px) {
